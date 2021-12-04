@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface ContainerProps {
+   opacity?: number
+}
+
 const FlexContainerMobile = styled.div`
    display: flex;
    flex-direction: column;
@@ -11,10 +15,6 @@ export const AppContainer = styled(FlexContainerMobile)`
    background-color: #101021;
    min-height: 100vh;
 `
-
-interface ContainerProps {
-   opacity?: number
-}
 
 export const ModalContainer = styled.div.attrs(
    ({ opacity }: ContainerProps) => ({
@@ -28,6 +28,7 @@ export const ModalContainer = styled.div.attrs(
    background-color: white;
    min-height: 600px;
    opacity: ${({ opacity }) => opacity};
+   pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
 `
 
 export const ModalSectionContainer = styled.div`
