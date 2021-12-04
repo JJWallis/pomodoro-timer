@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo, useEffect } from 'react'
 import ModalSection from './ModalSection'
 
 interface Props {
@@ -6,6 +6,7 @@ interface Props {
 }
 
 const ModalHeader: FC<Props> = ({ toggle }) => {
+   useEffect(() => console.log('re-rendered ModalHeader'))
    return (
       <ModalSection header>
          <h2>Settings</h2>
@@ -14,4 +15,4 @@ const ModalHeader: FC<Props> = ({ toggle }) => {
    )
 }
 
-export default ModalHeader
+export default memo(ModalHeader)
