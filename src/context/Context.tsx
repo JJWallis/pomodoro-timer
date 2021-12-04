@@ -14,6 +14,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
    )
 }
 
+// value={{}} - empty object
 // value into state/reducer  - solve some re-render issues? (react docs)
 
 export function useModalContext() {
