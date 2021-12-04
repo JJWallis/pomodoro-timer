@@ -2,7 +2,12 @@ import React, { FC } from 'react'
 import ModalSection from './ModalSection'
 import { withToggler } from './withToggler'
 
-const ModalHeader: FC = () => {
+interface ModalHeaderProps {
+   toggle: () => void
+   isToggled: boolean
+}
+
+const ModalHeader: FC<ModalHeaderProps> = ({ toggle, isToggled }) => {
    return (
       <ModalSection>
          <h2>Settings</h2>
