@@ -4,7 +4,7 @@ interface ContextInterface {
    test: string
 }
 
-export const ModalContext = createContext<ContextInterface | null>(null)
+const ModalContext = createContext<ContextInterface | null>(null)
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
    return (
@@ -13,9 +13,6 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
       </ModalContext.Provider>
    )
 }
-
-// value={{}} - empty object
-// value into state/reducer  - solve some re-render issues? (react docs)
 
 export function useModalContext() {
    const context = useContext(ModalContext)
