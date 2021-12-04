@@ -20,3 +20,8 @@ export const ModalContainer = styled.div`
    background-color: white;
    min-height: 600px;
 `
+
+export const ModalSectionContainer = styled.div`
+   border-bottom: 1px solid lightgrey;
+   padding-block: 1rem;
+`
