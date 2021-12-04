@@ -4,11 +4,11 @@ interface Props {
    test: string
 }
 
-const Context = createContext<Props | null>(null)
+export const Context = createContext<Props | null>(null)
 
 type TestProvider = <T>(Component: ComponentType<T>) => FC<T>
 
-export const TestContextProvider: TestProvider = (Component) => (props) => {
+export const withUserTest: TestProvider = (Component) => (props) => {
    return (
       <Context.Provider value={{ test: 'this is a test!' }}>
          <Component {...props} />
