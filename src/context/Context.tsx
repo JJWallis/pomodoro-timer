@@ -1,13 +1,26 @@
-import React, { createContext, ReactNode } from 'react'
+import React, { createContext, ReactNode, useContext } from 'react'
 
 interface ContextInterface {
    test: string
 }
 
-export const Context = createContext<ContextInterface | null>(null)
+export const ModalContext = createContext<ContextInterface | null>(null)
 
 export const ContextProvider = (children: ReactNode) => {
    return (
-      <Context.Provider value={{ test: 'test' }}>{children}</Context.Provider>
+      <ModalContext.Provider value={{ test: 'test' }}>
+         {children}
+      </ModalContext.Provider>
    )
+}
+
+// value into state/reducer  - solve some re-render issues? (react docs)
+
+export function useModalContext() {
+   const context = useContext(ModalContext)
+   if (!context)
+      throw new Error(
+         'useModalContext must be used within a ModalContextProvider'
+      )
+   return context
 }
