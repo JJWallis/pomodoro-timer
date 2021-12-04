@@ -6,7 +6,7 @@ interface ContextInterface {
 
 export const ModalContext = createContext<ContextInterface | null>(null)
 
-export const ContextProvider = (children: ReactNode) => {
+export const ContextProvider = ({ children }: { children: ReactNode }) => {
    return (
       <ModalContext.Provider value={{ test: 'test' }}>
          {children}
