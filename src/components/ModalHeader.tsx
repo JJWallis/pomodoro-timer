@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import ModalSection from './ModalSection'
+import { withToggler } from './withToggler'
 
 const ModalHeader: FC = () => {
    return (
@@ -10,4 +11,4 @@ const ModalHeader: FC = () => {
    )
 }
 
-export default ModalHeader
+export default withToggler(ModalHeader)
