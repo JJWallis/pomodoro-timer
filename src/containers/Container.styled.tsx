@@ -24,14 +24,21 @@ export const ModalContainer = styled.div.attrs(
    width: 90%;
    max-width: 600px;
    border-radius: 30px;
-   padding: 2rem 1rem;
+   padding-block: 1rem;
    background-color: white;
    min-height: 600px;
    opacity: ${({ opacity }) => opacity};
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
 `
 
-export const ModalSectionContainer = styled.div`
+interface ModalSectionProps {
+   header?: boolean
+}
+
+export const ModalSectionContainer = styled.div<ModalSectionProps>`
    border-bottom: 1px solid lightgrey;
    padding-block: 1rem;
+   width: 90%;
+   margin: 0 auto;
+   ${({ header }: ModalSectionProps) => header && `width: 100%;`};
 `

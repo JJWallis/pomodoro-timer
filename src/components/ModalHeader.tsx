@@ -7,7 +7,7 @@ interface Props {
 
 const ModalHeader: FC<Props> = ({ toggle }) => {
    return (
-      <ModalSection>
+      <ModalSection header>
          <h2>Settings</h2>
          <button onClick={() => toggle()}>Close</button>
       </ModalSection>

@@ -1,8 +1,16 @@
 import React, { FC } from 'react'
 import { ModalSectionContainer } from '../containers/Container.styled'
 
-const ModalSection: FC = ({ children }) => {
-   return <ModalSectionContainer>{children}</ModalSectionContainer>
+interface Props {
+   header?: boolean
+}
+
+const ModalSection: FC<Props> = ({ children, header }) => {
+   return (
+      <ModalSectionContainer header={header ? header : false}>
+         {children}
+      </ModalSectionContainer>
+   )
 }
 
 export default ModalSection
