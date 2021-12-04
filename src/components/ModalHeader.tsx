@@ -1,19 +1,17 @@
 import React, { FC } from 'react'
 import ModalSection from './ModalSection'
-import { withToggler } from './withToggler'
 
-interface ModalHeaderProps {
+interface Props {
    toggle: () => void
-   isToggled: boolean
 }
 
-const ModalHeader: FC<ModalHeaderProps> = ({ toggle, isToggled }) => {
+const ModalHeader: FC<Props> = ({ toggle }) => {
    return (
       <ModalSection>
          <h2>Settings</h2>
-         <input type="checkbox" />
+         <button onClick={() => toggle()}>Close</button>
       </ModalSection>
    )
 }
 
-export default withToggler(ModalHeader)
+export default ModalHeader

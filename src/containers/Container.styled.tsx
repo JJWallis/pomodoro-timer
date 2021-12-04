@@ -12,13 +12,22 @@ export const AppContainer = styled(FlexContainerMobile)`
    min-height: 100vh;
 `
 
-export const ModalContainer = styled.div`
+interface ContainerProps {
+   opacity?: number
+}
+
+export const ModalContainer = styled.div.attrs(
+   ({ opacity }: ContainerProps) => ({
+      opacity: opacity,
+   })
+)`
    width: 90%;
    max-width: 600px;
    border-radius: 30px;
    padding: 2rem 1rem;
    background-color: white;
    min-height: 600px;
+   opacity: ${({ opacity }) => opacity};
 `
 
 export const ModalSectionContainer = styled.div`
