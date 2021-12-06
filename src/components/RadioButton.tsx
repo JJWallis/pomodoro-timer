@@ -8,13 +8,14 @@ interface Props {
 
 const RadioButton: FC<Props> = ({ id, defaultChecked }) => {
    const { toggled, handleChange } = useToggle(defaultChecked)
+
    return (
       <input
          type="radio"
          name="theme-toggle"
          id={id}
          checked={toggled}
-         onChange={() => handleChange}
+         onChange={handleChange}
       />
    )
 }

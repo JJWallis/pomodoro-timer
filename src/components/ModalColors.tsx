@@ -5,7 +5,7 @@ import RadioButton from './RadioButton'
 const ModalColors: FC = () => {
    return (
       <ModalSection heading="Color">
-         <RadioButton id="theme-red" />
+         <RadioButton id="theme-red" defaultChecked={true} />
          <RadioButton id="theme-blue" />
          <RadioButton id="theme-purple" />
       </ModalSection>
