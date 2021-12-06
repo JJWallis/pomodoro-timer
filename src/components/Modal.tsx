@@ -18,4 +18,4 @@ const Modal: FC<Props> = ({ toggle, isToggled }) => {
    )
 }
 
-export default withToggler(Modal)
+export default withToggler(Modal, { initialState: false })
