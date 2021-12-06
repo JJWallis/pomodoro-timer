@@ -15,3 +15,5 @@ export function withNumberInput<T>(Component: ComponentType<T>) {
       )
    }
 }
+
+// refactor - dynamic form state as radio buttons for 3 themes
