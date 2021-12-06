@@ -1,10 +1,6 @@
-import React, { ReactNode, ComponentType } from 'react'
+import React, { ComponentType } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Theme } from '../styles/Theme'
-
-// export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-//    return <ThemeProvider theme={Theme}>{children}</ThemeProvider>
-// }
 
 type withThemeType = <T>(Component: ComponentType<T>) => ComponentType<T>
 
