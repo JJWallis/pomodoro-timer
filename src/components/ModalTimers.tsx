@@ -7,6 +7,8 @@ const ModalTimers: FC = () => {
       <ModalSection>
          <h3>Time (MINUTES)</h3>
          <ModalTimer label={'pomodoro'} />
+         <ModalTimer label={'short-break'} />
+         <ModalTimer label={'long-break'} />
       </ModalSection>
    )
 }
