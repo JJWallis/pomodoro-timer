@@ -20,7 +20,7 @@ export const withTheme: withThemeType = (Component) => (props) => {
 
    return (
       <ThemeProvider theme={theme}>
-         <Component {...props} />
+         <Component {...props} updateTheme={updateTheme} />
       </ThemeProvider>
    )
 }
