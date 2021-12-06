@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { useToggle } from '../hooks/useToggle'
-import { withTheme } from '../components/withTheme'
 
 interface Props {
    id: string
@@ -21,4 +20,4 @@ const RadioButton: FC<Props> = ({ id, defaultChecked }) => {
    )
 }
 
-export default withTheme(RadioButton)
+export default RadioButton
