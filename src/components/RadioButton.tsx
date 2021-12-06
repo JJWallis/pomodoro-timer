@@ -1,20 +1,20 @@
 import React, { FC } from 'react'
+import { useToggle } from '../hooks/useToggle'
 
 interface Props {
    id: string
+   defaultChecked?: boolean
 }
 
-const RadioButton: FC<Props> = ({ id }) => {
-   // custom hook to toggle the state + have one as true by default
-   // props are in same scope as the component
-
+const RadioButton: FC<Props> = ({ id, defaultChecked }) => {
+   const { toggled, handleChange } = useToggle(defaultChecked)
    return (
       <input
          type="radio"
          name="theme-toggle"
          id={id}
-         //  checked={checked}
-         //  onChange={handleChange}
+         checked={toggled}
+         onChange={() => handleChange}
       />
    )
 }
