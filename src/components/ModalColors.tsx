@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, ChangeEvent } from 'react'
 import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
@@ -15,11 +15,29 @@ const ModalColors: FC = () => {
       purpleBtn: false,
    })
 
+   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const currentState = { ...checked }
+      console.log(currentState)
+      //   setChecked({ ...checked, [e.target.id]: e.target.checked })
+   }
+
    return (
       <ModalSection heading="Color">
-         <RadioButton id="theme-red" />
-         <RadioButton id="theme-blue" />
-         <RadioButton id="theme-purple" />
+         <RadioButton
+            id="theme-red"
+            checked={checked.redBtn}
+            handleChange={handleChange}
+         />
+         <RadioButton
+            id="theme-blue"
+            checked={checked.blueBtn}
+            handleChange={handleChange}
+         />
+         <RadioButton
+            id="theme-purple"
+            checked={checked.purpleBtn}
+            handleChange={handleChange}
+         />
       </ModalSection>
    )
 }
