@@ -9,8 +9,7 @@ const ModalTimers: FC = () => {
    }
 
    return (
-      <ModalSection>
-         <h3>Time (MINUTES)</h3>
+      <ModalSection heading="Time (MINUTES)">
          {produceTimerInputs()}
       </ModalSection>
    )
