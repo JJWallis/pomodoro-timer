@@ -1,5 +1,7 @@
 import React, { useState, ComponentType } from 'react'
 
+export type toggle = () => void
+export type isToggled = boolean
 type options = {
    initialState: boolean
 }

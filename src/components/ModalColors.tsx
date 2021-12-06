@@ -2,13 +2,7 @@ import React, { FC } from 'react'
 import ModalSection from './ModalSection'
 
 const ModalColors: FC = () => {
-   return (
-      <ModalSection heading="Color">
-         <input type="radio" name="theme-toggle" />
-         <input type="radio" name="theme-toggle" />
-         <input type="radio" name="theme-toggle" />
-      </ModalSection>
-   )
+   return <ModalSection heading="Color"></ModalSection>
 }
 
 export default ModalColors
