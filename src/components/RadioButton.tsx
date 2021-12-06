@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
-import { withToggler } from './withToggler'
+import { withToggler, toggle, isToggled } from './withToggler'
 
 interface Props {
    id: string
+   toggle: toggle
+   isToggled: isToggled
 }
 
 const RadioButton: FC<Props> = ({ id }) => {
