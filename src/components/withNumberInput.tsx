@@ -1,19 +1,19 @@
 import React, { ComponentType, useState } from 'react'
 
-export function withNumberInput<T>(Component: ComponentType<T>) {
+type Options = {
+   formState: string | number | boolean
+}
+
+export function withNumberInput<T>(
+   Component: ComponentType<T>,
+   { formState }: Options
+) {
    return (props: Omit<T, 'state' | 'updateState'>) => {
-      const [numberState, setNumberState] = useState(0)
-      const updateState = (newNumber: string) =>
-         setNumberState(Number(newNumber))
+      const [state, setState] = useState(formState)
+      const updateState = (newValue: string) => setState(newValue)
 
       return (
-         <Component
-            {...(props as T)}
-            state={numberState}
-            updateState={updateState}
-         />
+         <Component {...(props as T)} state={state} updateState={updateState} />
       )
    }
 }
-
-// refactor - dynamic form state as radio buttons for 3 themes
