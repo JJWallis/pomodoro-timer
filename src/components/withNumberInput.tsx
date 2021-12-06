@@ -1,16 +1,17 @@
 import React, { ComponentType, useState } from 'react'
 
 type Options = {
-   formState: string | number | boolean
+   defaultState: string | number | boolean
 }
 
 export function withNumberInput<T>(
    Component: ComponentType<T>,
-   { formState }: Options
+   { defaultState }: Options
 ) {
    return (props: Omit<T, 'state' | 'updateState'>) => {
-      const [state, setState] = useState(formState)
-      const updateState = (newValue: string) => setState(newValue)
+      const [state, setState] = useState(defaultState)
+      const updateState = (newState: Options['defaultState']) =>
+         setState(newState)
 
       return (
          <Component {...(props as T)} state={state} updateState={updateState} />
