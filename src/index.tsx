@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import GlobalStyles from './styles/Global.styled'
+import { withTheme } from './components/withTheme'
+const AppWithTheme = withTheme(App)
 
 ReactDOM.render(
-   <React.StrictMode>
+   <StrictMode>
       <GlobalStyles />
-      <App />
-   </React.StrictMode>,
+      <AppWithTheme />
+   </StrictMode>,
 
    document.getElementById('root')
 )
