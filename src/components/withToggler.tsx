@@ -18,6 +18,7 @@ export function withToggler<T>(
          <Component
             isToggled={isToggled}
             toggle={toggle}
+            initialState={initialState}
             {...(hocProps as T)}
          />
       )
