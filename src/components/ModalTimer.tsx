@@ -21,4 +21,4 @@ const ModalTimer: FC<Props> = ({ label, state, updateState }) => {
    )
 }
 
-export default withNumberInput(ModalTimer, { defaultState: 0 })
+export default withNumberInput(ModalTimer)
