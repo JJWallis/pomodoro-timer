@@ -14,6 +14,3 @@ export const Theme = {
       bgPm: 'purple',
    },
 }
-
-// built in withTheme into styledcomponents
-// dunamic helper funcs - use TS generics to help us (vs any)
