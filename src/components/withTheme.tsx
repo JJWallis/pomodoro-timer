@@ -17,6 +17,7 @@ export const withTheme: withThemeType = (Component) => (props) => {
          setTheme(purpleTheme)
       }
       // regex look ahead to split id at capital letter + toLowerCase + replace space with '-'
+      // refactor useTheme into Context folder
    }
 
    return (
