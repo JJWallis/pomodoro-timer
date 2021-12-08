@@ -1,16 +1,12 @@
 import React, { createContext, ReactNode, useContext } from 'react'
 
-interface ContextInterface {
-   test: string
-}
+type ContextType = string
 
-const ModalContext = createContext<ContextInterface | null>(null)
+const ModalContext = createContext<ContextType | null>(null)
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
    return (
-      <ModalContext.Provider value={{ test: 'test' }}>
-         {children}
-      </ModalContext.Provider>
+      <ModalContext.Provider value={'test'}>{children}</ModalContext.Provider>
    )
 }
 
