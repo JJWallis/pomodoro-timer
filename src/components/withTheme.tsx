@@ -4,18 +4,20 @@ import { Theme } from '../styles/Theme'
 
 type withThemeType = <T>(Component: ComponentType<T>) => ComponentType<T>
 
+const { redTheme, blueTheme, purpleTheme } = Theme
+
 export const withTheme: withThemeType = (Component) => (props) => {
-   const [theme, setTheme] = useState(Theme.redTheme)
+   const [theme, setTheme] = useState(redTheme)
+
    const updateTheme = (newTheme: string) => {
       if (newTheme === 'theme-red') {
-         setTheme(Theme.redTheme)
+         setTheme(redTheme)
       } else if (newTheme === 'theme-blue') {
-         setTheme(Theme.blueTheme)
+         setTheme(blueTheme)
       } else {
-         setTheme(Theme.purpleTheme)
+         setTheme(purpleTheme)
       }
       // regex look ahead to split id at capital letter + toLowerCase + replace space with '-'
-      // vs long ass conditional
    }
 
    return (
