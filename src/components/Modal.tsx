@@ -1,10 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import { withToggler, toggle, isToggled } from './withToggler'
-import { withUserTest, useUserTest } from '../context/userTest'
 
 interface Props {
    toggle: toggle
@@ -12,7 +11,6 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ toggle, isToggled }) => {
-   const { test } = useUserTest()
    return (
       <ModalContainer opacity={isToggled ? 0 : 1}>
          <ModalHeader toggle={toggle} />
@@ -22,4 +20,4 @@ const Modal: FC<Props> = ({ toggle, isToggled }) => {
    )
 }
 
-export default withUserTest(withToggler(Modal, { initialState: false }))
+export default withToggler(Modal, { initialState: false })
