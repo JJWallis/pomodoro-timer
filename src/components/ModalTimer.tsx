@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { withNumberInput } from './withControlledInput'
-import { useRender } from '../hooks/useRender'
 
 interface Props {
    label: string
@@ -9,7 +8,6 @@ interface Props {
 }
 
 const ModalTimer: FC<Props> = ({ label, state, updateState }) => {
-   useRender()
    return (
       <>
          <label htmlFor={label}>{label.replace('-', ' ')}</label>
