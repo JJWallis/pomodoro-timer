@@ -1,7 +1,6 @@
 import React, {
    ComponentType,
    createContext,
-   FC,
    useContext,
    useState,
 } from 'react'
@@ -12,7 +11,7 @@ interface Props {
 
 export const Context = createContext<Props | null>(null)
 
-type TestProvider = <T>(Component: ComponentType<T>) => FC<T>
+type TestProvider = <T>(Component: ComponentType<T>) => ComponentType<T>
 
 export const withUserTest: TestProvider = (Component) => (props) => {
    const [test] = useState<{ test: string }>({ test: 'test' })
