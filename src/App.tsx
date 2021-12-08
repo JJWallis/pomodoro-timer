@@ -2,8 +2,8 @@ import React, { FC, useReducer } from 'react'
 import { AppContainer } from './containers/Container.styled'
 import Modal from './components/Modal'
 
-type TimerState = number
-type Actions =
+type ReducerState = number
+type ReducerActions =
    | {
         type: 'INCREMENT'
         payload: number
@@ -13,7 +13,7 @@ type Actions =
         payload: number
      }
 
-const timerReducer = (state: TimerState, action: Actions) => {
+const timerReducer = (state: ReducerState, action: ReducerActions) => {
    const { type, payload } = action
    switch (type) {
       case 'INCREMENT':
@@ -27,6 +27,7 @@ const timerReducer = (state: TimerState, action: Actions) => {
 
 const App: FC = () => {
    const [amount, dispatch] = useReducer(timerReducer, 500)
+
    return (
       <>
          <AppContainer>
@@ -34,7 +35,9 @@ const App: FC = () => {
             <button onClick={() => dispatch({ type: 'INCREMENT', payload: 1 })}>
                Increment
             </button>
-            <button>Decrement</button>
+            <button onClick={() => dispatch({ type: 'DECREMENT', payload: 1 })}>
+               Decrement
+            </button>
             <div>{amount}</div>
          </AppContainer>
       </>
