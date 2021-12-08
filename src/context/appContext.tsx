@@ -1,20 +1,17 @@
-import React, { createContext, ReactNode, useContext } from 'react'
+import React, { createContext, ReactNode, useContext, useState } from 'react'
 
-type ContextType = string
+type ContextType = { updateTheme?: () => void } | null
 
-const ModalContext = createContext<ContextType | null>(null)
+const AppContext = createContext<ContextType>(null)
 
-export const ContextProvider = ({ children }: { children: ReactNode }) => {
-   return (
-      <ModalContext.Provider value={'test'}>{children}</ModalContext.Provider>
-   )
+export const AppContextProvider = ({ children }: { children: ReactNode }) => {
+   const [context, setContext] = useState<{} | null>({})
+   return <AppContext.Provider value={context}>{children}</AppContext.Provider>
 }
 
-export function useModalContext() {
-   const context = useContext(ModalContext)
+export function useAppContext() {
+   const context = useContext(AppContext)
    if (!context)
-      throw new Error(
-         'useModalContext must be used within a ModalContextProvider'
-      )
+      throw new Error('useAppContext must be used within a AppContextProvider')
    return context
 }
