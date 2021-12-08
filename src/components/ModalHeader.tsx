@@ -9,7 +9,7 @@ const ModalHeader: FC<Props> = ({ toggle }) => {
    return (
       <ModalSection header>
          <h2>Settings</h2>
-         <button onClick={() => toggle()}>Close</button>
+         <button onClick={toggle}>Close</button>
       </ModalSection>
    )
 }

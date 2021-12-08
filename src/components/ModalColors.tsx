@@ -1,11 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
-import { useRender } from '../hooks/useRender'
 
 const ModalColors: FC = () => {
-   useRender()
-
    const produceRadioButtons = () => {
       const themes = ['theme-red', 'theme-blue', 'theme-purple']
       return themes.map((color) => (
@@ -20,4 +17,4 @@ const ModalColors: FC = () => {
    return <ModalSection heading="Color">{produceRadioButtons()}</ModalSection>
 }
 
-export default ModalColors
+export default memo(ModalColors)
