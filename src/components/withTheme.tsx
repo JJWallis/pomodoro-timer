@@ -8,7 +8,6 @@ const { redTheme, blueTheme, purpleTheme } = Theme
 
 export const withTheme: withThemeType = (Component) => (props) => {
    const [theme, setTheme] = useState(redTheme)
-
    const updateTheme = (newTheme: string) => {
       if (newTheme === 'theme-red') {
          setTheme(redTheme)
