@@ -1,14 +1,9 @@
-import React, { FC, memo, ChangeEvent, useState } from 'react'
+import React, { FC, memo, useState } from 'react'
 import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
    const [selectedTheme, setSelectedTheme] = useState('theme-red')
-
-   const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
-      setSelectedTheme(e.target.value)
-      // took away update theme method - why not changing
-   }
 
    const produceRadioButtons = () => {
       const themes = ['theme-red', 'theme-blue', 'theme-purple']
@@ -16,7 +11,7 @@ const ModalColors: FC = () => {
          <RadioButton
             key={theme}
             value={theme}
-            defaultChecked={theme === 'theme-red'}
+            defaultChecked={selectedTheme === theme}
             setTheme={setSelectedTheme}
          />
       ))
@@ -24,29 +19,7 @@ const ModalColors: FC = () => {
 
    return (
       // form tag
-      <ModalSection heading="Color">
-         <input
-            type="radio"
-            name="theme-toggle"
-            value="theme-red"
-            checked={selectedTheme === 'theme-red'}
-            onChange={handleRadioToggle}
-         />
-         <input
-            type="radio"
-            name="theme-toggle"
-            value="theme-blue"
-            checked={selectedTheme === 'theme-blue'}
-            onChange={handleRadioToggle}
-         />
-         <input
-            type="radio"
-            name="theme-toggle"
-            value="theme-purple"
-            checked={selectedTheme === 'theme-purple'}
-            onChange={handleRadioToggle}
-         />
-      </ModalSection>
+      <ModalSection heading="Color">{produceRadioButtons()}</ModalSection>
    )
 }
 
