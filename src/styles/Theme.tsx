@@ -1,4 +1,3 @@
-// export type ThemeType = {}
 // theme types - declare ThemeStyles obj + use that 3 times for each theme in parent Theme obj
 
 export const Theme = {
@@ -13,4 +12,10 @@ export const Theme = {
    purpleTheme: {
       bgPm: 'purple',
    },
+}
+
+export const Fonts = {
+   ffNoto: 'Noto Sans',
+   ffRoboto: 'Roboto',
+   ffRobotoMono: 'Roboto Mono',
 }
