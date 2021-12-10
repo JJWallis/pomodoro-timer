@@ -27,5 +27,3 @@ const ModalColors: FC = () => {
 }
 
 export default memo(ModalColors)
-
-// same logic above - different state str values
