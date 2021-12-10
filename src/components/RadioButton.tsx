@@ -14,7 +14,7 @@ const RadioButton: FC<Props> = ({ id, defaultChecked }) => {
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       handleChange(e)
       updateTheme(e.target.id)
-      console.log('changing...')
+      console.log(e.target.checked)
    }
 
    return (
