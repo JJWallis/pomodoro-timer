@@ -34,7 +34,12 @@ export const ThemeContext: FC = ({ children }) => {
 
    return (
       <ThemeProvider
-         theme={{ currentTheme, updateTheme, currentFont, updateFont }}
+         theme={{
+            currentTheme,
+            updateTheme,
+            currentFont,
+            updateFont,
+         }}
       >
          {children}
       </ThemeProvider>

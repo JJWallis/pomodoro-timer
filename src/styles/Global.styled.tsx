@@ -35,7 +35,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden; 
-  /* font-family: props.{theme}, sans-serif, monospace; */
+  font-family: sans-serif, monospace;
 }
 
 a:not([class]) {
