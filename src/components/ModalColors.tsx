@@ -1,21 +1,38 @@
-import React, { FC, memo } from 'react'
+import React, { FC, memo, ChangeEvent, useContext } from 'react'
 import ModalSection from './ModalSection'
-import RadioButton from './RadioButton'
+import { ThemeContext } from 'styled-components'
 
 const ModalColors: FC = () => {
-   // form tag
-   const produceRadioButtons = () => {
-      const themes = ['theme-red', 'theme-blue', 'theme-purple']
-      return themes.map((color) => (
-         <RadioButton
-            key={color}
-            id={color}
-            defaultChecked={themes.indexOf(color) === 0 ? true : false}
-         />
-      ))
+   const { updateTheme } = useContext(ThemeContext)
+
+   const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
+      // handleChange(e)
+      updateTheme(e.target.id)
+      console.log(e.target.checked)
    }
 
-   return <ModalSection heading="Color">{produceRadioButtons()}</ModalSection>
+   return (
+      // form tag
+      <ModalSection heading="Color">
+         <input
+            type="radio"
+            name="theme-toggle"
+            // checked={toggled}
+            onChange={handleRadioToggle}
+         />
+      </ModalSection>
+   )
 }
 
 export default memo(ModalColors)
+
+// const produceRadioButtons = () => {
+//    const themes = ['theme-red', 'theme-blue', 'theme-purple']
+//    return themes.map((color) => (
+//       <RadioButton
+//          key={color}
+//          id={color}
+//          defaultChecked={themes.indexOf(color) === 0 ? true : false}
+//       />
+//    ))
+// }
