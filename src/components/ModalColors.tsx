@@ -3,6 +3,7 @@ import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
+   // form tag
    const produceRadioButtons = () => {
       const themes = ['theme-red', 'theme-blue', 'theme-purple']
       return themes.map((color) => (
