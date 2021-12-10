@@ -2,13 +2,14 @@ import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import GlobalStyles from './styles/Global.styled'
-import { withTheme } from './components/withTheme'
-const AppWithTheme = withTheme(App)
+import { ThemeContext } from './components/withTheme'
 
 ReactDOM.render(
    <StrictMode>
-      <GlobalStyles />
-      <AppWithTheme />
+      <ThemeContext>
+         <GlobalStyles />
+         <App />
+      </ThemeContext>
    </StrictMode>,
 
    document.getElementById('root')

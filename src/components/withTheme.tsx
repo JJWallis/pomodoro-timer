@@ -1,13 +1,12 @@
-import React, { ComponentType, useState } from 'react'
+import React, { FC, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Theme } from '../styles/Theme'
 
-type withThemeType = <T>(Component: ComponentType<T>) => ComponentType<T>
-
 const { redTheme, blueTheme, purpleTheme } = Theme
 
-export const withTheme: withThemeType = (Component) => (props) => {
+export const ThemeContext: FC = ({ children }) => {
    const [currentTheme, setCurrentTheme] = useState(redTheme)
+
    const updateTheme = (newTheme: string) => {
       if (newTheme === 'theme-red') {
          setCurrentTheme(redTheme)
@@ -22,7 +21,7 @@ export const withTheme: withThemeType = (Component) => (props) => {
 
    return (
       <ThemeProvider theme={{ currentTheme, updateTheme }}>
-         <Component {...props} />
+         {children}
       </ThemeProvider>
    )
 }
