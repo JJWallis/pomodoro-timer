@@ -16,6 +16,7 @@ const ModalColors: FC = () => {
             defaultChecked={selectedOption === theme}
             setSelectedOption={setSelectedOption}
             updateThemeState={updateTheme}
+            name={theme}
          />
       ))
    }

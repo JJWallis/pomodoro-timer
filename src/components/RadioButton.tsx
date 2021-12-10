@@ -4,6 +4,7 @@ interface Props {
    value: string
    defaultChecked: boolean
    setSelectedOption: Dispatch<React.SetStateAction<string>>
+   name: string
    updateThemeState?: (newTheme: string) => void
    updateFont?: (newFont: string) => void
 }
@@ -14,6 +15,7 @@ const RadioButton: FC<Props> = ({
    setSelectedOption,
    updateThemeState,
    updateFont,
+   name,
 }) => {
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
@@ -25,7 +27,7 @@ const RadioButton: FC<Props> = ({
    return (
       <input
          type="radio"
-         name="theme-toggle"
+         name={name}
          value={value}
          checked={defaultChecked}
          onChange={handleRadioToggle}
