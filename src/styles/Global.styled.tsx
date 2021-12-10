@@ -36,7 +36,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden; 
   font-family: ${({ theme: { currentFont } }) =>
-     currentFont}  sans-serif, monospace;
+     currentFont}, sans-serif, monospace;
 }
 
 a:not([class]) {
