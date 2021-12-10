@@ -1,5 +1,3 @@
-// theme types - declare ThemeStyles obj + use that 3 times for each theme in parent Theme obj
-
 import 'styled-components'
 
 declare module 'styled-components' {
