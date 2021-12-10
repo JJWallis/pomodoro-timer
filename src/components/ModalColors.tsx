@@ -1,16 +1,13 @@
-import React, { FC, memo, ChangeEvent, useContext, useState } from 'react'
+import React, { FC, memo, ChangeEvent, useState } from 'react'
 import ModalSection from './ModalSection'
-import { ThemeContext } from 'styled-components'
 import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
    const [selectedTheme, setSelectedTheme] = useState('theme-red')
-   const { updateTheme } = useContext(ThemeContext)
 
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       setSelectedTheme(e.target.value)
-      updateTheme(e.target.value)
-      console.log(e.target.checked)
+      // took away update theme method - why not changing
    }
 
    const produceRadioButtons = () => {
@@ -20,6 +17,7 @@ const ModalColors: FC = () => {
             key={theme}
             value={theme}
             defaultChecked={theme === 'theme-red'}
+            setTheme={setSelectedTheme}
          />
       ))
    }
