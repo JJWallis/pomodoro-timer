@@ -4,11 +4,11 @@ import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
-   const [selectedOption, setSelectedOption] = useState('theme-red')
+   const [selectedOption, setSelectedOption] = useState('redTheme')
    const { updateTheme } = useContext(ThemeContext)
 
    const produceRadioButtons = () => {
-      const themes = ['theme-red', 'theme-blue', 'theme-purple']
+      const themes = ['redTheme', 'blueTheme', 'purpleTheme']
       return themes.map((theme) => (
          <RadioButton
             key={theme}

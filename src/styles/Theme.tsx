@@ -11,9 +11,12 @@ declare module 'styled-components' {
    }
 }
 
+// export const BaseStyles = {
+//    bgPm: '#101021',
+// }
+
 export const Theme = {
-   bgPm: '#101021',
-   // base
+   // bgPm: '#101021',
    redTheme: {
       bgPm: 'red',
    },
