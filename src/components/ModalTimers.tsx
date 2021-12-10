@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import ModalSection from './ModalSection'
 import ModalTimer from './ModalTimer'
-import { useRender } from '../hooks/useRender'
+import { useRenderCount } from '../hooks/useRenderCount'
 
 const ModalTimers: FC = () => {
-   useRender()
+   useRenderCount()
    const produceTimerInputs = () => {
       const labels = ['pomodoro', 'short-break', 'long-break']
       return labels.map((label) => <ModalTimer key={label} label={label} />)
