@@ -7,22 +7,22 @@ type withThemeType = <T>(Component: ComponentType<T>) => ComponentType<T>
 const { redTheme, blueTheme, purpleTheme } = Theme
 
 export const withTheme: withThemeType = (Component) => (props) => {
-   const [theme, setTheme] = useState(redTheme)
+   const [currentTheme, setCurrentTheme] = useState(redTheme)
    const updateTheme = (newTheme: string) => {
       if (newTheme === 'theme-red') {
-         setTheme(redTheme)
+         setCurrentTheme(redTheme)
       } else if (newTheme === 'theme-blue') {
-         setTheme(blueTheme)
+         setCurrentTheme(blueTheme)
       } else {
-         setTheme(purpleTheme)
+         setCurrentTheme(purpleTheme)
       }
       // regex look ahead to split id at capital letter + toLowerCase + replace space with '-'
       // refactor useTheme into Context folder
    }
 
    return (
-      <ThemeProvider theme={theme}>
-         <Component {...props} updateTheme={updateTheme} />
+      <ThemeProvider theme={{ currentTheme, updateTheme }}>
+         <Component {...props} />
       </ThemeProvider>
    )
 }
