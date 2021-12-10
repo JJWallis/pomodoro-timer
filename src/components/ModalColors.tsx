@@ -24,3 +24,8 @@ const ModalColors: FC = () => {
 }
 
 export default memo(ModalColors)
+
+// diff ThemeProvider that holds our fonts + method to update
+// if doesnt work - model fonts in one object + colours in another (all within parent theme obj)
+// two methods to update colours + other for fonts - pass both down (live in theme provider obj)
+// same logic above - different state str values
