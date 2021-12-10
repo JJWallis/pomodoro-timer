@@ -18,21 +18,24 @@ export const ThemeContext: FC = ({ children }) => {
          setCurrentTheme(purpleTheme)
       }
       // regex look ahead to split id at capital letter + toLowerCase + replace space with '-'
-      // refactor useTheme into Context folder
+      // newFont.split(/(?=[A-Z])/).join('-').toLowerCase()
    }
 
    const updateFont = (newFont: string) => {
-      if (newFont === 'font-noto') {
+      if (newFont === 'ffNoto') {
          setCurrentFont(ffNoto)
-      } else if (newFont === 'font-roboto') {
+      } else if (newFont === 'ffRoboto') {
          setCurrentFont(ffRoboto)
       } else {
          setCurrentFont(ffRobotoMono)
       }
+      // const desiredFont = Fonts[newFont]
    }
 
    return (
-      <ThemeProvider theme={{ currentTheme, updateTheme }}>
+      <ThemeProvider
+         theme={{ currentTheme, updateTheme, currentFont, updateFont }}
+      >
          {children}
       </ThemeProvider>
    )
