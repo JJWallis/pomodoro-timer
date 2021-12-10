@@ -1,6 +1,7 @@
 import React, { FC, memo, ChangeEvent, useContext, useState } from 'react'
 import ModalSection from './ModalSection'
 import { ThemeContext } from 'styled-components'
+import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
    const [selectedTheme, setSelectedTheme] = useState('theme-red')
@@ -10,6 +11,17 @@ const ModalColors: FC = () => {
       setSelectedTheme(e.target.value)
       updateTheme(e.target.value)
       console.log(e.target.checked)
+   }
+
+   const produceRadioButtons = () => {
+      const themes = ['theme-red', 'theme-blue', 'theme-purple']
+      return themes.map((theme) => (
+         <RadioButton
+            key={theme}
+            value={theme}
+            defaultChecked={theme === 'theme-red'}
+         />
+      ))
    }
 
    return (
@@ -41,14 +53,3 @@ const ModalColors: FC = () => {
 }
 
 export default memo(ModalColors)
-
-// const produceRadioButtons = () => {
-//    const themes = ['theme-red', 'theme-blue', 'theme-purple']
-//    return themes.map((color) => (
-//       <RadioButton
-//          key={color}
-//          id={color}
-//          defaultChecked={themes.indexOf(color) === 0 ? true : false}
-//       />
-//    ))
-// }

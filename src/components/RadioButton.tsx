@@ -1,28 +1,23 @@
 import React, { FC, useContext, ChangeEvent } from 'react'
-import { useToggle } from '../hooks/useToggle'
 import { ThemeContext } from 'styled-components'
 
 interface Props {
-   id: string
+   value: string
    defaultChecked?: boolean
 }
 
-const RadioButton: FC<Props> = ({ id, defaultChecked }) => {
-   const { toggled, handleChange } = useToggle(defaultChecked)
+const RadioButton: FC<Props> = ({ value, defaultChecked }) => {
    const { updateTheme } = useContext(ThemeContext)
-
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
-      handleChange(e)
-      updateTheme(e.target.id)
-      console.log(e.target.checked)
+      updateTheme(e.target.value)
    }
 
    return (
       <input
          type="radio"
          name="theme-toggle"
-         id={id}
-         checked={toggled}
+         value={value}
+         checked={defaultChecked}
          onChange={handleRadioToggle}
       />
    )
