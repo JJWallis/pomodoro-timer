@@ -3,15 +3,19 @@ import { ThemeContext } from 'styled-components'
 
 interface Props {
    value: string
-   defaultChecked?: boolean
-   setTheme: Dispatch<React.SetStateAction<string>>
+   defaultChecked: boolean
+   setSelectedOption: Dispatch<React.SetStateAction<string>>
 }
 
-const RadioButton: FC<Props> = ({ value, defaultChecked, setTheme }) => {
+const RadioButton: FC<Props> = ({
+   value,
+   defaultChecked,
+   setSelectedOption,
+}) => {
    const { updateTheme } = useContext(ThemeContext)
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
-      setTheme(value)
+      setSelectedOption(value)
       updateTheme(value)
    }
 

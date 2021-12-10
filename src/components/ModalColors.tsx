@@ -3,7 +3,7 @@ import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
 const ModalColors: FC = () => {
-   const [selectedTheme, setSelectedTheme] = useState('theme-red')
+   const [selectedOption, setSelectedOption] = useState('theme-red')
 
    const produceRadioButtons = () => {
       const themes = ['theme-red', 'theme-blue', 'theme-purple']
@@ -11,8 +11,8 @@ const ModalColors: FC = () => {
          <RadioButton
             key={theme}
             value={theme}
-            defaultChecked={selectedTheme === theme}
-            setTheme={setSelectedTheme}
+            defaultChecked={selectedOption === theme}
+            setSelectedOption={setSelectedOption}
          />
       ))
    }
