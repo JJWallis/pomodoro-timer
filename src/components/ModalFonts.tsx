@@ -1,11 +1,9 @@
-import React, { FC, memo, useState, useContext } from 'react'
-import { ThemeContext } from 'styled-components'
+import React, { FC, memo, useState } from 'react'
 import ModalSection from './ModalSection'
 import RadioButton from './RadioButton'
 
-const ModalColors: FC = () => {
+const ModalFonts: FC = () => {
    const [selectedOption, setSelectedOption] = useState('theme-red')
-   const { updateTheme } = useContext(ThemeContext)
 
    const produceRadioButtons = () => {
       const themes = ['theme-red', 'theme-blue', 'theme-purple']
@@ -15,17 +13,14 @@ const ModalColors: FC = () => {
             value={theme}
             defaultChecked={selectedOption === theme}
             setSelectedOption={setSelectedOption}
-            updateThemeState={updateTheme}
          />
       ))
    }
 
    return (
       // form tag
-      <ModalSection heading="Color">{produceRadioButtons()}</ModalSection>
+      <ModalSection heading="Font">{produceRadioButtons()}</ModalSection>
    )
 }
 
-export default memo(ModalColors)
-
-// same logic above - different state str values
+export default memo(ModalFonts)
