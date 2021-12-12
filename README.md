@@ -1,4 +1,4 @@
-# Frontend Mentor - ‘…’ solution
+# Frontend Mentor - Pomodoro app solution
 
 This is a solution to the **‘…’** challenge on Frontend Mentor(link)
 
