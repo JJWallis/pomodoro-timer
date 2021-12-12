@@ -14,13 +14,17 @@ This is a solution to the **‘…’** challenge on Frontend Mentor(link)
    -  [Continued development](#continued-development)
    -  [Useful resources](#useful-resources)
 -  [Author](#author)
--  [Acknowledgments](#acknowledgments)
 
 ## Overview
 
 ### The challenge
 
 Your users should be able to:
+
+-  Set a Pomodoro timer and short & long break timers
+-  Customize how long each timer runs for
+-  See a circular progress bar that updates every minute and represents how far through their timer they are
+-  Customize the appearance of the app with the ability to set preferences for colors and fonts
 
 ### Screenshot
 
