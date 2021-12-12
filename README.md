@@ -39,13 +39,12 @@ Your users should be able to:
 ### Built with
 
 -  Semantic HTML5 markup
--  CSS custom properties
 -  Flexbox
 -  CSS Grid
 -  Mobile-first workflow
 -  [React](https://reactjs.org/) - JS library
 -  [Styled Components](https://styled-components.com/) - For styles
--  Sass - CSS preprocessor
+-  Typescript
 
 ### What I learned
 
@@ -67,7 +66,11 @@ const proudOfThisFunc = () => {
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Custom hooks
+
+HOCs
+
+useReducer()
 
 ### Useful resources
 
