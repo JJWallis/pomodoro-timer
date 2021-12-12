@@ -94,3 +94,7 @@ JS:
 HOCs + TS - generics + Omit type | fixing 'any' props - rare potential use case | extending generic types (dynamic helper funcs) | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope)
 
 Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved)
+
+TS - path aliasing
+
+Folder structure
