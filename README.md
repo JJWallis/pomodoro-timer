@@ -87,6 +87,8 @@ HTML:
 
 CSS:
 
+Progressive meter/bar | controlled radio btns - theme + font toggling (styled components - typing theme obj with declarations + intellisense/available in GlobalStyles)
+
 JS:
 
 HOCs + TS - generics + Omit type | fixing 'any' props - rare potential use case
