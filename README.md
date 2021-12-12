@@ -1,6 +1,6 @@
 # Frontend Mentor - Pomodoro app solution
 
-This is a solution to the **‘…’** challenge on Frontend Mentor(link)
+This is a solution to the [Pomodoro app challenge](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G) on Frontend Mentor
 
 ## Table of contents
 
@@ -28,7 +28,7 @@ Your users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./Screenshot.png)
 
 ### Links
 
