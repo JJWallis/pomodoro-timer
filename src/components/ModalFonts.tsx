@@ -1,26 +1,17 @@
-import React, { FC, memo, useState, useContext } from 'react'
+import React, { FC, memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import ModalSection from './ModalSection'
-import RadioButton from './RadioButton'
+import { useRadioButton } from '../hooks/useRadioButton'
 
 const ModalFonts: FC = () => {
-   const [selectedOption, setSelectedOption] = useState('ffNoto')
    const { updateFont } = useContext(ThemeContext)
+   const radioButtons = useRadioButton(updateFont, {
+      pm: 'ffNoto',
+      sd: 'ffRoboto',
+      tr: 'ffRobotoMono',
+   })
 
-   const produceRadioButtons = () => {
-      return ['ffNoto', 'ffRoboto', 'ffRobotoMono'].map((font) => (
-         <RadioButton
-            key={font}
-            value={font}
-            defaultChecked={selectedOption === font}
-            setSelectedOption={setSelectedOption}
-            updateTheme={updateFont}
-            name={font}
-         />
-      ))
-   }
-
-   return <ModalSection heading="Font">{produceRadioButtons()}</ModalSection>
+   return <ModalSection heading="Font">{radioButtons}</ModalSection>
 }
 
 export default memo(ModalFonts)
