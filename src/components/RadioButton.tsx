@@ -1,4 +1,5 @@
 import React, { FC, ChangeEvent, Dispatch } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Update } from '../hooks/useRadioButton'
 
 interface Props {
@@ -16,11 +17,13 @@ const RadioButton: FC<Props> = ({
    updateTheme,
    name,
 }) => {
+   const [localName, setLocalName] = useLocalStorage('theme', '')
+
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
       setSelectedOption(value)
       updateTheme(value)
-      // update local storage
+      // localstorage
    }
 
    return (

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-function getSavedValue(key, initialValue) {}
+function getSavedValue(key: string, initialValue: string) {}
 
-export function useLocalStorage(initialValue) {
+export function useLocalStorage(key: string, initialValue: string) {
    const [value, setValue] = useState(initialValue)
-}
 
-//
+   return [value, setValue]
+}
