@@ -12,7 +12,6 @@ interface Themes {
 export function useRadioButton(updateTheme: Update, themes: Themes) {
    const { pm, sd, tr } = themes
    const [selectedOption, setSelectedOption] = useState(pm)
-   // useLocalStorage()
 
    return [pm, sd, tr].map((theme) => (
       <RadioButton
