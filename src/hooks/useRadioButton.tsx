@@ -2,7 +2,6 @@ import { useState } from 'react'
 import RadioButton from '../components/RadioButton'
 
 interface Options {
-   initialState: string
    updateTheme: ((newTheme: string) => void) | ((newFont: string) => void)
    // repeated type - export from RadioButton
    themes: {
@@ -12,9 +11,11 @@ interface Options {
    }
 }
 
-export function useRadioButton({ initialState, updateTheme, themes }: Options) {
-   const [selectedOption, setSelectedOption] = useState(initialState)
-   const { pm, sd, tr } = themes
+export function useRadioButton({
+   updateTheme,
+   themes: { pm, sd, tr },
+}: Options) {
+   const [selectedOption, setSelectedOption] = useState(pm)
 
    return [pm, sd, tr].map((theme) => (
       <RadioButton
