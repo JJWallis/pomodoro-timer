@@ -20,6 +20,7 @@ const RadioButton: FC<Props> = ({
       const { value } = e.target
       setSelectedOption(value)
       updateTheme(value)
+      // update local storage
    }
 
    return (
