@@ -8,14 +8,13 @@ const ModalColors: FC = () => {
    const { updateTheme } = useContext(ThemeContext)
 
    const produceRadioButtons = () => {
-      const themes = ['redTheme', 'blueTheme', 'purpleTheme']
-      return themes.map((theme) => (
+      return ['redTheme', 'blueTheme', 'purpleTheme'].map((theme) => (
          <RadioButton
             key={theme}
             value={theme}
             defaultChecked={selectedOption === theme}
             setSelectedOption={setSelectedOption}
-            updateThemeState={updateTheme}
+            updateTheme={updateTheme}
             name={theme}
          />
       ))

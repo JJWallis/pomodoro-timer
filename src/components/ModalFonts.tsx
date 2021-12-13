@@ -8,14 +8,13 @@ const ModalFonts: FC = () => {
    const { updateFont } = useContext(ThemeContext)
 
    const produceRadioButtons = () => {
-      const fonts = ['ffNoto', 'ffRoboto', 'ffRobotoMono']
-      return fonts.map((font) => (
+      return ['ffNoto', 'ffRoboto', 'ffRobotoMono'].map((font) => (
          <RadioButton
             key={font}
             value={font}
             defaultChecked={selectedOption === font}
             setSelectedOption={setSelectedOption}
-            updateFont={updateFont}
+            updateTheme={updateFont}
             name={font}
          />
       ))
