@@ -4,11 +4,13 @@ import RadioButton from '../components/RadioButton'
 interface Options {
    updateTheme: ((newTheme: string) => void) | ((newFont: string) => void)
    // repeated type - export from RadioButton
-   themes: {
-      pm: string
-      sd: string
-      tr: string
-   }
+   themes: Themes
+}
+
+interface Themes {
+   pm: string
+   sd: string
+   tr: string
 }
 
 export function useRadioButton({
