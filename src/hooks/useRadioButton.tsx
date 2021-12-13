@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import RadioButton from '../components/RadioButton'
 
-type Update = ((newTheme: string) => void) | ((newFont: string) => void)
-// repeated type - export from RadioButton
+export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
 
 interface Themes {
    pm: string

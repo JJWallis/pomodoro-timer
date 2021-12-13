@@ -1,11 +1,12 @@
 import React, { FC, ChangeEvent, Dispatch } from 'react'
+import { Update } from '../hooks/useRadioButton'
 
 interface Props {
    value: string
    defaultChecked: boolean
    setSelectedOption: Dispatch<React.SetStateAction<string>>
    name: string
-   updateTheme: ((newTheme: string) => void) | ((newFont: string) => void)
+   updateTheme: Update
 }
 
 const RadioButton: FC<Props> = ({
