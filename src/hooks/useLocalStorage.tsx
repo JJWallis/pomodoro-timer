@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function getSavedValue(key: string, initialValue: string | (() => void)) {
+function getSavedValue(key: string, initialValue: string | (() => string)) {
    const savedValue = localStorage.getItem(key)
    if (savedValue) return JSON.parse(savedValue)
    else if (initialValue instanceof Function) return initialValue()
