@@ -18,5 +18,4 @@ export function useLocalStorage(key: string, initialValue: string) {
    return [value, setValue]
 }
 
-// useState() func -
 // any types

@@ -17,13 +17,10 @@ const RadioButton: FC<Props> = ({
    updateTheme,
    name,
 }) => {
-   const [localName, setLocalName] = useLocalStorage('theme', '')
-
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
       setSelectedOption(value)
       updateTheme(value)
-      setLocalName(value)
    }
 
    return (
