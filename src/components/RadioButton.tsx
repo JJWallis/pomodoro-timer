@@ -23,7 +23,7 @@ const RadioButton: FC<Props> = ({
       const { value } = e.target
       setSelectedOption(value)
       updateTheme(value)
-      // localstorage
+      setLocalName(value)
    }
 
    return (
