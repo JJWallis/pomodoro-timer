@@ -17,5 +17,3 @@ export function useLocalStorage(key: string, initialValue: string) {
 
    return [value, setValue]
 }
-
-// any types

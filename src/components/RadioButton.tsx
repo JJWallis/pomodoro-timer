@@ -1,5 +1,4 @@
 import React, { FC, ChangeEvent, Dispatch } from 'react'
-import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Update } from '../hooks/useRadioButton'
 
 interface Props {
