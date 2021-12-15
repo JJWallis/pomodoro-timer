@@ -6,7 +6,7 @@ interface Data {
    longbreak: number
 }
 
-type ModalContextData = {
+export type ModalContextData = {
    state: Data
    updateState: (timer: string, newState: number) => void
 }

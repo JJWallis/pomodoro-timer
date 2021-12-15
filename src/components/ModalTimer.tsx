@@ -1,8 +1,11 @@
 import React, { FC } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { ModalContextData } from '../context/modalContext'
 
 interface Props {
    label: string
+   val: number
+   updateState: ModalContextData['updateState']
 }
 
 const ModalTimer: FC<Props> = ({ label }) => {
