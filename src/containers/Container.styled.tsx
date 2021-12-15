@@ -43,6 +43,14 @@ export const FlexContainerModal = styled(
    }
 `
 
+export const GridContainerModal = styled.div`
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   @media (min-width: 700px) {
+      grid-template-columns: repeat(3, 1fr);
+   }
+`
+
 export const AppContainer = styled(FlexContainerMobile)`
    padding: 2rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
