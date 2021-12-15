@@ -9,7 +9,7 @@ const FlexContainerMobile = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 2rem;
+   gap: 4rem;
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
