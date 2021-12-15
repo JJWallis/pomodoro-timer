@@ -25,6 +25,7 @@ export const ModalContainer = styled.div.attrs(
 )`
    width: 90%;
    max-width: 600px;
+   min-height: 600px;
    border-radius: 30px;
    padding-block: 1rem;
    position: absolute;
@@ -33,6 +34,7 @@ export const ModalContainer = styled.div.attrs(
    background-color: white;
    opacity: ${({ opacity }) => opacity};
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
+   transition: opacity 0.4s ease-in-out;
 `
 
 interface ModalSectionProps {

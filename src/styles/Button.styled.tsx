@@ -25,6 +25,7 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
 `
 
 export const ClockButton = styled(Button)`
+   position: relative;
    padding: 1rem;
    border-radius: 50%;
    width: 360px;
