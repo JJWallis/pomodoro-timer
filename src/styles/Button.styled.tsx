@@ -44,17 +44,24 @@ export const ClockButton = styled(Button)`
    &:hover {
       transform: scale(1.05);
    }
+   @media (min-width: 700px) {
+      margin-bottom: 2rem;
+   }
 `
 
 export const ApplyButton = styled(Button)<ButtonProps>`
+   position: absolute;
+   bottom: 0;
+   right: 50%;
+   transform: translate(50%, 50%);
    padding: 0.8em 2.7em;
    border-radius: 50px;
    font-size: 0.9em;
    font-weight: bold;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+   transition: background-color 0.2s ease-in-out;
    &:hover {
-      opacity: 0.8;
+      background-color: black;
    }
 `
