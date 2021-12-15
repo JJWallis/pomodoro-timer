@@ -24,4 +24,14 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    opacity: ${({ active }) => (active ? '1' : '0.4')};
 `
 
-export const ClockButton = styled(Button)``
+export const ClockButton = styled(Button)`
+   padding: 1rem;
+   border-radius: 50%;
+   width: 360px;
+   height: 360px;
+   background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
+   transition: transform 0.2s ease-in-out;
+   &:hover {
+      transform: scale(1.1);
+   }
+`
