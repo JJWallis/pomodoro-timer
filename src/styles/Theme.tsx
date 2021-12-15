@@ -7,7 +7,9 @@ declare module 'styled-components' {
          bgSd: string
          lightGrey: string
       }
-      currentTheme: {}
+      currentTheme: {
+         accent: string
+      }
       updateTheme: (newTheme: string) => void
       currentFont: string
       updateFont: (newFont: string) => void
@@ -16,13 +18,19 @@ declare module 'styled-components' {
 
 export const Theme = {
    baseStyles: {
-      bgPm: '#101021',
+      bgPm: '#181932',
       bgSd: '#111325',
       lightGrey: '#CED6FA',
    },
-   redTheme: {},
-   blueTheme: {},
-   purpleTheme: {},
+   redTheme: {
+      accent: '#F2585D',
+   },
+   blueTheme: {
+      accent: '#65F2F7',
+   },
+   purpleTheme: {
+      accent: '#CE64F5',
+   },
 }
 
 export const Fonts = {
