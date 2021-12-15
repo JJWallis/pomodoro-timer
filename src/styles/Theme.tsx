@@ -4,6 +4,7 @@ declare module 'styled-components' {
    export interface DefaultTheme {
       baseStyles: {
          bgPm: string
+         bgSd: string
          lightGrey: string
       }
       currentTheme: {
@@ -18,6 +19,7 @@ declare module 'styled-components' {
 export const Theme = {
    baseStyles: {
       bgPm: '#101021',
+      bgSd: '#111325',
       lightGrey: '#CED6FA',
    },
    redTheme: {
