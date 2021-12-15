@@ -1,7 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface ContainerProps {
    opacity?: number
+}
+
+interface ModalSectionProps {
+   header?: boolean
 }
 
 const FlexContainerMobile = styled.div`
@@ -10,6 +14,13 @@ const FlexContainerMobile = styled.div`
    justify-content: center;
    align-items: center;
    gap: 4rem;
+`
+
+export const FlexContainerModal = styled(
+   FlexContainerMobile
+)<ModalSectionProps>`
+   flex-direction: row;
+   justify-content: space-between;
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
@@ -37,14 +48,14 @@ export const ModalContainer = styled.div.attrs(
    transition: opacity 0.4s ease-in-out;
 `
 
-interface ModalSectionProps {
-   header?: boolean
-}
-
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
    border-bottom: 1px solid lightgrey;
    padding-block: 1rem;
    width: 90%;
    margin: 0 auto;
-   ${({ header }: ModalSectionProps) => header && `width: 100%;`};
+   ${({ header }: ModalSectionProps) =>
+      header &&
+      css`
+         width: 100%;
+      `};
 `
