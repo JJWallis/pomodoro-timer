@@ -1,15 +1,14 @@
 import React, { FC } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useNumberInput } from '../hooks/useNumberInput'
-import { withNumberInput } from './withControlledInput'
 
 interface Props {
    label: string
-   state: number
-   updateState: (newNumber: string) => void
 }
 
-const ModalTimer: FC<Props> = ({ label, state, updateState }) => {
+const ModalTimer: FC<Props> = ({ label }) => {
    // const [state, setState] = useNumberInput()
+   const [state, setState] = useLocalStorage(label, 0)
 
    return (
       <>
@@ -18,10 +17,10 @@ const ModalTimer: FC<Props> = ({ label, state, updateState }) => {
             type="number"
             id={label}
             value={state}
-            onChange={(e) => updateState(e.target.value)}
+            onChange={(e) => setState(Number(e.target.value))}
          />
       </>
    )
 }
 
-export default withNumberInput(ModalTimer)
+export default ModalTimer
