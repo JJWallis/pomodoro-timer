@@ -1,12 +1,19 @@
 import styled from 'styled-components'
 
-type ButtonProps = {
+interface ButtonProps {
    active?: boolean
 }
 
-export const Button = styled.button.attrs<ButtonProps>(({ active }) => ({
-   active,
-}))<ButtonProps>`
+const ButtonReset = styled.button`
+   border: none;
+   outline: none;
+`
+
+export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
+   ({ active }) => ({
+      active,
+   })
+)<ButtonProps>`
    padding: 2em 1.5em;
    border-radius: 50px;
    color: ${({ theme: { baseStyles }, active }) =>

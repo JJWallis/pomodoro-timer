@@ -54,6 +54,7 @@ button,
 textarea,
 select {
   font: inherit;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
