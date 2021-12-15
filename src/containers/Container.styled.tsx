@@ -6,6 +6,7 @@ interface ContainerProps {
 
 interface ModalSectionProps {
    header?: boolean
+   colors?: boolean
    radioButtons?: boolean
 }
 
@@ -76,5 +77,11 @@ export const ModalSectionContainer = styled.div<ModalSectionProps>`
       header &&
       css`
          width: 100%;
+      `};
+
+   ${({ colors }: ModalSectionProps) =>
+      colors &&
+      css`
+         border-bottom: 0;
       `};
 `

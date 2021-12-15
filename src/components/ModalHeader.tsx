@@ -11,7 +11,9 @@ const ModalHeader: FC<Props> = ({ toggle }) => {
       <ModalSection header>
          <FlexContainerModal header>
             <h3>Settings</h3>
-            <button onClick={toggle}>Close</button>
+            <button type="button" onClick={toggle}>
+               Close
+            </button>
          </FlexContainerModal>
       </ModalSection>
    )

@@ -13,9 +13,7 @@ const ModalColors: FC = () => {
    })
 
    return (
-      // form tag
-
-      <ModalSection>
+      <ModalSection colors>
          <FlexContainerModal>
             <h3>Color</h3>
             <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
