@@ -20,6 +20,7 @@ const Modal: FC<Props> = ({ toggle, isToggled }) => {
             <ModalFonts />
             <ModalColors />
          </form>
+         /
       </ModalContainer>
    )
 }
