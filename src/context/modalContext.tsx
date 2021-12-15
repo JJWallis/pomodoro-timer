@@ -1,9 +1,4 @@
-import React, {
-   ComponentType,
-   createContext,
-   useContext,
-   useState,
-} from 'react'
+import React, { ComponentType, createContext, useState } from 'react'
 
 interface Data {
    pomodoro: string
@@ -34,11 +29,4 @@ export const withUserTest: TestProvider = (Component) => (props) => {
          <Component {...props} />
       </ModalContext.Provider>
    )
-}
-
-export function useUserTest() {
-   const context = useContext(ModalContext)
-   if (!context)
-      throw new Error('useUserTest must be used within a UserTestProvider')
-   return context
 }
