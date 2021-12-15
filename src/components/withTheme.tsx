@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Theme, Fonts } from '../styles/Theme'
 
-const { redTheme } = Theme
+const { redTheme, baseStyles } = Theme
 const { ffNoto } = Fonts
 
 export const ThemeContext: FC = ({ children }) => {
@@ -10,7 +10,7 @@ export const ThemeContext: FC = ({ children }) => {
    const [currentFont, setCurrentFont] = useState(ffNoto)
 
    const updateTheme = (newTheme: string) => {
-      setCurrentTheme(Theme[newTheme as keyof typeof Theme])
+      setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])
    }
 
    const updateFont = (newFont: string) =>
@@ -19,6 +19,7 @@ export const ThemeContext: FC = ({ children }) => {
    return (
       <ThemeProvider
          theme={{
+            baseStyles,
             currentTheme,
             updateTheme,
             currentFont,

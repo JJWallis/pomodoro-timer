@@ -2,6 +2,10 @@ import 'styled-components'
 
 declare module 'styled-components' {
    export interface DefaultTheme {
+      baseStyles: {
+         bgPm: string
+         lightGrey: string
+      }
       currentTheme: {
          bgPm: string
       }
@@ -12,7 +16,10 @@ declare module 'styled-components' {
 }
 
 export const Theme = {
-   // bgPm: '#101021',
+   baseStyles: {
+      bgPm: '#101021',
+      lightGrey: '#CED6FA',
+   },
    redTheme: {
       bgPm: 'red',
    },
