@@ -11,6 +11,7 @@ const App: FC = () => {
             <Title>pomodoro</Title>
             <Timers />
             <Modal />
+            {/* clock */}
          </AppContainer>
       </>
    )

@@ -9,9 +9,11 @@ const FlexContainerMobile = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap: 2rem;
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
+   padding: 2rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;
 `
@@ -25,8 +27,10 @@ export const ModalContainer = styled.div.attrs(
    max-width: 600px;
    border-radius: 30px;
    padding-block: 1rem;
+   position: absolute;
+   left: 50%;
+   transform: translatex(-50%);
    background-color: white;
-   min-height: 600px;
    opacity: ${({ opacity }) => opacity};
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
 `
