@@ -1,9 +1,9 @@
 import React, { ComponentType, createContext, useState } from 'react'
 
 interface Data {
-   pomodoro: string
-   shortBreak: string
-   longBreak: string
+   pomodoro: number
+   shortbreak: number
+   longbreak: number
 }
 
 type ModalContextData = {
@@ -17,15 +17,15 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 
 export const withUserTest: TestProvider = (Component) => (props) => {
    const [state, setState] = useState<Data>({
-      pomodoro: '1',
-      shortBreak: '1',
-      longBreak: '1',
+      pomodoro: 1,
+      shortbreak: 1,
+      longbreak: 1,
    })
 
-   // update state method - custom hook to do this?
-   // const updateState = (newState: number) => {
-   //    if (newState > 0 && newState !== 0) setState(newState)
-   // }
+   const updateState = (timer: string, newState: number) => {
+      if (newState > 0 && newState !== 0)
+         setState({ ...state, [timer]: newState })
+   }
 
    return (
       <ModalContext.Provider value={{ state, setState }}>
