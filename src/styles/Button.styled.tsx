@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
 interface ButtonProps {
    active?: boolean
+   cross?: boolean
 }
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
    border: none;
    outline: none;
    background-color: transparent;
+   ${({ cross }) => cross && `position: relative`}
 `
 
 export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
