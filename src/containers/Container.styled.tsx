@@ -33,6 +33,7 @@ export const FlexContainerModal = styled(
       radioButtons &&
       css`
          flex-direction: row;
+         gap: 0.5rem;
       `}
 
    @media (min-width: 700px) {

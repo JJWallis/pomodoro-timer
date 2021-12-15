@@ -16,7 +16,7 @@ const ModalFonts: FC = () => {
       <ModalSection>
          <FlexContainerModal>
             <h3>Font</h3>
-            <FlexContainerModal header>{radioButtons}</FlexContainerModal>
+            <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>
    )

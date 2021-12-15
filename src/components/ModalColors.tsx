@@ -2,6 +2,7 @@ import React, { FC, memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { useRadioButton } from '../hooks/useRadioButton'
 import ModalSection from './ModalSection'
+import { FlexContainerModal } from '../containers/Container.styled'
 
 const ModalColors: FC = () => {
    const { updateTheme } = useContext(ThemeContext)
@@ -13,7 +14,13 @@ const ModalColors: FC = () => {
 
    return (
       // form tag
-      <ModalSection>{radioButtons}</ModalSection>
+
+      <ModalSection>
+         <FlexContainerModal>
+            <h3>Color</h3>
+            <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
+         </FlexContainerModal>
+      </ModalSection>
    )
 }
 
