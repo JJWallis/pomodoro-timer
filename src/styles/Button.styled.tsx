@@ -22,6 +22,11 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    background-color: ${({ theme: { currentTheme }, active }) =>
       active ? currentTheme.accent : 'transparent'};
    opacity: ${({ active }) => (active ? '1' : '0.4')};
+   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+   &:hover {
+      background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
+      color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
+   }
 `
 
 export const ClockButton = styled(Button)`
