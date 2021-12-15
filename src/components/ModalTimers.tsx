@@ -8,11 +8,11 @@ const ModalTimers: FC = () => {
    const { state, updateState } = useModalContext()
 
    const produceTimerInputs = () => {
-      return Object.entries(state).map(([key], val) => (
+      return Object.keys(state).map((key) => (
          <ModalTimer
             key={key}
             label={key}
-            val={val}
+            val={state[key as keyof typeof state]}
             updateState={updateState}
          />
       ))

@@ -1,9 +1,9 @@
 import React, { ComponentType, createContext, useState } from 'react'
 
 interface Data {
-   pomodoro: string
-   shortbreak: string
-   longbreak: string
+   pomodoro: number
+   shortbreak: number
+   longbreak: number
 }
 
 export type ModalContextData = {
@@ -18,9 +18,9 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
       const [state, setState] = useState({
-         pomodoro: '1',
-         shortbreak: '1',
-         longbreak: '1',
+         pomodoro: 1,
+         shortbreak: 1,
+         longbreak: 1,
       })
 
       const updateState = (timer: string, newState: number) => {
