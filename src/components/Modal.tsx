@@ -5,6 +5,7 @@ import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
 import { withToggler, toggle, isToggled } from './withToggler'
+import { ApplyButton } from '../styles/Button.styled'
 
 interface Props {
    toggle: toggle
@@ -19,6 +20,7 @@ const Modal: FC<Props> = ({ toggle, isToggled }) => {
             <ModalTimers />
             <ModalFonts />
             <ModalColors />
+            <ApplyButton>Apply</ApplyButton>
          </form>
          /
       </ModalContainer>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface ButtonProps {
    active?: boolean
    cross?: boolean
+   apply?: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -42,5 +43,18 @@ export const ClockButton = styled(Button)`
    transition: transform 0.2s ease-in-out;
    &:hover {
       transform: scale(1.05);
+   }
+`
+
+export const ApplyButton = styled(Button)<ButtonProps>`
+   padding: 0.8em 2.7em;
+   border-radius: 50px;
+   font-size: 0.9em;
+   font-weight: bold;
+   color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
+   background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+   &:hover {
+      opacity: 0.8;
    }
 `
