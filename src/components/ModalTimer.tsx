@@ -13,7 +13,7 @@ const ModalTimer: FC<Props> = ({ label }) => {
 
    return (
       <>
-         <label htmlFor={label}>{label.replace('-', ' ')}</label>
+         <label htmlFor={label}>{label}</label>
          <input
             type="number"
             id={label}
