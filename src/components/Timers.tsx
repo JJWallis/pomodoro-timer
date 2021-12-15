@@ -6,6 +6,8 @@ const Timers: FC = () => {
    return (
       <TimersContainer>
          <TimerButton active>pomodoro</TimerButton>
+         <TimerButton>short break</TimerButton>
+         <TimerButton>long break</TimerButton>
       </TimersContainer>
    )
 }
