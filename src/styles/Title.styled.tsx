@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const Title = styled.h1`
-   font-size: 1.5rem;
+   font-size: 1.8rem;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
 `
 
