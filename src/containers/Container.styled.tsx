@@ -73,15 +73,6 @@ export const ModalSectionContainer = styled.div<ModalSectionProps>`
    padding-block: 1rem;
    width: 90%;
    margin: 0 auto;
-   ${({ header }: ModalSectionProps) =>
-      header &&
-      css`
-         width: 100%;
-      `};
-
-   ${({ colors }: ModalSectionProps) =>
-      colors &&
-      css`
-         border-bottom: 0;
-      `};
+   ${({ header }: ModalSectionProps) => header && `width: 100%;`};
+   ${({ colors }: ModalSectionProps) => colors && `border-bottom: 0;`};
 `
