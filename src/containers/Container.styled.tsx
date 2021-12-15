@@ -6,6 +6,7 @@ interface ContainerProps {
 
 interface ModalSectionProps {
    header?: boolean
+   radioButtons?: boolean
 }
 
 const FlexContainerMobile = styled.div`
@@ -27,6 +28,11 @@ export const FlexContainerModal = styled(
          margin-inline: auto;
          flex-direction: row;
          justify-content: space-between;
+      `}
+   ${({ radioButtons }) =>
+      radioButtons &&
+      css`
+         flex-direction: row;
       `}
 
    @media (min-width: 700px) {
