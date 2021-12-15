@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { AppContainer } from './containers/Container.styled'
 import { Title } from './styles/Title.styled'
+import Clock from './components/Clock'
 import ModalToggle from './components/ModalToggle'
 import Timers from './components/Timers'
 import Modal from './components/Modal'
@@ -11,9 +12,9 @@ const App: FC = () => {
          <AppContainer>
             <Title>pomodoro</Title>
             <Timers />
-            <Modal />
-            {/* clock */}
+            <Clock />
             <ModalToggle />
+            <Modal />
          </AppContainer>
       </>
    )

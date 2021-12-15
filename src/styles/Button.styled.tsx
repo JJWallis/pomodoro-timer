@@ -26,6 +26,4 @@ export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
    opacity: ${({ active }) => (active ? '1' : '0.4')};
 `
 
-export const ModalButton = styled(ButtonReset)`
-   outline: 1px solid white;
-`
+export const ModalButton = styled(ButtonReset)``

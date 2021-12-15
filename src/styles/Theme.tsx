@@ -6,6 +6,7 @@ declare module 'styled-components' {
          bgPm: string
          bgSd: string
          lightGrey: string
+         softWhite: string
       }
       currentTheme: {
          accent: string
@@ -21,6 +22,7 @@ export const Theme = {
       bgPm: '#181932',
       bgSd: '#111325',
       lightGrey: '#CED6FA',
+      softWhite: '#CFD7FF',
    },
    redTheme: {
       accent: '#F2585D',
