@@ -12,11 +12,7 @@ const FlexContainerMobile = styled.div`
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
-   background-color: ${({
-      theme: {
-         currentTheme: { bgPm },
-      },
-   }) => bgPm};
+   background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;
 `
 
