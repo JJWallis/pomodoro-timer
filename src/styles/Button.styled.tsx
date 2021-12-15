@@ -7,6 +7,7 @@ interface ButtonProps {
 const ButtonReset = styled.button`
    border: none;
    outline: none;
+   background-color: transparent;
 `
 
 export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
@@ -24,3 +25,5 @@ export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
       active ? currentTheme.accent : 'transparent'};
    opacity: ${({ active }) => (active ? '1' : '0.4')};
 `
+
+export const ModalButton = styled(ButtonReset)``
