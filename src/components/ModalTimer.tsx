@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { ModalContextData } from '../context/modalContext'
+import { Input } from '../styles/Input.styled'
 
 interface Props {
    label: string
@@ -11,7 +12,7 @@ const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
    return (
       <>
          <label htmlFor={label}>{label}</label>
-         <input
+         <Input
             type="number"
             id={label}
             value={val}
