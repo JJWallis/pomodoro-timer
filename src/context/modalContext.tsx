@@ -17,12 +17,15 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 
 export const withUserTest: TestProvider = (Component) => (props) => {
    const [state, setState] = useState<Data>({
-      pomodoro: '',
-      shortBreak: '',
-      longBreak: '',
+      pomodoro: '1',
+      shortBreak: '1',
+      longBreak: '1',
    })
 
-   // update state method
+   // update state method - custom hook to do this?
+   // const updateState = (newState: number) => {
+   //    if (newState > 0 && newState !== 0) setState(newState)
+   // }
 
    return (
       <ModalContext.Provider value={{ state, setState }}>
