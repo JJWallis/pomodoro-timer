@@ -23,6 +23,8 @@ export const FlexContainerModal = styled(
    ${({ header }) =>
       header &&
       css`
+         width: 90%;
+         margin-inline: auto;
          flex-direction: row;
          justify-content: space-between;
       `}
