@@ -6,8 +6,10 @@ interface Props {
 }
 
 const ModalTimer: FC<Props> = ({ label }) => {
-   const [state, setState] = useLocalStorage(label, '0')
-   // local logic - validate against negative numbers
+   const [state, setState] = useLocalStorage(label, '1')
+   const updateState = (newState: number) => {
+      if (newState > 0 && newState !== 0) setState(newState)
+   }
 
    return (
       <>
@@ -16,7 +18,7 @@ const ModalTimer: FC<Props> = ({ label }) => {
             type="number"
             id={label}
             value={state}
-            onChange={(e) => setState(Number(e.target.value))}
+            onChange={(e) => updateState(Number(e.target.value))}
          />
       </>
    )
