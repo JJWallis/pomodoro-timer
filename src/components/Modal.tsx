@@ -14,10 +14,12 @@ interface Props {
 const Modal: FC<Props> = ({ toggle, isToggled }) => {
    return (
       <ModalContainer opacity={isToggled ? 0 : 1}>
-         <ModalHeader toggle={toggle} />
-         <ModalTimers />
-         <ModalFonts />
-         <ModalColors />
+         <form>
+            <ModalHeader toggle={toggle} />
+            <ModalTimers />
+            <ModalFonts />
+            <ModalColors />
+         </form>
       </ModalContainer>
    )
 }
