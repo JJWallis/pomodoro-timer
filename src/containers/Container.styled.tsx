@@ -19,8 +19,18 @@ const FlexContainerMobile = styled.div`
 export const FlexContainerModal = styled(
    FlexContainerMobile
 )<ModalSectionProps>`
-   flex-direction: row;
-   justify-content: space-between;
+   gap: 1rem;
+   ${({ header }) =>
+      header &&
+      css`
+         flex-direction: row;
+         justify-content: space-between;
+      `}
+
+   @media (min-width: 700px) {
+      flex-direction: row;
+      justify-content: space-between;
+   }
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
