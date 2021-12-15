@@ -15,7 +15,7 @@ const ModalColors: FC = () => {
    return (
       <ModalSection colors>
          <FlexContainerModal>
-            <h3>Color</h3>
+            <h4>Color</h4>
             <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>

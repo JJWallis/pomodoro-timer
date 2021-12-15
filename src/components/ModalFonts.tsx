@@ -15,7 +15,7 @@ const ModalFonts: FC = () => {
    return (
       <ModalSection>
          <FlexContainerModal>
-            <h3>Font</h3>
+            <h4>Font</h4>
             <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>
