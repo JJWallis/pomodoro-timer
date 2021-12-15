@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { useNumberInput } from '../hooks/useNumberInput'
 
 interface Props {
    label: string
 }
 
 const ModalTimer: FC<Props> = ({ label }) => {
-   // const [state, setState] = useNumberInput()
-   const [state, setState] = useLocalStorage(label, 0)
+   const [state, setState] = useLocalStorage(label, '0')
+   // local logic - validate against negative numbers
 
    return (
       <>
