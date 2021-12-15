@@ -4,17 +4,15 @@ interface ButtonProps {
    active?: boolean
 }
 
-const ButtonReset = styled.button`
+export const Button = styled.button`
    border: none;
    outline: none;
    background-color: transparent;
 `
 
-export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
-   ({ active }) => ({
-      active,
-   })
-)<ButtonProps>`
+export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
+   active,
+}))<ButtonProps>`
    padding: 1.2em 1.7em;
    border-radius: 50px;
    font-size: 0.9em;
@@ -26,4 +24,4 @@ export const TimerButton = styled(ButtonReset).attrs<ButtonProps>(
    opacity: ${({ active }) => (active ? '1' : '0.4')};
 `
 
-export const ModalButton = styled(ButtonReset)``
+export const ClockButton = styled(Button)``
