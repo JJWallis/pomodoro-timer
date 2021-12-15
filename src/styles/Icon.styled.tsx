@@ -10,3 +10,5 @@ export const Cog = styled.svg`
       fill: ${({ theme: { currentTheme } }) => currentTheme.accent};
    }
 `
+
+export const Close = styled(Cog)``
