@@ -13,7 +13,7 @@ const ModalColors: FC = () => {
 
    return (
       // form tag
-      <ModalSection heading="Color">{radioButtons}</ModalSection>
+      <ModalSection>{radioButtons}</ModalSection>
    )
 }
 

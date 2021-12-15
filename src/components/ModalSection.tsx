@@ -3,15 +3,11 @@ import { ModalSectionContainer } from '../containers/Container.styled'
 
 interface Props {
    header?: boolean
-   heading?: string
 }
 
-const ModalSection: FC<Props> = ({ children, header, heading }) => {
+const ModalSection: FC<Props> = ({ children, header }) => {
    return (
-      <ModalSectionContainer header={header ? header : false}>
-         <h3>{heading}</h3>
-         {children}
-      </ModalSectionContainer>
+      <ModalSectionContainer header={header}>{children}</ModalSectionContainer>
    )
 }
 

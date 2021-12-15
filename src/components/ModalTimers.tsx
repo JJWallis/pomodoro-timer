@@ -18,11 +18,7 @@ const ModalTimers: FC = () => {
       ))
    }
 
-   return (
-      <ModalSection heading="Time (MINUTES)">
-         {produceTimerInputs()}
-      </ModalSection>
-   )
+   return <ModalSection>{produceTimerInputs()}</ModalSection>
 }
 
 export default withModalContext(ModalTimers)

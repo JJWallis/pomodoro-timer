@@ -11,7 +11,7 @@ const ModalFonts: FC = () => {
       tr: 'ffRobotoMono',
    })
 
-   return <ModalSection heading="Font">{radioButtons}</ModalSection>
+   return <ModalSection>{radioButtons}</ModalSection>
 }
 
 export default memo(ModalFonts)
