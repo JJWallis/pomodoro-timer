@@ -70,12 +70,11 @@ export const ModalContainer = styled.div.attrs(
    padding-block: 1rem;
    position: absolute;
    left: 50%;
-   transform: ${({ opacity }) =>
-      opacity ? 'translate(-50%, 0)' : 'translate(-50%, 200%)'};
+   transform: translateX(-50%);
    background-color: white;
    opacity: ${({ opacity }) => opacity};
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
-   transition: opacity 0.8s ease-in-out, transform 0.5s ease-in-out;
+   transition: opacity 0.45s ease-in-out;
 `
 
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
