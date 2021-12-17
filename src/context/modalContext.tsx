@@ -15,7 +15,7 @@ export const withModalContext: ModalContextProvider =
       })
 
       const updateState = (timer: string, newState: number) => {
-         if (newState > 0 && newState !== 0)
+         if (newState && newState < 100)
             setState({ ...state, [timer]: newState })
       }
 
