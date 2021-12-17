@@ -13,6 +13,8 @@ export function useTimer(startTime: number) {
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
       setTimerLength(1.0)
-      //   dont need this
+      //   dont need this - return method above
    }, [timeoutId])
+
+   return { timerLength, setTimerLength, startTimer, endTimer }
 }
