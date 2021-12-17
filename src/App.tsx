@@ -6,9 +6,12 @@ import ModalToggle from './components/ModalToggle'
 import Timers from './components/Timers'
 import Modal from './components/Modal'
 import { useToggle } from './hooks/useToggle'
+import { useTimer } from './hooks/useTimer'
 
 const App: FC = () => {
    const [isModalToggled, setIsModalToggled] = useToggle()
+   const { timerLength, setTimerLength, startTimer, endTimer, isRunning } =
+      useTimer()
 
    return (
       <AppContainer>

@@ -1,7 +1,8 @@
 import { useState, useCallback } from 'react'
 
-export function useTimer(startTime: number) {
-   const [timerLength, setTimerLength] = useState(startTime ?? 1.0)
+export function useTimer() {
+   const [timerLength, setTimerLength] = useState(1.0)
+   //  localStorage hook above - if local storage value present uses it
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
    //    reducer - multiple changing at same time
