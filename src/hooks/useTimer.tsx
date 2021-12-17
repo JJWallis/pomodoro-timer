@@ -20,6 +20,7 @@ export function useTimer() {
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
       if (Number(timerLength) === 0) setTimerLength(10)
+      setIsRunning(false)
       //   when pause timer - don't want to reset it
    }, [timeoutId, timerLength])
 
