@@ -22,9 +22,10 @@ export function useTimer() {
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
-      setTimerLength('1.00')
-      //   check if timeLength === 0.00 = set to 1.00
-   }, [timeoutId])
+      if (Number(timerLength) === 0) setTimerLength('1.00')
+      //   when pause timer - don't want to reset it
+      //   kill timer immediately?
+   }, [timeoutId, timerLength])
 
    return { timerLength, setTimerLength, startTimer, endTimer, isRunning }
 }
