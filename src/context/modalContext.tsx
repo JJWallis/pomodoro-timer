@@ -1,17 +1,8 @@
-import React, { ComponentType, createContext, useState } from 'react'
-
-interface Data {
-   pomodoro: number
-   shortbreak: number
-   longbreak: number
-}
-
-export type ModalContextData = {
-   state: Data
-   updateState: (timer: string, newState: number) => void
-}
-
-type ModalContextProvider = <T>(Component: ComponentType<T>) => ComponentType<T>
+import React, { createContext, useState } from 'react'
+import {
+   ModalContextData,
+   ModalContextProvider,
+} from './modalContext.interface'
 
 export const ModalContext = createContext<ModalContextData | null>(null)
 

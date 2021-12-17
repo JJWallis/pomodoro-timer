@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { ModalContextData } from '../context/modalContext'
+import { ModalContextData } from '../context/modalContext.interface'
 import { Input } from '../styles/Input.styled'
 
 interface Props {

@@ -95,6 +95,6 @@ HOCs + TS - generics + Omit type | fixing 'any' props - rare potential use case 
 
 Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved)
 
-TS - path aliasing
+TS - path aliasing | ambient declarations | sep files for types/interfaces
 
 Folder structure

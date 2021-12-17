@@ -19,7 +19,9 @@ const Modal: FC<Props> = ({ isToggled, handleChange }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button">Apply</ApplyButton>
+         <ApplyButton type="button" onClick={handleChange}>
+            Apply
+         </ApplyButton>
       </ModalContainer>
    )
 }

@@ -7,7 +7,7 @@ const Clock: FC = () => {
    return (
       <ClockButton>
          <TimerTitle>0:00</TimerTitle>
-         <TimerTitle subTitle>pause</TimerTitle>
+         <TimerTitle subTitle>play</TimerTitle>
          <ProgressBar />
       </ClockButton>
    )
