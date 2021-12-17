@@ -6,15 +6,15 @@ import { Button } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
 
 interface Props {
-   handleChange: handleChange
+   setIsModalToggled: handleChange
 }
 
-const ModalHeader: FC<Props> = ({ handleChange }) => {
+const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
    return (
       <ModalSection header>
          <FlexContainerModal header>
             <h3>Settings</h3>
-            <Button cross type="button" onClick={handleChange}>
+            <Button cross type="button" onClick={setIsModalToggled}>
                <Close>
                   <svg xmlns="http://www.w3.org/2000/svg">
                      <path

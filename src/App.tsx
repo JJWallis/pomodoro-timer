@@ -8,7 +8,7 @@ import Modal from './components/Modal'
 import { useToggle } from './hooks/useToggle'
 
 const App: FC = () => {
-   const [isToggled, handleChange] = useToggle()
+   const [isModalToggled, setIsModalToggled] = useToggle()
 
    return (
       <>
@@ -16,8 +16,11 @@ const App: FC = () => {
             <Title>pomodoro</Title>
             <Timers />
             <Clock />
-            <ModalToggle handleChange={handleChange} />
-            <Modal handleChange={handleChange} isToggled={isToggled} />
+            <ModalToggle setIsModalToggled={setIsModalToggled} />
+            <Modal
+               setIsModalToggled={setIsModalToggled}
+               isModalToggled={isModalToggled}
+            />
          </AppContainer>
       </>
    )

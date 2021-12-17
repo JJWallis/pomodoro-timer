@@ -4,12 +4,12 @@ import { Button } from '../styles/Button.styled'
 import { Cog } from '../styles/Icon.styled'
 
 interface Props {
-   handleChange: handleChange
+   setIsModalToggled: handleChange
 }
 
-const ModalToggle: FC<Props> = ({ handleChange }) => {
+const ModalToggle: FC<Props> = ({ setIsModalToggled }) => {
    return (
-      <Button onClick={handleChange}>
+      <Button onClick={setIsModalToggled}>
          <Cog>
             <svg
                aria-hidden="true"

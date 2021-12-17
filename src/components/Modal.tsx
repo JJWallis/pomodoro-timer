@@ -8,18 +8,18 @@ import { ApplyButton } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
 
 interface Props {
-   isToggled: boolean
-   handleChange: handleChange
+   isModalToggled: boolean
+   setIsModalToggled: handleChange
 }
 
-const Modal: FC<Props> = ({ isToggled, handleChange }) => {
+const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    return (
-      <ModalContainer opacity={isToggled ? 1 : 0}>
-         <ModalHeader handleChange={handleChange} />
+      <ModalContainer opacity={isModalToggled ? 1 : 0}>
+         <ModalHeader setIsModalToggled={setIsModalToggled} />
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={handleChange}>
+         <ApplyButton type="button" onClick={setIsModalToggled}>
             Apply
          </ApplyButton>
       </ModalContainer>
