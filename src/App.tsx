@@ -9,7 +9,6 @@ import { useToggle } from './hooks/useToggle'
 
 const App: FC = () => {
    const [isToggled, handleChange] = useToggle()
-   // useCallback - local preferences in hook
 
    return (
       <>
