@@ -12,7 +12,12 @@ export function useTimer(startTime: number) {
          1000
       )
       setTimeoutId(time)
+      setIsRunning(true)
    }, [])
+
+   //    const pauseTimer = () => {
+   //       setIsRunning(false)
+   //    }
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
