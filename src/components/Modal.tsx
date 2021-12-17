@@ -15,7 +15,7 @@ interface Props {
 const Modal: FC<Props> = ({ toggle, isToggled }) => {
    return (
       <ModalContainer opacity={isToggled ? 0 : 1}>
-         <form>
+         <form onSubmit={(e) => e.preventDefault()}>
             <ModalHeader toggle={toggle} />
             <ModalTimers />
             <ModalFonts />
