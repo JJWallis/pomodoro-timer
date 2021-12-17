@@ -17,7 +17,7 @@ const App: FC = () => {
             <Timers />
             <Clock />
             <ModalToggle handleChange={handleChange} />
-            <Modal />
+            <Modal handleChange={handleChange} isToggled={isToggled} />
          </AppContainer>
       </>
    )

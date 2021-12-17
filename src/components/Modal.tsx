@@ -4,27 +4,24 @@ import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
-import { withToggler, toggle, isToggled } from './withToggler'
 import { ApplyButton } from '../styles/Button.styled'
+import { handleChange } from '../hooks/useToggle'
 
 interface Props {
-   toggle: toggle
-   isToggled: isToggled
+   isToggled: boolean
+   handleChange: handleChange
 }
 
-const Modal: FC<Props> = ({ toggle, isToggled }) => {
+const Modal: FC<Props> = ({ isToggled, handleChange }) => {
    return (
       <ModalContainer opacity={isToggled ? 0 : 1}>
-         <form onSubmit={(e) => e.preventDefault()}>
-            <ModalHeader toggle={toggle} />
-            <ModalTimers />
-            <ModalFonts />
-            <ModalColors />
-            <ApplyButton>Apply</ApplyButton>
-         </form>
-         /
+         <ModalHeader toggle={handleChange} />
+         <ModalTimers />
+         <ModalFonts />
+         <ModalColors />
+         <ApplyButton type="button">Apply</ApplyButton>
       </ModalContainer>
    )
 }
 
-export default withToggler(Modal, { initialState: false })
+export default Modal
