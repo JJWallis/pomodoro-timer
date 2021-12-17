@@ -3,17 +3,18 @@ import ModalSection from './ModalSection'
 import { FlexContainerModal } from '../containers/Container.styled'
 import { Close } from '../styles/Icon.styled'
 import { Button } from '../styles/Button.styled'
+import { handleChange } from '../hooks/useToggle'
 
 interface Props {
-   toggle: () => void
+   handleChange: handleChange
 }
 
-const ModalHeader: FC<Props> = ({ toggle }) => {
+const ModalHeader: FC<Props> = ({ handleChange }) => {
    return (
       <ModalSection header>
          <FlexContainerModal header>
             <h3>Settings</h3>
-            <Button cross type="button" onClick={toggle}>
+            <Button cross type="button" onClick={handleChange}>
                <Close>
                   <svg xmlns="http://www.w3.org/2000/svg">
                      <path

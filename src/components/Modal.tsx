@@ -15,7 +15,7 @@ interface Props {
 const Modal: FC<Props> = ({ isToggled, handleChange }) => {
    return (
       <ModalContainer opacity={isToggled ? 0 : 1}>
-         <ModalHeader toggle={handleChange} />
+         <ModalHeader handleChange={handleChange} />
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
