@@ -4,7 +4,7 @@ import { TimerTitle } from '../styles/Title.styled'
 import ProgressBar from './ProgressBar'
 
 interface Props {
-   timerLength: string
+   timerLength: number
    isRunning: boolean
    startTimer: () => void
    endTimer: () => void

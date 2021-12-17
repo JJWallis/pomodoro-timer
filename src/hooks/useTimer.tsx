@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 
 export function useTimer() {
-   const [timerLength, setTimerLength] = useState('1.00')
+   const [timerLength, setTimerLength] = useState(10)
    //  localStorage hook above - if local storage value present uses it
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
@@ -10,11 +10,7 @@ export function useTimer() {
 
    const startTimer = useCallback(() => {
       const time = setInterval(
-         () =>
-            setTimerLength((prevTime) => {
-               const num = Number(prevTime) - 0.01
-               return num.toString()
-            }),
+         () => setTimerLength((previous) => previous - 1),
          1000
       )
       setTimeoutId(time)
@@ -23,9 +19,8 @@ export function useTimer() {
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
-      if (Number(timerLength) === 0) setTimerLength('1.00')
+      if (Number(timerLength) === 0) setTimerLength(10)
       //   when pause timer - don't want to reset it
-      //   kill timer immediately?
    }, [timeoutId, timerLength])
 
    return { timerLength, setTimerLength, startTimer, endTimer, isRunning }
