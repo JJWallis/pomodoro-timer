@@ -11,18 +11,16 @@ const App: FC = () => {
    const [isModalToggled, setIsModalToggled] = useToggle()
 
    return (
-      <>
-         <AppContainer>
-            <Title>pomodoro</Title>
-            <Timers />
-            <Clock />
-            <ModalToggle setIsModalToggled={setIsModalToggled} />
-            <Modal
-               setIsModalToggled={setIsModalToggled}
-               isModalToggled={isModalToggled}
-            />
-         </AppContainer>
-      </>
+      <AppContainer>
+         <Title>pomodoro</Title>
+         <Timers />
+         <Clock />
+         <ModalToggle setIsModalToggled={setIsModalToggled} />
+         <Modal
+            setIsModalToggled={setIsModalToggled}
+            isModalToggled={isModalToggled}
+         />
+      </AppContainer>
    )
 }
 
