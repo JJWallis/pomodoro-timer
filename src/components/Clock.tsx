@@ -5,13 +5,16 @@ import ProgressBar from './ProgressBar'
 
 interface Props {
    timerLength: string
+   isRunning: boolean
+   startTimer: () => void
+   endTimer: () => void
 }
 
-const Clock: FC<Props> = ({ timerLength }) => {
+const Clock: FC<Props> = ({ timerLength, isRunning, startTimer, endTimer }) => {
    return (
-      <ClockButton>
+      <ClockButton onClick={isRunning ? endTimer : startTimer}>
          <TimerTitle>{timerLength}</TimerTitle>
-         <TimerTitle subTitle>play</TimerTitle>
+         <TimerTitle subTitle>{isRunning ? 'pause' : 'play'}</TimerTitle>
          <ProgressBar />
       </ClockButton>
    )

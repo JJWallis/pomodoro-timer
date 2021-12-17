@@ -17,7 +17,12 @@ const App: FC = () => {
       <AppContainer>
          <Title>pomodoro</Title>
          <Timers />
-         <Clock timerLength={timerLength} />
+         <Clock
+            timerLength={timerLength}
+            isRunning={isRunning}
+            startTimer={startTimer}
+            endTimer={endTimer}
+         />
          <ModalToggle setIsModalToggled={setIsModalToggled} />
          <Modal
             setIsModalToggled={setIsModalToggled}
