@@ -9,4 +9,10 @@ export function useTimer(startTime: number) {
       const time = setInterval(() => setTimerLength(timerLength - 0.01), 1000)
       setTimeoutId(time)
    }, [timerLength])
+
+   const endTimer = useCallback(() => {
+      timeoutId && clearInterval(timeoutId)
+      setTimerLength(1.0)
+      //   dont need this
+   }, [timeoutId])
 }
