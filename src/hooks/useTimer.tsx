@@ -6,9 +6,12 @@ export function useTimer(startTime: number) {
    //    reducer - both change at same time
 
    const startTimer = useCallback(() => {
-      const time = setInterval(() => setTimerLength(timerLength - 0.01), 1000)
+      const time = setInterval(
+         () => setTimerLength((prevTime) => prevTime - 0.01),
+         1000
+      )
       setTimeoutId(time)
-   }, [timerLength])
+   }, [])
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
