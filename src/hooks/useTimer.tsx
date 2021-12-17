@@ -6,7 +6,6 @@ export function useTimer() {
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
    //    reducer - multiple changing at same time
-   //    refactor this into its own context
 
    const startTimer = useCallback(() => {
       const time = setInterval(
