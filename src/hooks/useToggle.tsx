@@ -1,10 +1,11 @@
-import { useState, ChangeEvent } from 'react'
+import { useState } from 'react'
+
+export type handleChange = () => void
 
 export function useToggle(initialState?: boolean) {
    const [isToggled, setIsToggled] = useState(initialState ?? false)
 
-   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-      setIsToggled((prev) => !prev)
+   const handleChange = () => setIsToggled((prev) => !prev)
 
-   return [isToggled, handleChange]
+   return { isToggled, handleChange }
 }

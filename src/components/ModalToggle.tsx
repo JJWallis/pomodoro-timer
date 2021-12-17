@@ -1,10 +1,15 @@
 import React, { FC } from 'react'
+import { handleChange } from '../hooks/useToggle'
 import { Button } from '../styles/Button.styled'
 import { Cog } from '../styles/Icon.styled'
 
-const ModalToggle: FC = () => {
+interface Props {
+   handleChange: handleChange
+}
+
+const ModalToggle: FC<Props> = ({ handleChange }) => {
    return (
-      <Button>
+      <Button onClick={handleChange}>
          <Cog>
             <svg
                aria-hidden="true"
