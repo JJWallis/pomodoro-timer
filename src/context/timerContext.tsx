@@ -1,12 +1,13 @@
 import React, { createContext, ReactNode, useState } from 'react'
 import { useTimer } from '../hooks/useTimer'
+import { TimerContextData } from './timerContext.interface'
 
-type ContextType = null
+export const TimerContext = createContext<TimerContextData | null>(null)
 
-export const TimerContext = createContext<ContextType>(null)
+export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
+   const [timer] = useState(useTimer())
 
-export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-   const [data] = useState(useTimer())
-
-   return <TimerContext.Provider value={null}>{children}</TimerContext.Provider>
+   return (
+      <TimerContext.Provider value={timer}>{children}</TimerContext.Provider>
+   )
 }
