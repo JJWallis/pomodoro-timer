@@ -17,21 +17,21 @@ export function useTimer() {
       setIsRunning(true)
    }, [])
 
+   const endTimer = useCallback(() => {
+      timeoutId && clearInterval(timeoutId)
+      if (Number(timerLength) === 0) setTimerLength(10)
+      //   not when paused - move to useEffect below
+      setIsRunning(false)
+   }, [timeoutId, timerLength])
+
    useEffect(() => {
       if (timerLength === 0) timeoutId && clearInterval(timeoutId)
-      // sep callback func when 'break' btn clicked
+      // sep callback func when 'break' btn clicked (or any of these btns?)
       // check if isRunning === 'pomodoro'
       // if so sets prevTimerRef.current to current timerLength + updates timerLength with new state (one dispatch)
       // if pomodoro btn hit - first check if prevTimerRef.current is thruthy
       // reset this ref somewhere - if click pomodoro btn while main timer running will reset it
    }, [timerLength, timeoutId])
-
-   const endTimer = useCallback(() => {
-      timeoutId && clearInterval(timeoutId)
-      if (Number(timerLength) === 0) setTimerLength(10)
-      //   not when paused
-      setIsRunning(false)
-   }, [timeoutId, timerLength])
 
    return { timerLength, setTimerLength, startTimer, endTimer, isRunning }
 }
