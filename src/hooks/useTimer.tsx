@@ -5,6 +5,10 @@ export function useTimer() {
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
 
+   // Reducer in context or here?
+   // local storage - checked to set default timerLength if present else ...
+   // update timerLength by apply btn - when clicked updates timerLength with pomodoro number
+
    const startTimer = useCallback(() => {
       const time = setInterval(
          () => setTimerLength((previous) => previous - 1),
