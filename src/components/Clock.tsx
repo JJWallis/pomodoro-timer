@@ -10,7 +10,9 @@ const Clock: FC = () => {
    return (
       <ClockButton onClick={isRunning ? endTimer : startTimer}>
          <TimerTitle>{timerLength}</TimerTitle>
-         <TimerTitle subTitle>{isRunning ? 'pause' : 'play'}</TimerTitle>
+         <TimerTitle subTitle>
+            {isRunning && timerLength !== 0 ? 'pause' : 'play'}
+         </TimerTitle>
          <ProgressBar />
       </ClockButton>
    )

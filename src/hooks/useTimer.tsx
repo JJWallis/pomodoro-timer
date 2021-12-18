@@ -2,10 +2,8 @@ import { useState, useCallback, useEffect } from 'react'
 
 export function useTimer() {
    const [timerLength, setTimerLength] = useState(10)
-   //  localStorage hook above - if local storage value present uses it
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
-   //    reducer - multiple changing at same time
 
    const startTimer = useCallback(() => {
       const time = setInterval(
@@ -17,12 +15,11 @@ export function useTimer() {
    }, [])
 
    useEffect(() => {
-      if (timerLength === 0)
-         clearInterval(timeoutId?.valueOf() as NodeJS.Timeout)
+      if (timerLength === 0) timeoutId && clearInterval(timeoutId)
    }, [timerLength, timeoutId])
 
    const endTimer = useCallback(() => {
-      clearInterval(timeoutId?.valueOf() as NodeJS.Timeout)
+      timeoutId && clearInterval(timeoutId)
       if (Number(timerLength) === 0) setTimerLength(10)
       //   not when paused
       setIsRunning(false)
