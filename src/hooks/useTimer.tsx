@@ -16,6 +16,8 @@ export function useTimer() {
       setIsRunning(true)
    }, [])
 
+   //    useEffect() - if timerLength === 0 - kill timer
+
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
       if (Number(timerLength) === 0) setTimerLength(10)
