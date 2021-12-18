@@ -5,11 +5,8 @@ export function useTimer() {
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
 
+   // change naming in modalContext (generic state value)
    // Reducer in context or here?
-   // local storage - checked to set default timerLength if present else 0
-   // local storage - also for modal number inputs - one key + object for values within
-   // update timerLength by apply btn (dont change modal opacity)
-   // with pomodoro number (event callback - dispatch)
 
    const startTimer = useCallback(() => {
       const time = setInterval(
@@ -22,6 +19,10 @@ export function useTimer() {
 
    useEffect(() => {
       if (timerLength === 0) timeoutId && clearInterval(timeoutId)
+      // check if isRunning === 'pomodoro'
+      // if so use prevTimerRef.current to set timerLength
+      // diff useEffect - isRunning dependancy?
+      // not going to work!
    }, [timerLength, timeoutId])
 
    const endTimer = useCallback(() => {

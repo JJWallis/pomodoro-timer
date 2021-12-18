@@ -27,10 +27,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalColors />
          <ApplyButton
             type="button"
-            onClick={() => {
-               setIsModalToggled()
-               setTimerLength(state.pomodoro)
-            }}
+            onClick={() => setTimerLength(state.pomodoro)}
          >
             Apply
          </ApplyButton>
