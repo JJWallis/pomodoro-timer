@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 export function useTimer() {
    const [timerLength, setTimerLength] = useState(10)
@@ -16,12 +16,15 @@ export function useTimer() {
       setIsRunning(true)
    }, [])
 
-   //    useEffect() - if timerLength === 0 - kill timer
+   useEffect(() => {
+      if (timerLength === 0)
+         clearInterval(timeoutId?.valueOf() as NodeJS.Timeout)
+   }, [timerLength, timeoutId])
 
    const endTimer = useCallback(() => {
-      timeoutId && clearInterval(timeoutId)
+      clearInterval(timeoutId?.valueOf() as NodeJS.Timeout)
       if (Number(timerLength) === 0) setTimerLength(10)
-      //   when pause timer - don't want to reset it
+      //   not when paused
       setIsRunning(false)
    }, [timeoutId, timerLength])
 
