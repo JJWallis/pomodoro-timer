@@ -6,6 +6,9 @@ import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
 import { ApplyButton } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
+import { useTimerContext } from '../hooks/useTimerContext'
+import { useModalContext } from '../hooks/useModalContext'
+import { withModalContext } from '../context/modalContext'
 
 interface Props {
    isModalToggled: boolean
@@ -13,17 +16,26 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
+   const { setTimerLength } = useTimerContext()
+   const { state } = useModalContext()
+
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
          <ModalHeader setIsModalToggled={setIsModalToggled} />
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={setIsModalToggled}>
+         <ApplyButton
+            type="button"
+            onClick={() => {
+               setIsModalToggled()
+               setTimerLength(state.pomodoro)
+            }}
+         >
             Apply
          </ApplyButton>
       </ModalContainer>
    )
 }
 
-export default Modal
+export default withModalContext(Modal)

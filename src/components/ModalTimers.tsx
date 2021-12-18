@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import ModalSection from './ModalSection'
 import ModalTimer from './ModalTimer'
-import { withModalContext } from '../context/modalContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { GridContainerModal } from '../containers/Container.styled'
 
@@ -27,4 +26,4 @@ const ModalTimers: FC = () => {
    )
 }
 
-export default withModalContext(ModalTimers)
+export default ModalTimers

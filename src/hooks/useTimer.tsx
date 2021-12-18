@@ -8,7 +8,8 @@ export function useTimer() {
    // Reducer in context or here?
    // local storage - checked to set default timerLength if present else 0
    // local storage - also for modal number inputs - one key + object for values within
-   // update timerLength by apply btn - when clicked with pomodoro number (event callback)
+   // update timerLength by apply btn (dont change modal opacity)
+   // with pomodoro number (event callback - dispatch)
 
    const startTimer = useCallback(() => {
       const time = setInterval(
