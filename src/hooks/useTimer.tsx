@@ -5,7 +5,6 @@ export function useTimer() {
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
 
-   // change naming in modalContext (generic state value)
    // Reducer in context or here?
 
    const startTimer = useCallback(() => {
