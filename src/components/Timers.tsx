@@ -18,15 +18,20 @@ const Timers: FC = () => {
             desiredTimer !== 'pomodoro' && timer === 'pomodoro'
                ? timerLength
                : null
+
          setActive(desiredTimer)
+
          endTimer()
+
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
-            amount: newAmount
-               ? newAmount
-               : state[desiredTimer as keyof typeof state],
+            amount: state[desiredTimer as keyof typeof state],
          })
-         prevTimer.current = { timer: desiredTimer, amount: 0 }
+
+         prevTimer.current = {
+            timer: desiredTimer,
+            amount: newAmount ? newAmount : null,
+         }
       }
 
       // amount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
