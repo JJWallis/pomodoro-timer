@@ -1,6 +1,28 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useReducer } from 'react'
+
+interface State {
+   timerLength: number
+   timeoutId: NodeJS.Timeout | null
+   isRunning: null | 'pomodoro' | 'shortBreak' | 'longBreak'
+   // match strings with either key or state name
+}
+
+type Actions =
+   | {
+        type: 'SET_TIMER_LENGTH'
+        payload: number
+     }
+   | {}
+
+function reducer(state: State, action: Actions) {}
 
 export function useTimer() {
+   const [activeTimer, dispatch] = useReducer(reducer, {
+      timerLength: 10,
+      timeoutId: null,
+      isRunning: null,
+   })
+
    const [timerLength, setTimerLength] = useState(10)
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
