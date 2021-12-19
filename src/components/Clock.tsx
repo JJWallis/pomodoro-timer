@@ -8,8 +8,11 @@ const Clock: FC = () => {
    const { timerLength, isRunning, endTimer, startTimer } = useTimerContext()
 
    useEffect(() => {
-      // when timer changes (prevTimerRef.current.timer) - reset progress bar to 0
-      // unless pomodoro - dynamic math
+      // when timer changes (prevTimerRef.current.timer)
+      // use to determine whether to reset progress bar to 0 (or use prevTimerRef.current.amount)
+      // growing issue - always setting width + 1 below (when changing timer) every render
+      // wamt to set progressWidth to 0 if change timer as well (not just === 0)
+      // defaults to zero - issue?
       setProgressWidth((prev) => prev + 1)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
