@@ -29,7 +29,7 @@ export function useTimer() {
          isRunning: false,
       }
    )
-   const prevTimer = useRef<PreviousTimer>(null)
+   const prevTimer = useRef<PreviousTimer>({ timer: 'pomodoro', amount: null })
 
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)

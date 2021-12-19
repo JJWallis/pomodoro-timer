@@ -7,20 +7,29 @@ import { TimerButton } from '../styles/Button.styled'
 const Timers: FC = () => {
    const [active, setActive] = useState('pomodoro')
    const { state } = useModalContext()
-   const { dispatch, endTimer, prevTimer } = useTimerContext()
+   const { dispatch, endTimer, prevTimer, timerLength } = useTimerContext()
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
+         const {
+            current: { timer },
+         } = prevTimer
+         const newAmount =
+            desiredTimer !== 'pomodoro' && timer === 'pomodoro'
+               ? timerLength
+               : null
          setActive(desiredTimer)
          endTimer()
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
-            amount: state[desiredTimer as keyof typeof state],
+            amount: newAmount
+               ? newAmount
+               : state[desiredTimer as keyof typeof state],
          })
          prevTimer.current = { timer: desiredTimer, amount: 0 }
       }
 
-      // pomodoroAmount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
+      // amount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
       // code order - update timer prop to new key after this
       // setting when returning (desiredTimer === 'pomodoro') - if pomodoroAmount prop is truthy (use that for dispatch amount)
    }

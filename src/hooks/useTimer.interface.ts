@@ -21,6 +21,6 @@ export type UseTimerActions =
      }
 
 export type PreviousTimer = {
-   timer: string
+   timer: string | null
    amount: number | null
-} | null
+}
