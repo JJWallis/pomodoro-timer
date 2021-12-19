@@ -1,5 +1,9 @@
-import { useCallback, useEffect, useReducer } from 'react'
-import { UseTimerActions, UseTimerState } from './useTimer.interface'
+import { useCallback, useEffect, useReducer, useRef } from 'react'
+import {
+   PreviousTimer,
+   UseTimerActions,
+   UseTimerState,
+} from './useTimer.interface'
 
 function reducer(state: UseTimerState, action: UseTimerActions) {
    switch (action.type) {
@@ -25,6 +29,7 @@ export function useTimer() {
          isRunning: false,
       }
    )
+   const prevTimer = useRef<PreviousTimer>(null)
 
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
@@ -40,5 +45,5 @@ export function useTimer() {
       if (timerLength === 0) endTimer()
    }, [timerLength, endTimer])
 
-   return { timerLength, isRunning, dispatch, startTimer, endTimer }
+   return { timerLength, isRunning, dispatch, startTimer, endTimer, prevTimer }
 }

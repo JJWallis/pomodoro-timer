@@ -2,8 +2,6 @@ export interface UseTimerState {
    timerLength: number
    timeoutId: NodeJS.Timeout | null
    isRunning: boolean
-   // 'pomodoro' | 'shortBreak' | 'longBreak' | null
-   //  match strings!
 }
 
 export type UseTimerActions =
@@ -21,3 +19,8 @@ export type UseTimerActions =
    | {
         type: 'END_TIMER'
      }
+
+export type PreviousTimer = {
+   timer: string
+   amount: number | null
+} | null

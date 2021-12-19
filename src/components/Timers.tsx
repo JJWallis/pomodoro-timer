@@ -19,7 +19,6 @@ const Timers: FC = () => {
          })
       }
 
-      // ref logic - updating prevRunningTimer holding obj - timer + pomodoroAmount props
       // updates timer prop with key (desiredTimer) everytime
       // pomodoroAmount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
       // code order - update timer prop to new key after this
