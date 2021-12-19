@@ -1,8 +1,15 @@
 import styled from 'styled-components'
 
-export const ProgressMeter = styled.div`
+interface Props {
+   progressAmount?: number
+   // make required
+}
+
+export const ProgressMeter = styled.div<Props>`
    position: absolute;
-   width: var(--progress-meter-width, 0);
+   width: calc(
+      ${({ progressAmount }) => (progressAmount ? progressAmount : 0)} * 1%
+   );
    height: 10px;
    min-width: 10px;
    max-width: 100%;

@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
 
 :root {
-  --progress-meter-width: 100%;
+  --progress-meter-width: 100;
 }
 
 *,
