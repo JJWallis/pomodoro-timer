@@ -20,6 +20,9 @@ type Actions =
    | {
         type: 'COUNT_DOWN'
      }
+   | {
+        type: 'END_TIMER'
+     }
 
 function reducer(state: State, action: Actions) {
    switch (action.type) {
@@ -56,19 +59,17 @@ export function useTimer() {
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
-      if (Number(timerLength) === 0) setTimerLength(10)
-      //   not when paused - move to useEffect below
       setIsRunning(false)
-   }, [timeoutId, timerLength])
+   }, [timeoutId])
 
    useEffect(() => {
-      if (timerLength === 0) timeoutId && clearInterval(timeoutId)
+      if (timerLength === 0) endTimer()
       // sep callback func when 'break' btn clicked (or any of these btns?)
       // check if isRunning === 'pomodoro'
       // if so sets prevTimerRef.current to current timerLength + updates timerLength with new state (one dispatch)
       // if pomodoro btn hit - first check if prevTimerRef.current is thruthy
       // reset this ref somewhere - if click pomodoro btn while main timer running will reset it
-   }, [timerLength, timeoutId])
+   }, [timerLength, endTimer])
 
    return { timerLength, setTimerLength, startTimer, endTimer, isRunning }
 }
