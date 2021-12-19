@@ -12,8 +12,12 @@ const Timers: FC = () => {
    const handleClick = (desiredTimer: string) => {
       setActive(desiredTimer)
       endTimer()
-      // ref logic - update ref if desiredTimer is pomodoro + moving away from it
-      // if prevTimerRef.current is truthy + desiredTimer === 'pomodoro' + isRunning !== 'pomodoro'
+      // ref logic - updating prevRunningTimer holding obj - timer + amount props
+      // updates timer prop with key everytime
+      // amount only updated if desiredTimer is not pomodoro + timer prop was pomodoro
+      // code order - update timer prop to new key after this
+      // setting when returning - if amount prop is truthy + desiredTimer === 'pomodoro'
+      // resetting ref? - if click pomodoro btn while main timer running will reset it
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
          amount: state[desiredTimer as keyof typeof state],

@@ -29,6 +29,8 @@ export function useTimer() {
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
       dispatch({ type: 'START_TIMER', timeOutId: time })
+      // isRunning:
+      // checks ref to see if value not there - if so, sets it to 'pomodoro'
    }, [])
 
    const endTimer = useCallback(() => {
@@ -38,11 +40,6 @@ export function useTimer() {
 
    useEffect(() => {
       if (timerLength === 0) endTimer()
-      // sep callback func when 'break' btn clicked (or any of these btns?)
-      // check if isRunning === 'pomodoro'
-      // if so sets prevTimerRef.current to current timerLength + updates timerLength with new state (one dispatch)
-      // if pomodoro btn hit - first check if prevTimerRef.current is thruthy
-      // reset this ref somewhere - if click pomodoro btn while main timer running will reset it
    }, [timerLength, endTimer])
 
    return { timerLength, isRunning, dispatch, startTimer, endTimer }
