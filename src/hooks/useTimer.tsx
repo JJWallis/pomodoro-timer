@@ -24,7 +24,7 @@ export function useTimer() {
    const [{ isRunning, timeoutId, timerLength }, dispatch] = useReducer(
       reducer,
       {
-         timerLength: 10,
+         timerLength: 50,
          // dont hardcode
          timeoutId: null,
          isRunning: false,

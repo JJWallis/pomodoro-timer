@@ -59,7 +59,7 @@ export const ClockButton = styled(Button)<ButtonProps>`
       border-radius: 50%;
       background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
    }
-   box-shadow: -15px -10px 30px 0px rgba(255, 255, 255, 0.1);
+   box-shadow: -30px -20px 40px 0px rgba(40, 45, 87, 0.8);
    transition: transform 0.2s ease-in-out;
    &:hover {
       transform: scale(1.05);

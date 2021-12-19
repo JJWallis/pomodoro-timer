@@ -13,7 +13,8 @@ const Clock: FC = () => {
       // growing issue - always setting width + 1 below (when changing timer) every render
       // wamt to set progressWidth to 0 if change timer as well (not just === 0)
       // defaults to zero - issue?
-      setProgressWidth((prev) => prev + 1)
+
+      setProgressWidth(((timerLength / 10) * 100) / 10)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
