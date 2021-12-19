@@ -17,18 +17,18 @@ type Actions =
         type: 'START_TIMER'
         timeOutId: NodeJS.Timeout
      }
-
-const ACTIONS = {
-   SET_INITIAL_TIMER_LENGTH: 'SET_INITIAL_TIMER_LENGTH',
-   START_TIMER: 'START_TIMER',
-}
+   | {
+        type: 'COUNT_DOWN'
+     }
 
 function reducer(state: State, action: Actions) {
    switch (action.type) {
-      case ACTIONS.SET_INITIAL_TIMER_LENGTH:
+      case 'SET_INITIAL_TIMER_LENGTH':
          return { ...state, timerLength: action.amount }
-      case ACTIONS.START_TIMER:
+      case 'START_TIMER':
          return { ...state, timeoutId: action.timeOutId, isRunning: true }
+      case 'COUNT_DOWN':
+         return { ...state, timerLength: state.timerLength - 1 }
       default:
          throw new Error('Action not recognized')
    }
