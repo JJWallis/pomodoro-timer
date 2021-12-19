@@ -17,28 +17,30 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 
 export function useTimer() {
-   const [activeTimer, dispatch] = useReducer(reducer, {
-      timerLength: 10,
-      timeoutId: null,
-      isRunning: false,
-   })
+   const [{ isRunning, timeoutId, timerLength }, dispatch] = useReducer(
+      reducer,
+      {
+         timerLength: 10,
+         timeoutId: null,
+         isRunning: false,
+      }
+   )
 
-   const [timerLength, setTimerLength] = useState(10)
-   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
-   const [isRunning, setIsRunning] = useState(false)
+   // const [timerLength, setTimerLength] = useState(10)
+   // const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
+   // const [isRunning, setIsRunning] = useState(false)
 
    const startTimer = useCallback(() => {
-      const time = setInterval(
-         () => setTimerLength((previous) => previous - 1),
-         1000
-      )
-      setTimeoutId(time)
-      setIsRunning(true)
+      const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
+      // setTimeoutId(time)
+      // setIsRunning(true)
+      dispatch({ type: 'START_TIMER', timeOutId: time })
    }, [])
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
-      setIsRunning(false)
+      dispatch({ type: 'END_TIMER' })
+      // setIsRunning(false)
    }, [timeoutId])
 
    useEffect(() => {
@@ -50,5 +52,5 @@ export function useTimer() {
       // reset this ref somewhere - if click pomodoro btn while main timer running will reset it
    }, [timerLength, endTimer])
 
-   return { timerLength, setTimerLength, startTimer, endTimer, isRunning }
+   return { timerLength, isRunning, dispatch, startTimer, endTimer }
 }

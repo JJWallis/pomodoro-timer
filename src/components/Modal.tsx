@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { setTimerLength } = useTimerContext()
+   const { dispatch } = useTimerContext()
    const { state } = useModalContext()
 
    return (
@@ -27,7 +27,12 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalColors />
          <ApplyButton
             type="button"
-            onClick={() => setTimerLength(state.pomodoro)}
+            onClick={() =>
+               dispatch({
+                  type: 'SET_INITIAL_TIMER_LENGTH',
+                  amount: state.pomodoro,
+               })
+            }
          >
             Apply
          </ApplyButton>
