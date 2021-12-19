@@ -4,6 +4,7 @@ interface ButtonProps {
    active?: boolean
    cross?: boolean
    apply?: boolean
+   progressAmount?: number
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -32,13 +33,32 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    }
 `
 
-export const ClockButton = styled(Button)`
+export const ClockButton = styled(Button)<ButtonProps>`
    position: relative;
-   padding: 1rem;
+   width: 300px;
+   height: 300px;
+   min-width: 1px;
+   max-width: 100%;
    border-radius: 50%;
-   width: 360px;
-   height: 360px;
-   background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
+   background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   background: conic-gradient(
+      ${({ theme: { currentTheme } }) => currentTheme.accent}
+         ${({ progressAmount }) => progressAmount}%,
+      ${({ theme: { baseStyles } }) => baseStyles.bgSd}
+         ${({ progressAmount }) => progressAmount}%
+   );
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 84%;
+      height: 84%;
+      border-radius: 50%;
+      background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
+   }
    box-shadow: -15px -10px 30px 0px rgba(255, 255, 255, 0.1);
    transition: transform 0.2s ease-in-out;
    &:hover {

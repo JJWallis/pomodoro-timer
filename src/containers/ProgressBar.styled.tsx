@@ -12,7 +12,6 @@ export const ProgressMeter = styled.div<Props>`
    min-width: 1px;
    max-width: 100%;
    border-radius: 50%;
-   inset: 0;
    background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
    background: conic-gradient(
       ${({ theme: { currentTheme } }) => currentTheme.accent}
