@@ -25,11 +25,13 @@ export function useTimer() {
       reducer,
       {
          timerLength: 10,
+         // dont hardcode
          timeoutId: null,
          isRunning: false,
       }
    )
    const prevTimer = useRef<PreviousTimer>({ timer: 'pomodoro', amount: null })
+   // set amount to timerLength state when dynamic
 
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
