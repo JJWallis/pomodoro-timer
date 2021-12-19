@@ -22,7 +22,6 @@ const Timers: FC = () => {
 
          setActive(desiredTimer)
          endTimer()
-
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
             amount: retrievePrevAmount
@@ -30,15 +29,10 @@ const Timers: FC = () => {
                : state[desiredTimer as keyof typeof state],
          })
 
-         prevTimer.current = {
-            timer: desiredTimer,
-            amount: prevAmount ? prevAmount : null,
-         }
+         prevTimer.current.timer = desiredTimer
+         if (prevAmount) prevTimer.current.amount = prevAmount
       }
 
-      // amount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
-      // code order - update timer prop to new key after this
-      // setting when returning (desiredTimer === 'pomodoro') - if amount prop is truthy (use that for dispatch amount)
       // BUG - update timerLength from modal display but ref still holds a value?
    }
 
