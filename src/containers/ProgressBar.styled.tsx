@@ -9,16 +9,16 @@ export const ProgressMeter = styled.div<Props>`
    position: relative;
    width: 100%;
    height: 100%;
-   min-width: 10px;
+   min-width: 1px;
    max-width: 100%;
-   /* kyle does calc(100% - offset value to fit in parent bar) */
    border-radius: 50%;
    inset: 0;
    background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
    background: conic-gradient(
       ${({ theme: { currentTheme } }) => currentTheme.accent}
          ${({ progressAmount }) => progressAmount}%,
-      ${({ theme: { baseStyles } }) => baseStyles.bgSd} 50%
+      ${({ theme: { baseStyles } }) => baseStyles.bgSd}
+         ${({ progressAmount }) => progressAmount}%
    );
    &::before {
       content: '';
