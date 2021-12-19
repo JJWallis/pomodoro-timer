@@ -12,6 +12,8 @@ const Timers: FC = () => {
    const handleClick = (desiredTimer: string) => {
       setActive(desiredTimer)
       endTimer()
+      // ref logic - update ref if desiredTimer is pomodoro + moving away from it
+      // if prevTimerRef.current is truthy + desiredTimer === 'pomodoro' + isRunning !== 'pomodoro'
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
          amount: state[desiredTimer as keyof typeof state],
