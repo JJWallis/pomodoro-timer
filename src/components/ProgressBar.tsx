@@ -7,7 +7,7 @@ const ProgressBar: FC = () => {
    const { timerLength } = useTimerContext()
 
    useEffect(() => {
-      setProgressWidth((prev) => prev + timerLength / 10)
+      setProgressWidth((prev) => prev + 5)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
