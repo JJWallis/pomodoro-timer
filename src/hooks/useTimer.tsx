@@ -32,6 +32,8 @@ function reducer(state: State, action: Actions) {
          return { ...state, timeoutId: action.timeOutId, isRunning: true }
       case 'COUNT_DOWN':
          return { ...state, timerLength: state.timerLength - 1 }
+      case 'END_TIMER':
+         return { ...state, isRunning: false }
       default:
          throw new Error('Action not recognized')
    }
