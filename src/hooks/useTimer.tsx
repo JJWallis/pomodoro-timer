@@ -5,8 +5,6 @@ export function useTimer() {
    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
    const [isRunning, setIsRunning] = useState(false)
 
-   // Reducer in context or here?
-
    const startTimer = useCallback(() => {
       const time = setInterval(
          () => setTimerLength((previous) => previous - 1),
