@@ -1,30 +1,7 @@
 import { useState, useCallback, useEffect, useReducer } from 'react'
+import { UseTimerActions, UseTimerState } from './useTimer.interface'
 
-interface State {
-   timerLength: number
-   timeoutId: NodeJS.Timeout | null
-   isRunning: boolean
-   // 'pomodoro' | 'shortBreak' | 'longBreak' | null
-   //  match strings with either key or state name
-}
-
-type Actions =
-   | {
-        type: 'SET_INITIAL_TIMER_LENGTH'
-        amount: number
-     }
-   | {
-        type: 'START_TIMER'
-        timeOutId: NodeJS.Timeout
-     }
-   | {
-        type: 'COUNT_DOWN'
-     }
-   | {
-        type: 'END_TIMER'
-     }
-
-function reducer(state: State, action: Actions) {
+function reducer(state: UseTimerState, action: UseTimerActions) {
    switch (action.type) {
       case 'SET_INITIAL_TIMER_LENGTH':
          return { ...state, timerLength: action.amount }
