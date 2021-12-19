@@ -3,23 +3,32 @@ import { useState, useCallback, useEffect, useReducer } from 'react'
 interface State {
    timerLength: number
    timeoutId: NodeJS.Timeout | null
-   isRunning: 'pomodoro' | 'shortBreak' | 'longBreak' | null
-   // match strings with either key or state name
+   isRunning: boolean
+   // 'pomodoro' | 'shortBreak' | 'longBreak' | null
+   //  match strings with either key or state name
 }
+
+type Actions =
+   | {
+        type: 'SET_INITIAL_TIMER_LENGTH'
+        amount: number
+     }
+   | {
+        type: 'START_TIMER'
+        timeOutId: NodeJS.Timeout
+     }
 
 const ACTIONS = {
    SET_INITIAL_TIMER_LENGTH: 'SET_INITIAL_TIMER_LENGTH',
-}
-
-type Actions = {
-   type: 'SET_INITIAL_TIMER_LENGTH'
-   amount: number
+   START_TIMER: 'START_TIMER',
 }
 
 function reducer(state: State, action: Actions) {
    switch (action.type) {
       case ACTIONS.SET_INITIAL_TIMER_LENGTH:
          return { ...state, timerLength: action.amount }
+      case ACTIONS.START_TIMER:
+         return { ...state, timeoutId: action.timeOutId, isRunning: true }
       default:
          throw new Error('Action not recognized')
    }
@@ -29,7 +38,7 @@ export function useTimer() {
    const [activeTimer, dispatch] = useReducer(reducer, {
       timerLength: 10,
       timeoutId: null,
-      isRunning: null,
+      isRunning: false,
    })
 
    const [timerLength, setTimerLength] = useState(10)
