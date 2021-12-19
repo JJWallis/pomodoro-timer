@@ -18,12 +18,12 @@ const Timers: FC = () => {
             amount: state[desiredTimer as keyof typeof state],
          })
       }
+
       // ref logic - updating prevRunningTimer holding obj - timer + pomodoroAmount props
       // updates timer prop with key (desiredTimer) everytime
-      // pomodoroAmount only updated if desiredTimer is not pomodoro + timer prop was pomodoro (will be by default)
+      // pomodoroAmount only updated if desiredTimer is not pomodoro && timer prop was pomodoro (will be by default)
       // code order - update timer prop to new key after this
-      // setting when returning - if pomodoroAmount prop is truthy + desiredTimer === 'pomodoro'
-      // resetting ref? - if click pomodoro btn while main timer running will reset it
+      // setting when returning (desiredTimer === 'pomodoro') - if pomodoroAmount prop is truthy (use that for dispatch amount)
    }
 
    return (

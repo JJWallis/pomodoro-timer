@@ -29,8 +29,6 @@ export function useTimer() {
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
       dispatch({ type: 'START_TIMER', timeOutId: time })
-      // isRunning:
-      // checks ref to see if value not there - if so, sets it to 'pomodoro'
    }, [])
 
    const endTimer = useCallback(() => {
