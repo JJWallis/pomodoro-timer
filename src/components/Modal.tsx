@@ -8,7 +8,6 @@ import { ApplyButton } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
-import { withModalContext } from '../context/modalContext'
 
 interface Props {
    isModalToggled: boolean
@@ -40,4 +39,4 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    )
 }
 
-export default withModalContext(Modal)
+export default Modal

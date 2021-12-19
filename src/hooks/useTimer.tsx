@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useReducer } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 import { UseTimerActions, UseTimerState } from './useTimer.interface'
 
 function reducer(state: UseTimerState, action: UseTimerActions) {
@@ -26,21 +26,14 @@ export function useTimer() {
       }
    )
 
-   // const [timerLength, setTimerLength] = useState(10)
-   // const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
-   // const [isRunning, setIsRunning] = useState(false)
-
    const startTimer = useCallback(() => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
-      // setTimeoutId(time)
-      // setIsRunning(true)
       dispatch({ type: 'START_TIMER', timeOutId: time })
    }, [])
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
       dispatch({ type: 'END_TIMER' })
-      // setIsRunning(false)
    }, [timeoutId])
 
    useEffect(() => {

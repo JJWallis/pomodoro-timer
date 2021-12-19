@@ -7,6 +7,7 @@ import Timers from './components/Timers'
 import Modal from './components/Modal'
 import { useToggle } from './hooks/useToggle'
 import { TimerContextProvider } from './context/timerContext'
+import { withModalContext } from './context/modalContext'
 
 const App: FC = () => {
    const [isModalToggled, setIsModalToggled] = useToggle()
@@ -27,4 +28,4 @@ const App: FC = () => {
    )
 }
 
-export default App
+export default withModalContext(App)
