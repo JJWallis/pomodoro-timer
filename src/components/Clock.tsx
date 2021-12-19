@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { ClockButton } from '../styles/Button.styled'
 import { TimerTitle } from '../styles/Title.styled'
-import ProgressBar from './ProgressBar'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
@@ -26,7 +25,6 @@ const Clock: FC = () => {
                {isRunning && timerLength !== 0 ? 'pause' : 'play'}
             </TimerTitle>
          </ClockButton>
-         <ProgressBar />
       </>
    )
 }
