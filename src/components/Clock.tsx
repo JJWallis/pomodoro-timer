@@ -15,7 +15,7 @@ const Clock: FC = () => {
       // wamt to set progressWidth to 0 if change timer as well (not just === 0)
       // defaults to zero - issue?
 
-      setProgressWidth(((timerLength / 10) * 100) / 10)
+      setProgressWidth(((timerLength * 500) / 100) * 2)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
@@ -25,7 +25,10 @@ const Clock: FC = () => {
             progressAmount={progressWidth}
             onClick={isRunning ? endTimer : startTimer}
          >
-            <ProgressCircle viewBox="0 0 168 168">
+            <ProgressCircle
+               progressAmount={progressWidth}
+               viewBox="0 0 168 168"
+            >
                <path
                   d="M84 4.4225
       a 79.5775 79.5775 0 0 1 0 159.155

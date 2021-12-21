@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface Props {
+   progressAmount: number
+}
+
 export const Cog = styled.svg`
    width: 40px;
    height: 40px;
@@ -21,8 +25,9 @@ export const Close = styled(Cog)`
    right: -3px;
 `
 
-export const ProgressCircle = styled.svg`
+export const ProgressCircle = styled.svg<Props>`
    stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
    fill: none;
    stroke-width: 5;
+   stroke-dasharray: ${({ progressAmount }) => progressAmount}, 500;
 `
