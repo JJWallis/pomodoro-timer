@@ -25,7 +25,6 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          amount: newTimerLength,
       })
       currentTimerTotal.current = newTimerLength
-      console.log(currentTimerTotal.current)
    }
 
    return (
@@ -34,15 +33,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton
-            type="button"
-            onClick={() =>
-               dispatch({
-                  type: 'SET_INITIAL_TIMER_LENGTH',
-                  amount: state.pomodoro,
-               })
-            }
-         >
+         <ApplyButton type="button" onClick={handleApplyBtn}>
             Apply
          </ApplyButton>
       </ModalContainer>

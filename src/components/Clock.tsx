@@ -6,13 +6,16 @@ import { ProgressCircle } from '../styles/Icon.styled'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
-   const { timerLength, isRunning, endTimer, startTimer } = useTimerContext()
+   const { timerLength, isRunning, endTimer, startTimer, currentTimerTotal } =
+      useTimerContext()
 
    useEffect(() => {
       // when timer changes (prevTimerRef.current.timer)
       // use to determine whether to reset progress bar to 0 (or use prevTimerRef.current.amount)
       // time left divided by total time * total circumference
-      setProgressWidth((timerLength / 20) * 500)
+      const { current } = currentTimerTotal
+      const currentTotal = current ? current : 50
+      setProgressWidth((timerLength / currentTotal) * 500)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
