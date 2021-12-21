@@ -14,6 +14,7 @@ This is a solution to the [Pomodoro app challenge](https://www.frontendmentor.io
    -  [Continued development](#continued-development)
    -  [Useful resources](#useful-resources)
 -  [Author](#author)
+-  [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -97,6 +98,10 @@ useReducer() - more usecases + how that leads in Redux (apparently similar struc
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
 -  Linkedin - [Joshua Jameson-Wallis]()
+
+## Acknowledgments
+
+[GitHub - mlatka9/Pomodoro-app](https://github.com/mlatka9/Pomodoro-app)
 
 ###### TODO
 
