@@ -15,7 +15,7 @@ const Clock: FC = () => {
       // wamt to set progressWidth to 0 if change timer as well (not just === 0)
       // defaults to zero - issue?
 
-      setProgressWidth(((timerLength * 500) / 100) * 2)
+      setProgressWidth((500 / timerLength) * 100)
       if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
