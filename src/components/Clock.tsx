@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { ClockButton } from '../styles/Button.styled'
 import { TimerTitle } from '../styles/Title.styled'
+import { ProgressCircle } from '../styles/Icon.styled'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
@@ -24,6 +25,13 @@ const Clock: FC = () => {
             progressAmount={progressWidth}
             onClick={isRunning ? endTimer : startTimer}
          >
+            <ProgressCircle>
+               <path
+                  d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+               />
+            </ProgressCircle>
             <TimerTitle>{timerLength}</TimerTitle>
             <TimerTitle subTitle>
                {isRunning && timerLength !== 0 ? 'pause' : 'play'}
