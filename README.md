@@ -48,9 +48,22 @@ Your users should be able to:
 
 ### What I learned
 
-```css
+```scss
 
 ```
+
+```tsx
+export const withModalContext: ModalContextProvider =
+   (Component) => (props) => {
+      return (
+         <ModalContext.Provider value={{ state, updateState }}>
+            <Component {...props} />
+         </ModalContext.Provider>
+      )
+   }
+```
+
+Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure)
 
 ```tsx
 const updateTheme = (newTheme: string) => {
@@ -72,15 +85,13 @@ Module Declarations - styled components (typing theme obj with declarations + in
 
 ### Continued development
 
-Custom hooks
-
-HOCs
+Custom hooks - research online for more examples | building more logic into them
 
 useReducer() - more usecases + how that leads in Redux (apparently similar structure)
 
 ### Useful resources
 
--  [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+-  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) -
 
 ## Author
 
@@ -94,9 +105,3 @@ CSS:
 Progressive meter/bar - SVG animation (outline drawing)
 
 JS:
-
-Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved)
-
-TS - path aliasing | ambient declarations | sep files for types/interfaces
-
-Folder structure
