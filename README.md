@@ -48,21 +48,19 @@ Your users should be able to:
 
 ### What I learned
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
 ```css
-.proud-of-this-css {
-   color: papayawhip;
+
+```
+
+```ts
+declare module 'styled-components' {
+   export interface DefaultTheme {
+      ...
+   }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-   console.log('🎉')
-}
-```
+Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
 
 ### Continued development
 
@@ -88,8 +86,6 @@ CSS:
 Progressive meter/bar - SVG animation (outline drawing)
 
 TS:
-
-Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
 
 JS:
 
