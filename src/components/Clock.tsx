@@ -14,8 +14,6 @@ const Clock: FC = () => {
    } = useModalContext()
 
    useEffect(() => {
-      // when timer changes (prevTimerRef.current.timer)
-      // use to determine whether to reset progress bar to 0 (or use prevTimerRef.current.amount)
       const { current } = currentTimerTotal
       const currentTotal = current ? current : pomodoro
       setProgressWidth((timerLength / currentTotal) * 500)
