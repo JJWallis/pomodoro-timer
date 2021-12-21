@@ -15,8 +15,18 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { dispatch } = useTimerContext()
+   const { dispatch, currentTimerTotal } = useTimerContext()
    const { state } = useModalContext()
+
+   const handleApplyBtn = () => {
+      const newTimerLength = state.pomodoro
+      dispatch({
+         type: 'SET_INITIAL_TIMER_LENGTH',
+         amount: newTimerLength,
+      })
+      currentTimerTotal.current = newTimerLength
+      console.log(currentTimerTotal.current)
+   }
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
