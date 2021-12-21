@@ -22,10 +22,6 @@ export const Close = styled(Cog)`
 `
 
 export const ProgressCircle = styled.svg`
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
    stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
    fill: none;
    stroke-width: 3;

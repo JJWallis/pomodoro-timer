@@ -40,14 +40,14 @@ export const ClockButton = styled(Button)<ButtonProps>`
    min-width: 1px;
    max-width: 100%;
    border-radius: 50%;
-   background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   background: conic-gradient(
+   /* background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   /* background: conic-gradient(
       ${({ theme: { currentTheme } }) => currentTheme.accent}
          ${({ progressAmount }) => progressAmount}%,
       ${({ theme: { baseStyles } }) => baseStyles.bgSd}
          ${({ progressAmount }) => progressAmount}%
-   );
-   &::before {
+   ); */
+   */ &::before {
       content: '';
       display: block;
       position: absolute;
