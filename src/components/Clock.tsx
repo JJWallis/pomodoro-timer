@@ -3,19 +3,22 @@ import { useTimerContext } from '../hooks/useTimerContext'
 import { ClockButton } from '../styles/Button.styled'
 import { TimerTitle } from '../styles/Title.styled'
 import { ProgressCircle } from '../styles/Icon.styled'
+import { useModalContext } from '../hooks/useModalContext'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
    const { timerLength, isRunning, endTimer, startTimer, currentTimerTotal } =
       useTimerContext()
+   const {
+      state: { pomodoro },
+   } = useModalContext()
 
    useEffect(() => {
       // when timer changes (prevTimerRef.current.timer)
       // use to determine whether to reset progress bar to 0 (or use prevTimerRef.current.amount)
       const { current } = currentTimerTotal
-      const currentTotal = current ? current : 50
+      const currentTotal = current ? current : pomodoro
       setProgressWidth((timerLength / currentTotal) * 500)
-      if (timerLength === 0) setProgressWidth(0)
    }, [timerLength])
 
    return (
