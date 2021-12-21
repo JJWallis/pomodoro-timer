@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useLayoutEffect } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -16,16 +16,19 @@ interface Props {
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const { dispatch, currentTimerTotal } = useTimerContext()
-   const { state } = useModalContext()
+   const {
+      state: { pomodoro },
+   } = useModalContext()
 
    const handleApplyBtn = () => {
-      const newTimerLength = state.pomodoro
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: newTimerLength,
+         amount: pomodoro,
       })
-      currentTimerTotal.current = newTimerLength
+      currentTimerTotal.current = pomodoro
    }
+
+   useLayoutEffect(() => {}, [])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>

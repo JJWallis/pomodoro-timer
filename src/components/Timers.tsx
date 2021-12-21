@@ -34,7 +34,6 @@ const Timers: FC = () => {
             type: 'SET_INITIAL_TIMER_LENGTH',
             amount: newAmount,
          })
-
          currentTimerTotal.current = newAmount
          prevTimer.current.timer = desiredTimer
          if (prevAmount) prevTimer.current.amount = prevAmount
