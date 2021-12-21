@@ -13,7 +13,7 @@ export const TimerTitle = styled.h2<Props>`
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -70%);
+   transform: translate(-50%, -65%);
    font-size: 4rem;
    color: ${({ theme: { baseStyles } }) => baseStyles.softWhite};
    ${({ subTitle }) =>
@@ -22,6 +22,6 @@ export const TimerTitle = styled.h2<Props>`
          font-size: 1.5rem;
          text-transform: uppercase;
          left: 51%;
-         transform: translate(-50%, 70%);
+         transform: translate(-55%, 40%);
       `}
 `

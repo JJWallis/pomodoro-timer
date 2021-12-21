@@ -28,5 +28,5 @@ export const ProgressCircle = styled.svg`
    transform: translate(-50%, -50%);
    stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
    fill: none;
-   stroke-width: 5;
+   stroke-width: 3;
 `

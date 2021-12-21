@@ -25,7 +25,7 @@ const Clock: FC = () => {
             progressAmount={progressWidth}
             onClick={isRunning ? endTimer : startTimer}
          >
-            <ProgressCircle>
+            <ProgressCircle viewBox="0 0 38 38">
                <path
                   d="M18 2.0845
       a 15.9155 15.9155 0 0 1 0 31.831
