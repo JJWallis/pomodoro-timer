@@ -9,9 +9,9 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
       const [state, setState] = useState({
-         pomodoro: 1,
-         shortbreak: 1,
-         longbreak: 1,
+         pomodoro: 99,
+         shortbreak: 10,
+         longbreak: 20,
       })
 
       const updateState = (timer: string, newState: number) => {

@@ -28,7 +28,13 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }
 
-   useLayoutEffect(() => {}, [])
+   useLayoutEffect(() => {
+      dispatch({
+         type: 'SET_INITIAL_TIMER_LENGTH',
+         amount: pomodoro,
+      })
+      currentTimerTotal.current = pomodoro
+   }, [])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
