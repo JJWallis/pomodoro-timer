@@ -35,11 +35,12 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
 
 export const ClockButton = styled(Button)<ButtonProps>`
    position: relative;
-   width: 300px;
-   height: 300px;
+   width: 370px;
+   height: 370px;
    min-width: 1px;
    max-width: 100%;
    border-radius: 50%;
+   padding: 20px;
    /* background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
    /* background: conic-gradient(
       ${({ theme: { currentTheme } }) => currentTheme.accent}

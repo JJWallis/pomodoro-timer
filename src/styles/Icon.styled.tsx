@@ -24,5 +24,5 @@ export const Close = styled(Cog)`
 export const ProgressCircle = styled.svg`
    stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
    fill: none;
-   stroke-width: 3;
+   stroke-width: 5;
 `
