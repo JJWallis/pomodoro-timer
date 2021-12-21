@@ -15,7 +15,7 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { dispatch, currentTimerTotal } = useTimerContext()
+   const { dispatch, currentTimerTotal, endTimer } = useTimerContext()
    const {
       state: { pomodoro },
    } = useModalContext()
@@ -28,6 +28,11 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }
 
+   const handleApplyBtn = () => {
+      setNewTimer()
+      endTimer()
+   }
+
    useLayoutEffect(setNewTimer, [])
 
    return (
@@ -36,7 +41,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={setNewTimer}>
+         <ApplyButton type="button" onClick={handleApplyBtn}>
             Apply
          </ApplyButton>
       </ModalContainer>
