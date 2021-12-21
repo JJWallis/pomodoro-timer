@@ -52,7 +52,15 @@ Your users should be able to:
 
 ```
 
-```ts
+```tsx
+const updateTheme = (newTheme: string) => {
+   setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])
+}
+```
+
+HOCs + TS - Omit utility type (+ generics) | fixing 'any' props - rare potential use case | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope) | add more components to tree + bloated syntax + props | example above - bracket notation with objects (ignoring other keys apart from those to target)
+
+```tsx
 declare module 'styled-components' {
    export interface DefaultTheme {
       ...
@@ -85,11 +93,7 @@ CSS:
 
 Progressive meter/bar - SVG animation (outline drawing)
 
-TS:
-
 JS:
-
-HOCs + TS - generics + Omit type | fixing 'any' props - rare potential use case | extending generic types (dynamic helper funcs) | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope)
 
 Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved)
 
