@@ -83,11 +83,13 @@ useReducer()
 
 ###### TODO
 
-HTML:
-
 CSS:
 
-Progressive meter/bar | controlled radio btns - theme + font toggling (styled components - typing theme obj with declarations + intellisense/available in GlobalStyles)
+Progressive meter/bar - SVG animation (outline drawing)
+
+TS:
+
+Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
 
 JS:
 
