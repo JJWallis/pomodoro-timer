@@ -25,11 +25,12 @@ export function useTimer() {
       reducer,
       {
          timerLength: 50,
-         // dont hardcode
          timeoutId: null,
          isRunning: false,
       }
    )
+
+   const currentTimerTotal = useRef<number | null>(null)
    const prevTimer = useRef<PreviousTimer>({ timer: 'pomodoro', amount: null })
    // set amount to timerLength state when dynamic
 
@@ -47,27 +48,13 @@ export function useTimer() {
       if (timerLength === 0) endTimer()
    }, [timerLength, endTimer])
 
-   return { timerLength, isRunning, dispatch, startTimer, endTimer, prevTimer }
+   return {
+      timerLength,
+      isRunning,
+      dispatch,
+      startTimer,
+      endTimer,
+      prevTimer,
+      currentTimerTotal,
+   }
 }
-
-// tick = () => {
-//    if (this.state.isRunning) {
-//        const now = Date.now()
-//        this.setState(prevState => ({
-//            previousTime: now,
-//            elapsedTime: prevState.elapsedTime + (now - this.state.previousTime)
-//        }))
-//    }
-// }
-
-// on clock btn Click:
-// if (!this.state.isRunning) {
-// this.setState(
-//  { previousTime: Date.now() }
-
-// handleReset = () => {
-// this.setState({ elapsedTime: 0 })
-// }
-
-// const seconds = Math.floor(this.state.elapsedTime / 1000)
-// componentDidMount() { this.intervalID = setInterval(() => this.tick(), 100) }
