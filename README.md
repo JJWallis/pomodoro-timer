@@ -68,7 +68,7 @@ Custom hooks
 
 HOCs
 
-useReducer()
+useReducer() - more usecases + how that leads in Redux (apparently similar structure)
 
 ### Useful resources
 
