@@ -28,7 +28,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }
 
-   useLayoutEffect(() => setNewTimer(), [])
+   useLayoutEffect(setNewTimer, [])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
