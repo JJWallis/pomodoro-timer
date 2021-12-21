@@ -24,6 +24,8 @@ const Timers: FC = () => {
             ? retrievePrevAmount
             : state[desiredTimer as keyof typeof state]
 
+         // REFACTOR - func takes in 2 args + ternary operator + returns one for 3 above vars
+
          setActive(desiredTimer)
          endTimer()
          dispatch({
@@ -35,9 +37,9 @@ const Timers: FC = () => {
          prevTimer.current.timer = desiredTimer
          if (prevAmount) prevTimer.current.amount = prevAmount
       }
-
-      // BUG - update timerLength from modal display but ref still holds a value?
    }
+
+   const performConditionalAction = () => {}
 
    return (
       <TimersContainer>
