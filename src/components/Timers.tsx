@@ -10,22 +10,24 @@ const Timers: FC = () => {
    const { dispatch, endTimer, prevTimer, timerLength, currentTimerTotal } =
       useTimerContext()
 
+   const gatherData = (desiredTimer: string) => {
+      const {
+         current: { timer, amount },
+      } = prevTimer
+      const prevAmount =
+         desiredTimer !== 'pomodoro' && timer === 'pomodoro'
+            ? timerLength
+            : null
+      const retrievePrevAmount = desiredTimer === 'pomodoro' ? amount : null
+      const newAmount = retrievePrevAmount
+         ? retrievePrevAmount
+         : state[desiredTimer as keyof typeof state]
+      return { prevAmount, newAmount }
+   }
+
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
-         const {
-            current: { timer, amount },
-         } = prevTimer
-         const prevAmount =
-            desiredTimer !== 'pomodoro' && timer === 'pomodoro'
-               ? timerLength
-               : null
-         const retrievePrevAmount = desiredTimer === 'pomodoro' ? amount : null
-         const newAmount = retrievePrevAmount
-            ? retrievePrevAmount
-            : state[desiredTimer as keyof typeof state]
-
-         // REFACTOR - func takes in 2 args + ternary operator + returns one for 3 above vars
-
+         const { prevAmount, newAmount } = gatherData(desiredTimer)
          setActive(desiredTimer)
          endTimer()
          dispatch({
@@ -38,8 +40,6 @@ const Timers: FC = () => {
          if (prevAmount) prevTimer.current.amount = prevAmount
       }
    }
-
-   const performConditionalAction = () => {}
 
    return (
       <TimersContainer>
