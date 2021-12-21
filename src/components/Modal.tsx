@@ -20,7 +20,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       state: { pomodoro },
    } = useModalContext()
 
-   const handleApplyBtn = () => {
+   const setNewTimer = () => {
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
          amount: pomodoro,
@@ -28,13 +28,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }
 
-   useLayoutEffect(() => {
-      dispatch({
-         type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: pomodoro,
-      })
-      currentTimerTotal.current = pomodoro
-   }, [])
+   useLayoutEffect(() => setNewTimer(), [])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
@@ -42,7 +36,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={handleApplyBtn}>
+         <ApplyButton type="button" onClick={setNewTimer}>
             Apply
          </ApplyButton>
       </ModalContainer>
