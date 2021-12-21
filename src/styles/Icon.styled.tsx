@@ -20,3 +20,11 @@ export const Close = styled(Cog)`
    transform: translateY(-35%);
    right: -3px;
 `
+
+export const ProgressCircle = styled.svg`
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   fill: white;
+`
