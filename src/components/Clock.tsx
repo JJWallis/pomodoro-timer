@@ -7,16 +7,27 @@ import { useModalContext } from '../hooks/useModalContext'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
-   const { timerLength, isRunning, endTimer, startTimer, currentTimerTotal } =
-      useTimerContext()
+   const {
+      timerLength,
+      isRunning,
+      endTimer,
+      startTimer,
+      currentTimerTotal,
+      prevTimer,
+   } = useTimerContext()
    const {
       state: { pomodoro },
    } = useModalContext()
 
    useEffect(() => {
       const { current } = currentTimerTotal
+      const {
+         current: { timer },
+      } = prevTimer
       const currentTotal = current ? current : pomodoro
       setProgressWidth((timerLength / currentTotal) * 500)
+      if (timerLength === 0 && timer === 'pomodoro')
+         prevTimer.current.amount = null
    }, [timerLength])
 
    return (
