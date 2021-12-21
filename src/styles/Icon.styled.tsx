@@ -31,5 +31,5 @@ export const ProgressCircle = styled.svg<Props>`
    stroke-width: 5;
    stroke-dasharray: ${({ progressAmount }) => progressAmount}, 500;
    stroke-linecap: round;
-   transition: stroke-dasharray 0.3s linear;
+   transition: stroke-dasharray 1s linear;
 `
