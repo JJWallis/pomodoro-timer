@@ -7,7 +7,8 @@ import { TimerButton } from '../styles/Button.styled'
 const Timers: FC = () => {
    const [active, setActive] = useState('pomodoro')
    const { state } = useModalContext()
-   const { dispatch, endTimer, prevTimer, timerLength } = useTimerContext()
+   const { dispatch, endTimer, prevTimer, timerLength, currentTimerTotal } =
+      useTimerContext()
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
@@ -19,16 +20,18 @@ const Timers: FC = () => {
                ? timerLength
                : null
          const retrievePrevAmount = desiredTimer === 'pomodoro' ? amount : null
+         const newAmount = retrievePrevAmount
+            ? retrievePrevAmount
+            : state[desiredTimer as keyof typeof state]
 
          setActive(desiredTimer)
          endTimer()
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
-            amount: retrievePrevAmount
-               ? retrievePrevAmount
-               : state[desiredTimer as keyof typeof state],
+            amount: newAmount,
          })
 
+         currentTimerTotal.current = newAmount
          prevTimer.current.timer = desiredTimer
          if (prevAmount) prevTimer.current.amount = prevAmount
       }

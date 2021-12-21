@@ -12,7 +12,6 @@ const Clock: FC = () => {
    useEffect(() => {
       // when timer changes (prevTimerRef.current.timer)
       // use to determine whether to reset progress bar to 0 (or use prevTimerRef.current.amount)
-      // time left divided by total time * total circumference
       const { current } = currentTimerTotal
       const currentTotal = current ? current : 50
       setProgressWidth((timerLength / currentTotal) * 500)
