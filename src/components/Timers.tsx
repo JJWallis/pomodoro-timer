@@ -9,9 +9,6 @@ const Timers: FC = () => {
    const { dispatch, endTimer, currentTimerTotal, activeTimer } =
       useTimerContext()
 
-   // TODO:
-   // refactor isRunning using that state
-
    const handleClick = (desiredTimer: string) => {
       if (activeTimer !== desiredTimer) {
          const newAmount = state[desiredTimer as keyof typeof state]
