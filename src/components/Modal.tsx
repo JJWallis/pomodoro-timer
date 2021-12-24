@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect } from 'react'
+import React, { FC, useEffect, useLayoutEffect } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -23,10 +23,23 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const setNewTimer = () => {
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: pomodoro,
+         amount: pomodoro * 100,
       })
       currentTimerTotal.current = pomodoro
    }
+
+   // 'SET_INITIAL_TIMER_LENGTH':
+   // const minutes = 60 * userInput
+   // 'START_TIMER':
+   //
+   // 'Clock display':
+   // minutes = minutes < 10 ? "0" + minutes : minutes; | seconds = seconds < 10 ? "0" + seconds : seconds;
+
+   // const test = (duration?: number) => {
+   //    const minutes = Math.floor(duration / 60)
+   //    const seconds = duration - minutes * 60
+   //    console.log(minutes, seconds)
+   // }
 
    const handleApplyBtn = () => {
       setNewTimer()
