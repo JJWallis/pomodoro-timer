@@ -45,15 +45,13 @@ export function useTimer() {
       return `${minutesString}:${secondsString}`
    }
 
-   // TODO:
-
    // If input > 60 - EXTRA HOURS:
-   // export const formatTimerHourBase = (seconds) => {
-   //    const hours = Math.floor(seconds / 3600);
-   //    const allMinutes = Math.floor(seconds / 60);
-   //    const leftMinutes = allMinutes - hours * 60;
-   //    return `${hours} hours ${leftMinutes} minutes`;
-   //  };
+   const formatTimerHourBase = (seconds: number) => {
+      const hours = Math.floor(seconds / 3600)
+      const allMinutes = Math.floor(seconds / 60)
+      const leftMinutes = allMinutes - hours * 60
+      return `${hours} hours ${leftMinutes} minutes`
+   }
 
    useEffect(() => {
       if (timerLength === 0) endTimer()
@@ -67,5 +65,6 @@ export function useTimer() {
       endTimer,
       currentTimerTotal,
       formatTimer,
+      formatTimerHourBase,
    }
 }
