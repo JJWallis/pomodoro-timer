@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useLayoutEffect } from 'react'
+import React, { FC, useLayoutEffect } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -23,16 +23,17 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const setNewTimer = () => {
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: pomodoro,
+         amount: pomodoro * 60,
       })
       currentTimerTotal.current = pomodoro
    }
 
    // 'SET_INITIAL_TIMER_LENGTH':
    // const minutes = 60 * userInput (in seconds)
+   // -1 like we have from timerLength (big number in seconds)
+   // remember to do elsewhere - Timers.tsx
 
    // 'START_TIMER':
-
    // 'Clock display':
    // export const formatTimer = (leftSeconds) => {
    // const seconds = leftSeconds % 60;
@@ -42,6 +43,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    // return `${minutesString}:${secondsString}`;
    //  };
 
+   // If input > 60 - EXTRA:
    // export const formatTimerHourBase = (seconds) => {
    //    const hours = Math.floor(seconds / 3600);
    //    const allMinutes = Math.floor(seconds / 60);

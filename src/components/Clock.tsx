@@ -25,7 +25,7 @@ const Clock: FC = () => {
          current: { timer },
       } = prevTimer
       const currentTotal = current ? current : pomodoro
-      setProgressWidth((timerLength / currentTotal) * 500)
+      setProgressWidth((timerLength / 60 / currentTotal) * 500)
       if (timerLength === 0 && timer === 'pomodoro')
          prevTimer.current.amount = null
    }, [timerLength])
