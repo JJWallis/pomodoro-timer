@@ -5,6 +5,7 @@ interface ButtonProps {
    cross?: boolean
    apply?: boolean
    progressAmount?: number
+   resetVisible?: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -41,25 +42,6 @@ export const ClockButton = styled(Button)<ButtonProps>`
    max-width: 100%;
    border-radius: 50%;
    padding: 20px;
-   /* background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   /* background: conic-gradient(
-      ${({ theme: { currentTheme } }) => currentTheme.accent}
-         ${({ progressAmount }) => progressAmount}%,
-      ${({ theme: { baseStyles } }) => baseStyles.bgSd}
-         ${({ progressAmount }) => progressAmount}%
-   ); */
-   */ &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 84%;
-      height: 84%;
-      border-radius: 50%;
-      background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
-   }
    box-shadow: -30px -20px 40px 0px rgba(40, 45, 87, 0.8);
    transition: transform 0.2s ease-in-out;
    &:hover {
@@ -67,6 +49,20 @@ export const ClockButton = styled(Button)<ButtonProps>`
    }
    @media (min-width: 700px) {
       margin-bottom: 2rem;
+   }
+`
+
+export const ResetButton = styled(Button)<ButtonProps>`
+   opacity: ${({ resetVisible }) => (resetVisible ? '1' : '0')};
+   position: absolute;
+   top: 70%;
+   right: 50%;
+   transform: translate(50%, -50%);
+   color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
+   font-size: 2rem;
+   transition: opacity 0.2s ease-in-out;
+   &:hover {
+      text-decoration: underline;
    }
 `
 

@@ -4,6 +4,7 @@ import { ClockButton } from '../styles/Button.styled'
 import { TimerTitle } from '../styles/Title.styled'
 import { ProgressCircle } from '../styles/Icon.styled'
 import { useModalContext } from '../hooks/useModalContext'
+import { ResetButton } from '../styles/Button.styled'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
@@ -45,6 +46,7 @@ const Clock: FC = () => {
                {isRunning && timerLength !== 0 ? 'pause' : 'play'}
             </TimerTitle>
          </ClockButton>
+         <ResetButton>Reset</ResetButton>
       </>
    )
 }
