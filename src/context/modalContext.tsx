@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import {
    ModalContextData,
    ModalContextProvider,
@@ -8,7 +9,7 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
-      const [state, setState] = useState({
+      const [state, setState] = useLocalStorage('inputs', {
          pomodoro: 1,
          shortbreak: 5,
          longbreak: 15,

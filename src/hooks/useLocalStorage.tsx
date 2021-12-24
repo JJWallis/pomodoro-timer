@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 
-type InitialValue = string | number | (() => string)
+type InitialValue =
+   | { pomodoro: number; shortbreak: number; longbreak: number }
+   | (() => string)
 
 function getSavedValue(key: string, initialValue: InitialValue) {
    const savedValue = localStorage.getItem(key)
