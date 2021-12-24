@@ -50,12 +50,11 @@ export function useTimer() {
       return `${minutesString}:${secondsString}`
    }
 
-   // TODO:
+   // BUG:
 
-   // 'SET_INITIAL_TIMER_LENGTH':
-   // const minutes = 60 * userInput (in seconds)
-   // -1 like we have from timerLength (big number in seconds)
-   // remember to do elsewhere - Timers.tsx
+   // Timers - remove ref feature (just use state from Modal) - compounding issue
+
+   // TODO:
 
    // If input > 60 - EXTRA HOURS:
    // export const formatTimerHourBase = (seconds) => {

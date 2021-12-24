@@ -32,7 +32,7 @@ const Timers: FC = () => {
          endTimer()
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
-            amount: newAmount,
+            amount: newAmount * 60,
          })
          currentTimerTotal.current = newAmount
          prevTimer.current.timer = desiredTimer
