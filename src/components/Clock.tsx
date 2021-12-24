@@ -13,17 +13,33 @@ const Clock: FC = () => {
       isRunning,
       endTimer,
       startTimer,
-      currentTimerTotal: { current: currentTotal },
+      currentTimerTotal,
       formatTimer,
+      activeTimer,
+      dispatch,
    } = useTimerContext()
-   const {
-      state: { pomodoro },
-   } = useModalContext()
+   const { state } = useModalContext()
 
    useEffect(() => {
-      const current = currentTotal ? currentTotal : pomodoro
+      const current = currentTimerTotal.current
+         ? currentTimerTotal.current
+         : state.pomodoro
       setProgressWidth((timerLength / 60 / current) * 500)
-   }, [timerLength, currentTotal, pomodoro])
+   }, [timerLength, currentTimerTotal, state])
+
+   const setNewTimer = () => {
+      const desiredAmount = state[activeTimer as keyof typeof state]
+      dispatch({
+         type: 'SET_INITIAL_TIMER_LENGTH',
+         amount: desiredAmount * 60,
+      })
+      currentTimerTotal.current = desiredAmount
+   }
+
+   const handleApplyBtn = () => {
+      endTimer()
+      setNewTimer()
+   }
 
    return (
       <>
@@ -46,7 +62,9 @@ const Clock: FC = () => {
                {isRunning && timerLength !== 0 ? 'pause' : 'play'}
             </TimerTitle>
          </ClockButton>
-         <ResetButton>Reset</ResetButton>
+         <ResetButton resetVisible={isRunning} onClick={handleApplyBtn}>
+            Reset
+         </ResetButton>
       </>
    )
 }

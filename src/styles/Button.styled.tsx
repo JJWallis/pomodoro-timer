@@ -60,7 +60,7 @@ export const ResetButton = styled(Button)<ButtonProps>`
    transform: translate(50%, -50%);
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    font-size: 2rem;
-   transition: opacity 0.2s ease-in-out;
+   transition: opacity 0.3s ease-in-out;
    &:hover {
       text-decoration: underline;
    }
