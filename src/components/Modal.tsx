@@ -15,7 +15,8 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { dispatch, currentTimerTotal, endTimer } = useTimerContext()
+   const { dispatch, currentTimerTotal, endTimer, activeTimer } =
+      useTimerContext()
    const {
       state: { pomodoro },
    } = useModalContext()
@@ -35,6 +36,9 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          updateTimerOnMount.current = false
       }
    }, [currentTimerTotal, pomodoro, dispatch, setNewTimer, updateTimerOnMount])
+
+   // determine what is active state
+   // then update timerLength with it on apply btn click
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
