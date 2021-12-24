@@ -10,7 +10,6 @@ const Timers: FC = () => {
       useTimerContext()
 
    // TODO:
-   // blend dispatch into setInitialTimerLength
    // refactor isRunning using that state
 
    const handleClick = (desiredTimer: string) => {

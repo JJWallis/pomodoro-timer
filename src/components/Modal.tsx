@@ -17,28 +17,29 @@ interface Props {
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const { dispatch, currentTimerTotal, endTimer, activeTimer } =
       useTimerContext()
-   const {
-      state: { pomodoro },
-   } = useModalContext()
+   const { state } = useModalContext()
    let updateTimerOnMount = useRef(true)
 
    const setNewTimer = useCallback(() => {
+      const desiredAmount = state[activeTimer as keyof typeof state]
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: pomodoro * 60,
+         amount: desiredAmount * 60,
       })
-      currentTimerTotal.current = pomodoro
-   }, [currentTimerTotal, dispatch, pomodoro])
+      currentTimerTotal.current = desiredAmount
+   }, [currentTimerTotal, dispatch, state, activeTimer])
+
+   const handleApplyBtn = () => {
+      endTimer()
+      setNewTimer()
+   }
 
    useLayoutEffect(() => {
       if (updateTimerOnMount.current) {
          setNewTimer()
          updateTimerOnMount.current = false
       }
-   }, [currentTimerTotal, pomodoro, dispatch, setNewTimer, updateTimerOnMount])
-
-   // determine what is active state
-   // then update timerLength with it on apply btn click
+   }, [currentTimerTotal, dispatch, setNewTimer, updateTimerOnMount])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
@@ -46,7 +47,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={endTimer}>
+         <ApplyButton type="button" onClick={handleApplyBtn}>
             Apply
          </ApplyButton>
       </ModalContainer>
