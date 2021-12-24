@@ -12,7 +12,7 @@ const Clock: FC = () => {
       isRunning,
       endTimer,
       startTimer,
-      currentTimerTotal,
+      currentTimerTotal: { current: currentTotal },
       formatTimer,
       formatTimerHourBase,
    } = useTimerContext()
@@ -21,9 +21,8 @@ const Clock: FC = () => {
    } = useModalContext()
 
    useEffect(() => {
-      const { current } = currentTimerTotal
-      const currentTotal = current ? current : pomodoro
-      setProgressWidth((timerLength / 60 / currentTotal) * 500)
+      const current = currentTotal ? currentTotal : pomodoro
+      setProgressWidth((timerLength / 60 / current) * 500)
    }, [timerLength])
 
    return (
@@ -43,7 +42,7 @@ const Clock: FC = () => {
                />
             </ProgressCircle>
             <TimerTitle>
-               {currentTimerTotal.current && currentTimerTotal.current > 60
+               {currentTotal && currentTotal > 60
                   ? formatTimerHourBase(timerLength)
                   : formatTimer(timerLength)}
             </TimerTitle>
