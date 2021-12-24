@@ -33,11 +33,7 @@ export function useTimer() {
    const prevTimer = useRef<PreviousTimer>({ timer: 'pomodoro', amount: null })
 
    const startTimer = useCallback(() => {
-      const time = setInterval(() => {
-         // extra logic here for dispatch amount - change to accept payload
-         // timerLength - determine minutes + seconds
-         dispatch({ type: 'COUNT_DOWN' })
-      }, 1000)
+      const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
       dispatch({ type: 'START_TIMER', timeOutId: time })
    }, [])
 

@@ -28,6 +28,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }
 
+   // TODO:
    // 'SET_INITIAL_TIMER_LENGTH':
    // const minutes = 60 * userInput (in seconds)
    // -1 like we have from timerLength (big number in seconds)
@@ -43,7 +44,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    // return `${minutesString}:${secondsString}`;
    //  };
 
-   // If input > 60 - EXTRA:
+   // If input > 60 - EXTRA HOURS:
    // export const formatTimerHourBase = (seconds) => {
    //    const hours = Math.floor(seconds / 3600);
    //    const allMinutes = Math.floor(seconds / 60);
