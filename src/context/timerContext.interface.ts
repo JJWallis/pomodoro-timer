@@ -6,6 +6,7 @@ export interface TimerContextData {
    startTimer: () => void
    endTimer: () => void
    isRunning: boolean
+   activeTimer: string
    currentTimerTotal: React.MutableRefObject<number | null>
    formatTimer: (leftSeconds: number) => string
 }

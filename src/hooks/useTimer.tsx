@@ -19,15 +19,13 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 
 export function useTimer() {
-   const [{ isRunning, timeoutId, timerLength }, dispatch] = useReducer(
-      reducer,
-      {
+   const [{ isRunning, timeoutId, timerLength, activeTimer }, dispatch] =
+      useReducer(reducer, {
          timerLength: 0,
          timeoutId: null,
          isRunning: false,
          activeTimer: 'pomodoro',
-      }
-   )
+      })
    const currentTimerTotal = useRef<number | null>(null)
 
    const startTimer = useCallback(() => {
@@ -55,6 +53,7 @@ export function useTimer() {
    return {
       timerLength,
       isRunning,
+      activeTimer,
       dispatch,
       startTimer,
       endTimer,
