@@ -14,6 +14,7 @@ const Clock: FC = () => {
       startTimer,
       currentTimerTotal,
       prevTimer,
+      formatTimer,
    } = useTimerContext()
    const {
       state: { pomodoro },
@@ -46,7 +47,7 @@ const Clock: FC = () => {
       a 79.5775 79.5775 0 0 1 0 -159.155"
                />
             </ProgressCircle>
-            <TimerTitle>{timerLength}</TimerTitle>
+            <TimerTitle>{formatTimer(timerLength)}</TimerTitle>
             <TimerTitle subTitle>
                {isRunning && timerLength !== 0 ? 'pause' : 'play'}
             </TimerTitle>

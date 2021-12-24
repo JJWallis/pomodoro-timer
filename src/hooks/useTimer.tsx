@@ -62,5 +62,6 @@ export function useTimer() {
       endTimer,
       prevTimer,
       currentTimerTotal,
+      formatTimer,
    }
 }
