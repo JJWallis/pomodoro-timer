@@ -13,6 +13,7 @@ const Timers: FC = () => {
    // lift active state into useTimer
    // use in Modal to determine what is active state
    // then update timerLength with it on apply btn click
+   // refactor isRunning using that state
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
