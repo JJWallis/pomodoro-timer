@@ -9,7 +9,7 @@ export const ModalContext = createContext<ModalContextData | null>(null)
 
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
-      const [state, setState] = useLocalStorage('inputs', {
+      const [state, setState] = useLocalStorage('TIMERS', {
          pomodoro: 1,
          shortbreak: 5,
          longbreak: 15,
