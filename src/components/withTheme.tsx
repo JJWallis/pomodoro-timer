@@ -7,7 +7,10 @@ const { redTheme, baseStyles } = Theme
 const { ffNoto } = Fonts
 
 export const ThemeContext: FC = ({ children }) => {
-   const [currentTheme, setCurrentTheme] = useState(redTheme)
+   const [currentTheme, setCurrentTheme] = useLocalStorage(
+      'themeColor',
+      redTheme
+   )
    const [currentFont, setCurrentFont] = useLocalStorage('themeFont', ffNoto)
 
    const updateTheme = (newTheme: string) => {

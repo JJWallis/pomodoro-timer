@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 type InitialValue =
    | { pomodoro: number; shortbreak: number; longbreak: number }
+   | { accent: string }
    | string
    | (() => string)
 
