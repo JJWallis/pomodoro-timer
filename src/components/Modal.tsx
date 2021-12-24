@@ -34,16 +34,6 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    // -1 like we have from timerLength (big number in seconds)
    // remember to do elsewhere - Timers.tsx
 
-   // 'START_TIMER':
-   // 'Clock display':
-   // export const formatTimer = (leftSeconds) => {
-   // const seconds = leftSeconds % 60;
-   // const minutes = Math.floor(leftSeconds / 60);
-   // const minutesString = minutes > 9 ? minutes : `0${minutes}`;
-   // const secondsString = seconds > 9 ? seconds : `0${seconds}`;
-   // return `${minutesString}:${secondsString}`;
-   //  };
-
    // If input > 60 - EXTRA HOURS:
    // export const formatTimerHourBase = (seconds) => {
    //    const hours = Math.floor(seconds / 3600);

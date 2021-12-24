@@ -42,6 +42,14 @@ export function useTimer() {
       dispatch({ type: 'END_TIMER' })
    }, [timeoutId])
 
+   const formatTimer = (leftSeconds: number) => {
+      const seconds = leftSeconds % 60
+      const minutes = Math.floor(leftSeconds / 60)
+      const minutesString = minutes > 9 ? minutes : `0${minutes}`
+      const secondsString = seconds > 9 ? seconds : `0${seconds}`
+      return `${minutesString}:${secondsString}`
+   }
+
    useEffect(() => {
       if (timerLength === 0) endTimer()
    }, [timerLength, endTimer])
