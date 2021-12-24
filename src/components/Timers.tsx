@@ -7,27 +7,12 @@ import { TimerButton } from '../styles/Button.styled'
 const Timers: FC = () => {
    const [active, setActive] = useState('pomodoro')
    const { state } = useModalContext()
-   const { dispatch, endTimer, prevTimer, timerLength, currentTimerTotal } =
+   const { dispatch, endTimer, prevTimer, currentTimerTotal } =
       useTimerContext()
-
-   const gatherData = (desiredTimer: string) => {
-      const {
-         current: { timer, amount },
-      } = prevTimer
-      const prevAmount =
-         desiredTimer !== 'pomodoro' && timer === 'pomodoro'
-            ? timerLength
-            : null
-      const retrievePrevAmount = desiredTimer === 'pomodoro' ? amount : null
-      const newAmount = retrievePrevAmount
-         ? retrievePrevAmount
-         : state[desiredTimer as keyof typeof state]
-      return { prevAmount, newAmount }
-   }
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
-         const { prevAmount, newAmount } = gatherData(desiredTimer)
+         const newAmount = state[desiredTimer as keyof typeof state]
          setActive(desiredTimer)
          endTimer()
          dispatch({
@@ -35,8 +20,6 @@ const Timers: FC = () => {
             amount: newAmount * 60,
          })
          currentTimerTotal.current = newAmount
-         prevTimer.current.timer = desiredTimer
-         if (prevAmount) prevTimer.current.amount = prevAmount
       }
    }
 

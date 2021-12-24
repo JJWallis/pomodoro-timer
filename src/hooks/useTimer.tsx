@@ -50,10 +50,6 @@ export function useTimer() {
       return `${minutesString}:${secondsString}`
    }
 
-   // BUG:
-
-   // Timers - remove ref feature (just use state from Modal - compounding issue
-
    // TODO:
 
    // If input > 60 - EXTRA HOURS:
