@@ -5,9 +5,10 @@ import { useTimerContext } from '../hooks/useTimerContext'
 import { TimerButton } from '../styles/Button.styled'
 
 const Timers: FC = () => {
-   const [active, setActive] = useState('pomodoro')
+   // const [active, setActive] = useState('pomodoro')
    const { state } = useModalContext()
-   const { dispatch, endTimer, currentTimerTotal } = useTimerContext()
+   const { dispatch, endTimer, currentTimerTotal, activeTimer } =
+      useTimerContext()
 
    // TODO:
    // use in Modal to determine what is active state
@@ -16,10 +17,11 @@ const Timers: FC = () => {
    // refactor isRunning using that state
 
    const handleClick = (desiredTimer: string) => {
-      if (active !== desiredTimer) {
+      if (activeTimer !== desiredTimer) {
          const newAmount = state[desiredTimer as keyof typeof state]
-         setActive(desiredTimer)
          endTimer()
+         // setActive(desiredTimer)
+         dispatch({ type: 'SET_ACTIVE_TIMER', active: desiredTimer })
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',
             amount: newAmount * 60,
@@ -33,7 +35,7 @@ const Timers: FC = () => {
          {Object.keys(state).map((key) => (
             <TimerButton
                key={key}
-               active={key === active}
+               active={key === activeTimer}
                onClick={() => handleClick(key)}
             >
                {key}
