@@ -52,7 +52,7 @@ export function useTimer() {
 
    // BUG:
 
-   // Timers - remove ref feature (just use state from Modal) - compounding issue
+   // Timers - remove ref feature (just use state from Modal - compounding issue
 
    // TODO:
 
