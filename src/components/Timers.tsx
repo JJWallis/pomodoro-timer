@@ -9,6 +9,11 @@ const Timers: FC = () => {
    const { state } = useModalContext()
    const { dispatch, endTimer, currentTimerTotal } = useTimerContext()
 
+   // TODO:
+   // lift active state into useTimer
+   // use in Modal to determine whether pomodoro is active state
+   // then update timerLength on apply btn click
+
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
          const newAmount = state[desiredTimer as keyof typeof state]

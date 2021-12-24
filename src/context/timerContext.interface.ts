@@ -8,5 +8,4 @@ export interface TimerContextData {
    isRunning: boolean
    currentTimerTotal: React.MutableRefObject<number | null>
    formatTimer: (leftSeconds: number) => string
-   formatTimerHourBase: (seconds: number) => string
 }
