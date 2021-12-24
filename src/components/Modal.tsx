@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect } from 'react'
+import React, { FC, useLayoutEffect, useCallback } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -20,20 +20,22 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       state: { pomodoro },
    } = useModalContext()
 
-   const setNewTimer = () => {
+   const setNewTimer = useCallback(() => {
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
          amount: pomodoro * 60,
       })
       currentTimerTotal.current = pomodoro
-   }
+   }, [currentTimerTotal, dispatch, pomodoro])
 
    const handleApplyBtn = () => {
       setNewTimer()
       endTimer()
    }
 
-   useLayoutEffect(setNewTimer, [])
+   useLayoutEffect(() => {
+      setNewTimer()
+   }, [currentTimerTotal, pomodoro, dispatch, setNewTimer])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>

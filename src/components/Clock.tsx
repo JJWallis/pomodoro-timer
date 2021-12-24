@@ -23,7 +23,7 @@ const Clock: FC = () => {
    useEffect(() => {
       const current = currentTotal ? currentTotal : pomodoro
       setProgressWidth((timerLength / 60 / current) * 500)
-   }, [timerLength])
+   }, [timerLength, currentTotal, pomodoro])
 
    return (
       <>
