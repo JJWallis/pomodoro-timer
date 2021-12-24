@@ -5,6 +5,8 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
    switch (action.type) {
       case 'SET_INITIAL_TIMER_LENGTH':
          return { ...state, timerLength: action.amount }
+      case 'SET_ACTIVE_TIMER':
+         return { ...state, activeTimer: action.active }
       case 'START_TIMER':
          return { ...state, timeoutId: action.timeOutId, isRunning: true }
       case 'COUNT_DOWN':
@@ -23,6 +25,7 @@ export function useTimer() {
          timerLength: 0,
          timeoutId: null,
          isRunning: false,
+         activeTimer: 'pomodoro',
       }
    )
    const currentTimerTotal = useRef<number | null>(null)
