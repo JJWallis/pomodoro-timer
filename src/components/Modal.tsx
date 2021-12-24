@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useCallback } from 'react'
+import React, { FC, useLayoutEffect, useCallback, useRef } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -19,6 +19,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const {
       state: { pomodoro },
    } = useModalContext()
+   let updateTimerOnMount = useRef(true)
 
    const setNewTimer = useCallback(() => {
       dispatch({
@@ -28,14 +29,12 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = pomodoro
    }, [currentTimerTotal, dispatch, pomodoro])
 
-   const handleApplyBtn = () => {
-      setNewTimer()
-      endTimer()
-   }
-
    useLayoutEffect(() => {
-      setNewTimer()
-   }, [currentTimerTotal, pomodoro, dispatch, setNewTimer])
+      if (updateTimerOnMount.current) {
+         setNewTimer()
+         updateTimerOnMount.current = false
+      }
+   }, [currentTimerTotal, pomodoro, dispatch, setNewTimer, updateTimerOnMount])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0}>
@@ -43,7 +42,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          <ModalTimers />
          <ModalFonts />
          <ModalColors />
-         <ApplyButton type="button" onClick={handleApplyBtn}>
+         <ApplyButton type="button" onClick={endTimer}>
             Apply
          </ApplyButton>
       </ModalContainer>
