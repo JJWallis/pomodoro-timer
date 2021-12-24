@@ -2,11 +2,20 @@ import { useState } from 'react'
 import RadioButton from '../components/RadioButton'
 
 export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
-interface Themes {
+type Themes = {
    pm: string
    sd: string
    tr: string
 }
+
+// const retrieveSelectedOption = (key: string) => {
+//    const previousOption = localStorage.getItem(key)
+//    if (previousOption) return JSON.parse(previousOption)
+// }
+
+// const previousOption = retrieveSelectedOption(key)
+// const {} = useContext(ThemeContext)
+// key: string
 
 export function useRadioButton(updateTheme: Update, themes: Themes) {
    const { pm, sd, tr } = themes

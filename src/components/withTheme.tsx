@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Theme, Fonts } from '../styles/Theme'
