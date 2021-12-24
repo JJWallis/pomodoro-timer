@@ -13,7 +13,6 @@ const Clock: FC = () => {
       endTimer,
       startTimer,
       currentTimerTotal,
-      prevTimer,
       formatTimer,
    } = useTimerContext()
    const {
@@ -22,13 +21,8 @@ const Clock: FC = () => {
 
    useEffect(() => {
       const { current } = currentTimerTotal
-      const {
-         current: { timer },
-      } = prevTimer
       const currentTotal = current ? current : pomodoro
       setProgressWidth((timerLength / 60 / currentTotal) * 500)
-      if (timerLength === 0 && timer === 'pomodoro')
-         prevTimer.current.amount = null
    }, [timerLength])
 
    return (

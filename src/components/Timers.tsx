@@ -7,8 +7,7 @@ import { TimerButton } from '../styles/Button.styled'
 const Timers: FC = () => {
    const [active, setActive] = useState('pomodoro')
    const { state } = useModalContext()
-   const { dispatch, endTimer, prevTimer, currentTimerTotal } =
-      useTimerContext()
+   const { dispatch, endTimer, currentTimerTotal } = useTimerContext()
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {

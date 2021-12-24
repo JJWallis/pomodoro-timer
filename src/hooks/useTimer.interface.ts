@@ -19,8 +19,3 @@ export type UseTimerActions =
    | {
         type: 'END_TIMER'
      }
-
-export type PreviousTimer = {
-   timer: string | null
-   amount: number | null
-}
