@@ -11,7 +11,7 @@ interface Props {
 const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
    return (
       <>
-         <label htmlFor={label}>{label}</label>
+         <label htmlFor={label}>{label.replace('b', ' b')}</label>
          <Input
             type="number"
             id={label}

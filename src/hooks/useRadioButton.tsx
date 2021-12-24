@@ -15,7 +15,7 @@ type Themes = {
 
 // const previousOption = retrieveSelectedOption(key)
 // const {} = useContext(ThemeContext)
-// key: string
+// key: string - param
 
 export function useRadioButton(updateTheme: Update, themes: Themes) {
    const { pm, sd, tr } = themes
