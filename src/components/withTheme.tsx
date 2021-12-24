@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Theme, Fonts } from '../styles/Theme'
 
 const { redTheme, baseStyles } = Theme
@@ -7,7 +8,7 @@ const { ffNoto } = Fonts
 
 export const ThemeContext: FC = ({ children }) => {
    const [currentTheme, setCurrentTheme] = useState(redTheme)
-   const [currentFont, setCurrentFont] = useState(ffNoto)
+   const [currentFont, setCurrentFont] = useLocalStorage('themeFont', ffNoto)
 
    const updateTheme = (newTheme: string) => {
       setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])

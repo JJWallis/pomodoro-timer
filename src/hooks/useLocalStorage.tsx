@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 type InitialValue =
    | { pomodoro: number; shortbreak: number; longbreak: number }
+   | string
    | (() => string)
 
 function getSavedValue(key: string, initialValue: InitialValue) {
