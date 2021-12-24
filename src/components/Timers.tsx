@@ -11,8 +11,8 @@ const Timers: FC = () => {
 
    // TODO:
    // lift active state into useTimer
-   // use in Modal to determine whether pomodoro is active state
-   // then update timerLength on apply btn click
+   // use in Modal to determine what is active state
+   // then update timerLength with it on apply btn click
 
    const handleClick = (desiredTimer: string) => {
       if (active !== desiredTimer) {
