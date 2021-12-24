@@ -23,23 +23,31 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const setNewTimer = () => {
       dispatch({
          type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: pomodoro * 100,
+         amount: pomodoro,
       })
       currentTimerTotal.current = pomodoro
    }
 
    // 'SET_INITIAL_TIMER_LENGTH':
-   // const minutes = 60 * userInput
-   // 'START_TIMER':
-   //
-   // 'Clock display':
-   // minutes = minutes < 10 ? "0" + minutes : minutes; | seconds = seconds < 10 ? "0" + seconds : seconds;
+   // const minutes = 60 * userInput (in seconds)
 
-   // const test = (duration?: number) => {
-   //    const minutes = Math.floor(duration / 60)
-   //    const seconds = duration - minutes * 60
-   //    console.log(minutes, seconds)
-   // }
+   // 'START_TIMER':
+
+   // 'Clock display':
+   // export const formatTimer = (leftSeconds) => {
+   // const seconds = leftSeconds % 60;
+   // const minutes = Math.floor(leftSeconds / 60);
+   // const minutesString = minutes > 9 ? minutes : `0${minutes}`;
+   // const secondsString = seconds > 9 ? seconds : `0${seconds}`;
+   // return `${minutesString}:${secondsString}`;
+   //  };
+
+   // export const formatTimerHourBase = (seconds) => {
+   //    const hours = Math.floor(seconds / 3600);
+   //    const allMinutes = Math.floor(seconds / 60);
+   //    const leftMinutes = allMinutes - hours * 60;
+   //    return `${hours} hours ${leftMinutes} minutes`;
+   //  };
 
    const handleApplyBtn = () => {
       setNewTimer()
