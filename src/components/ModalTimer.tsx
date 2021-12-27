@@ -16,12 +16,14 @@ const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
          <NumberInputLabel htmlFor={label}>
             {label.replace('b', ' b')}
          </NumberInputLabel>
-         <Input
-            type="number"
-            id={label}
-            value={val}
-            onChange={(e) => updateState(label, Number(e.target.value))}
-         />
+         <div>
+            <Input
+               type="number"
+               id={label}
+               value={val}
+               onChange={(e) => updateState(label, Number(e.target.value))}
+            />
+         </div>
       </NumberInputsContainer>
    )
 }
