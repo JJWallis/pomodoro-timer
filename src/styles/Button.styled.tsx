@@ -94,4 +94,21 @@ export const ApplyButton = styled(Button)<ButtonProps>`
    font-weight: bold;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    background-color: #f87070;
+   &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 50%;
+      border-radius: 50px;
+      transform: translate(50%, -25.5%);
+      background-color: white;
+      opacity: 0;
+      transition: opacity
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+   }
+   &:hover::before {
+      opacity: 0.1;
+   }
 `
