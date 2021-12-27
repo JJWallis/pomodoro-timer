@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { ModalContextData } from '../context/modalContext.interface'
+import { useModalContext } from '../hooks/useModalContext'
 import { Input } from '../styles/Input.styled'
 import {
    NumberInputsContainer,
@@ -11,10 +12,10 @@ import { Arrow } from '../styles/Icon.styled'
 interface Props {
    label: string
    val: number
-   updateState: ModalContextData['updateState']
 }
 
-const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
+const ModalTimer: FC<Props> = ({ label, val }) => {
+   const { state, updateState } = useModalContext()
    return (
       <NumberInputsContainer>
          <NumberInputLabel htmlFor={label}>

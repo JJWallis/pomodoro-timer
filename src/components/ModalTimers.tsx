@@ -6,7 +6,7 @@ import { GridContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
 
 const ModalTimers: FC = () => {
-   const { state, updateState } = useModalContext()
+   const { state } = useModalContext()
 
    const produceTimerInputs = () => {
       return Object.keys(state).map((key) => (
@@ -14,7 +14,6 @@ const ModalTimers: FC = () => {
             key={key}
             label={key}
             val={state[key as keyof typeof state]}
-            updateState={updateState}
          />
       ))
    }
