@@ -4,14 +4,14 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 import { Theme, Fonts } from '../styles/Theme'
 
 const { redTheme, baseStyles } = Theme
-const { ffNoto } = Fonts
+const { ffKumbh } = Fonts
 
 export const ThemeContext: FC = ({ children }) => {
    const [currentTheme, setCurrentTheme] = useLocalStorage(
       'themeColor',
       redTheme
    )
-   const [currentFont, setCurrentFont] = useLocalStorage('themeFont', ffNoto)
+   const [currentFont, setCurrentFont] = useLocalStorage('themeFont', ffKumbh)
 
    const updateTheme = (newTheme: string) => {
       setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])

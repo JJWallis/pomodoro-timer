@@ -7,9 +7,9 @@ import { FlexContainerModal } from '../containers/Container.styled'
 const ModalFonts: FC = () => {
    const { updateFont } = useContext(ThemeContext)
    const radioButtons = useRadioButton(updateFont, {
-      pm: 'ffNoto',
+      pm: 'ffKumbh',
       sd: 'ffRoboto',
-      tr: 'ffRobotoMono',
+      tr: 'ffSpaceMono',
    })
 
    return (

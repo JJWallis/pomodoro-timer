@@ -44,10 +44,7 @@ export const Theme = {
 }
 
 export const Fonts = {
-   // pmFont: 'Kumbh Sans',
-   // sdFont: 'Roboto Slab',
-   // trFont: 'Space Mono',
-   ffNoto: 'Noto Sans',
-   ffRoboto: 'Roboto',
-   ffRobotoMono: 'Roboto Mono',
+   ffKumbh: 'Kumbh Sans',
+   ffRoboto: 'Roboto Slab',
+   ffSpaceMono: 'Space Mono',
 }
