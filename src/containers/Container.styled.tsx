@@ -72,6 +72,7 @@ export const ClockContainer = styled.div`
          baseStyles.mediaBreakpoint}) {
       width: 400px;
       height: 400px;
+      box-shadow: -3rem -3rem 10rem 0 #272c5a, 3rem 3rem 10rem 0 #121530;
    }
 `
 

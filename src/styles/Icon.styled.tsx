@@ -8,14 +8,17 @@ export const Cog = styled.svg`
    width: 40px;
    height: 40px;
    opacity: 0.6;
-   fill: #ced6fa;
-   transition: fill ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+   fill: #d7e0ff;
+   transition: opacity
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition},
+      transform ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
-      fill: ${({ theme: { currentTheme } }) => currentTheme.accent};
+      opacity: 1;
+      transform: rotate(180deg) scale(1.05);
    }
 `
 
-export const Close = styled(Cog)`
+export const Close = styled.svg`
    width: 20px;
    height: 20px;
    opacity: 1;

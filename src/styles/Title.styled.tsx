@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface Props {
    subTitle?: boolean
-   resetVisible?: boolean
+   progressAmount?: number
 }
 
 export const TimerTitle = styled.h1<Props>`
@@ -24,7 +24,7 @@ export const TimerTitle = styled.h1<Props>`
          letter-spacing: 10px;
          left: 53.5%;
          transform: translate(-55%, 140%);
-         opacity: ${({ resetVisible }) => (resetVisible ? '0' : '1')};
+         opacity: ${({ progressAmount }) => (progressAmount === 0 ? '0' : '1')};
          @media (min-width: ${({ theme: { baseStyles } }) =>
                baseStyles.mediaBreakpoint}) {
             font-size: 1.2rem;

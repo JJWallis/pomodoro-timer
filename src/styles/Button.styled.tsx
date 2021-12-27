@@ -5,7 +5,6 @@ interface ButtonProps {
    cross?: boolean
    apply?: boolean
    progressAmount?: number
-   resetVisible?: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -74,7 +73,6 @@ export const ResetButton = styled(Button)<ButtonProps>`
    text-transform: uppercase;
    letter-spacing: 10px;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
-   transition: opacity 0.1s ease-in-out;
    &:hover {
       color: ${({ theme: { currentTheme } }) => currentTheme.accent};
    }
@@ -95,10 +93,5 @@ export const ApplyButton = styled(Button)<ButtonProps>`
    font-size: 0.9em;
    font-weight: bold;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
-   background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   transition: background-color
-      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
-   &:hover {
-      background-color: black;
-   }
+   background-color: #f87070;
 `

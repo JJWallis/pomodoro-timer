@@ -51,6 +51,8 @@ const Clock: FC = () => {
             <ProgressCircle
                progressAmount={progressWidth}
                viewBox="0 0 168 168"
+               aria-hidden="true"
+               focusable="false"
             >
                <path
                   d="M84 4.4225
@@ -59,7 +61,7 @@ const Clock: FC = () => {
                />
             </ProgressCircle>
             <TimerTitle>{formatTimer(timerLength)}</TimerTitle>
-            <TimerTitle subTitle resetVisible={timerLength === 0}>
+            <TimerTitle subTitle progressAmount={progressWidth}>
                {isRunning && timerLength !== 0 ? 'pause' : 'start'}
             </TimerTitle>
          </ClockButton>
