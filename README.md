@@ -49,8 +49,17 @@ Your users should be able to:
 
 ### What I learned
 
-```scss
-
+```tsx
+export const ProgressMeter = styled.div<Props>`
+   background: conic-gradient(
+      ${({ theme: { currentTheme } }) => currentTheme.accent} ${({
+            progressAmount,
+         }) => progressAmount}%,
+      ${({ theme: { baseStyles } }) => baseStyles.bgSd} ${({
+            progressAmount,
+         }) => progressAmount}%
+   );
+`
 ```
 
 ```tsx
