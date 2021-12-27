@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 interface Props {
-   progressAmount: number
+   progressAmount?: number
+   downwards?: boolean
 }
 
 export const Cog = styled.svg`
@@ -21,7 +22,6 @@ export const Cog = styled.svg`
 export const Close = styled.svg`
    width: 20px;
    height: 20px;
-   opacity: 1;
    position: absolute;
    top: 50%;
    transform: translateY(-35%);
@@ -31,6 +31,24 @@ export const Close = styled.svg`
    &:hover {
       fill: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    }
+`
+
+export const Arrow = styled(Close)<Props>`
+   width: 10px;
+   height: 10px;
+   right: 10px;
+   fill: none;
+   stroke: #1e213f;
+   stroke-opacity: 0.25;
+   stroke-width: 2px;
+   transform: translateY(-50%);
+   transition: stroke
+      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+   &:hover {
+      stroke: red;
+      fill: none;
+   }
+   ${({ downwards }) => downwards && `transform: translateY(-35%);`}
 `
 
 export const ProgressCircle = styled.svg<Props>`
