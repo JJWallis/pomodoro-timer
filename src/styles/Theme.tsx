@@ -12,6 +12,7 @@ declare module 'styled-components' {
       }
       currentTheme: {
          accent: string
+         lightAccent: string
       }
       updateTheme: (newTheme: string) => void
       currentFont: string
@@ -29,17 +30,21 @@ export const Theme = {
       mediaBreakpoint: '700px',
    },
    redTheme: {
-      accent: '#F2585D',
+      accent: '#F87070',
+      lightAccent: '#ff9494',
    },
    blueTheme: {
-      accent: '#65F2F7',
+      accent: '#70F3F8',
+      lightAccent: '#92f9fc',
    },
    purpleTheme: {
-      accent: '#CE64F5',
+      accent: '#D881F8',
+      lightAccent: '#e4a2fc',
    },
 }
 
 export const Fonts = {
+   // mainFont: 'Kumbh Sans',
    ffNoto: 'Noto Sans',
    ffRoboto: 'Roboto',
    ffRobotoMono: 'Roboto Mono',
