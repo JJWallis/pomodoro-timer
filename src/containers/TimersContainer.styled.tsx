@@ -10,6 +10,9 @@ export const TimersContainer = styled.div`
 `
 
 export const TimersContainerOverlay = styled.div`
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
    padding: 1rem 1.7rem;
    border-radius: 50px;
    background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
