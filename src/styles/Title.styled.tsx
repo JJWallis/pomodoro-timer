@@ -40,7 +40,7 @@ export const ModalTitle = styled.h3<Props>`
    ${({ subTitle }) =>
       subTitle &&
       css`
-      font-size: 1rem;
+      font-size: 0.9rem;
       letter-spacing: 4px;
       text-transform: uppercase;
       text-align: center;

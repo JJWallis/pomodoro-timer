@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components'
 import ModalSection from './ModalSection'
 import { useRadioButton } from '../hooks/useRadioButton'
 import { FlexContainerModal } from '../containers/Container.styled'
+import { ModalTitle } from '../styles/Title.styled'
 
 const ModalFonts: FC = () => {
    const { updateFont } = useContext(ThemeContext)
@@ -15,7 +16,7 @@ const ModalFonts: FC = () => {
    return (
       <ModalSection>
          <FlexContainerModal>
-            <h4>Font</h4>
+            <ModalTitle subTitle>Font</ModalTitle>
             <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>
