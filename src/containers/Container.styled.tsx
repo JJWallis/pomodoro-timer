@@ -68,6 +68,11 @@ export const ClockContainer = styled.div`
    border-radius: 50%;
    background-image: linear-gradient(to bottom right, #0e112a, #2e325a);
    box-shadow: -5rem -5rem 10rem 0 #272c5a, 5rem 5rem 10rem 0 #121530;
+   @media (max-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      width: 400px;
+      height: 400px;
+   }
 `
 
 export const ModalContainer = styled.div.attrs(

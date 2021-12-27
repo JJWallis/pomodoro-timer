@@ -47,12 +47,15 @@ export const ClockButton = styled(Button)<ButtonProps>`
    padding: 20px;
    margin-bottom: 2rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
-   /* box-shadow: -70px -60px 120px 0 rgba(40, 45, 87, 1),
-      60px 80px 120px 0 ${({ theme: { baseStyles } }) => baseStyles.bgSd}; */
    transition: transform
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       transform: scale(1.05);
+   }
+   @media (max-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      width: 340px;
+      height: 340px;
    }
 `
 

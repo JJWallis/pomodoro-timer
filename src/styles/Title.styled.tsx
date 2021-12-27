@@ -11,12 +11,21 @@ export const TimerTitle = styled.h1<Props>`
    transform: translate(-50%, -65%);
    font-size: 4rem;
    color: ${({ theme: { baseStyles } }) => baseStyles.softWhite};
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      font-size: 5rem;
+   }
    ${({ subTitle }) =>
       subTitle &&
       css`
-         font-size: 1.5rem;
+         font-size: 1.2rem;
          text-transform: uppercase;
-         left: 51%;
-         transform: translate(-55%, 40%);
-      `}
+         letter-spacing: 10px;
+         left: 53.5%;
+         transform: translate(-55%, 140%);
+         @media (min-width: ${({ theme: { baseStyles } }) =>
+               baseStyles.mediaBreakpoint}) {
+            font-size: 1.2rem;
+         }
+      `};
 `
