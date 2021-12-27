@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { ModalContextData } from '../context/modalContext.interface'
 import { useModalContext } from '../hooks/useModalContext'
 import { Input } from '../styles/Input.styled'
 import {
@@ -24,6 +23,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
          </NumberInputLabel>
          <InputContainer>
             <Input
+               disabled
                type="number"
                id={label}
                value={val}

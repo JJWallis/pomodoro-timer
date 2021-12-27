@@ -13,6 +13,7 @@ export const Input = styled(InputRest)`
    font-weight: bold;
    font-size: 0.9rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
+   color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
    appearance: textfield;
    pointer-events: none;
 `
