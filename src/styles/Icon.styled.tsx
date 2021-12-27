@@ -50,7 +50,7 @@ export const Arrow = styled(Close)<Props>`
       stroke-opacity: 1;
       fill: none;
    }
-   ${({ downwards }) => downwards && ` transform: translateY(0%);`}
+   ${({ downwards }) => downwards && ` transform: translateY(20%);`}
 `
 
 export const ProgressCircle = styled.svg<Props>`

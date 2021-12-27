@@ -42,7 +42,7 @@ const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
                width="14"
                height="7"
                focusable="true"
-               aria-label="Increase timer amount by one"
+               aria-label="Decrease timer amount by one"
             >
                <path d="M1 1l6 4 6-4" />
             </Arrow>
