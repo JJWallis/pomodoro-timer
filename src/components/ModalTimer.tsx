@@ -15,7 +15,7 @@ interface Props {
 }
 
 const ModalTimer: FC<Props> = ({ label, val }) => {
-   const { state, updateState } = useModalContext()
+   const { incremenet, decremement, updateState } = useModalContext()
 
    return (
       <NumberInputsContainer>
@@ -35,6 +35,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                height="7"
                focusable="true"
                aria-label="Increase timer amount by one"
+               onClick={() => incremenet(label)}
             >
                <path d="M1 6l6-4 6 4" />
             </Arrow>
@@ -45,6 +46,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                height="7"
                focusable="true"
                aria-label="Decrease timer amount by one"
+               onClick={() => decremement(label)}
             >
                <path d="M1 1l6 4 6-4" />
             </Arrow>
