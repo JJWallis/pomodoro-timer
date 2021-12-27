@@ -65,6 +65,10 @@ export const NumberInputsContainer = styled.div`
    }
 `
 
+export const InputContainer = styled.div`
+   position: relative;
+`
+
 export const AppContainer = styled(FlexContainerMobile)<ContainerProps>`
    padding: 3rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
