@@ -60,6 +60,14 @@ export const ProgressMeter = styled.div<Props>`
          }) => progressAmount}%
    );
 `
+
+export const ProgressCircle = styled.svg<Props>`
+   stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   stroke-width: 5
+   stroke-dasharray: ${({ progressAmount }) => progressAmount}, 500;
+   stroke-linecap: round;
+   transition: stroke-dasharray 1s linear;
+`
 ```
 
 ```tsx
