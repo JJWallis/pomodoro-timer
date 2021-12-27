@@ -26,7 +26,7 @@ export const Theme = {
       lightGrey: '#EFF1FA',
       softWhite: '#FFFFFF',
       hoverTransition: '0.2s ease-in-out',
-      mediaBreakpoint: '700px',
+      mediaBreakpoint: '43.999em',
    },
    redTheme: {
       accent: '#F87070',
