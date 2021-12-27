@@ -7,6 +7,7 @@ interface ContainerProps {
 
 interface ModalSectionProps {
    header?: boolean
+   timerInputs?: boolean
    colors?: boolean
    radioButtons?: boolean
 }
@@ -103,7 +104,7 @@ export const ModalContainer = styled.div.attrs(
    width: 90%;
    max-width: 600px;
    border-radius: 20px;
-   padding: 2rem 0 5rem;
+   padding: 1.5rem 0 2.5rem;
    position: absolute;
    z-index: 999;
    left: 50%;
@@ -111,14 +112,16 @@ export const ModalContainer = styled.div.attrs(
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
    transform: ${({ opacity }) =>
       opacity ? 'translate(-50%)' : 'translate(-200%)'};
-   transition: transform 0.55s cubic-bezier(0.04, -0.03, 0.52, 1.49);
+   transition: transform 0.6s cubic-bezier(0.04, -0.03, 0.52, 1.49);
 `
 
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
    border-bottom: 1px solid lightgrey;
-   padding-block: 1rem;
+   padding-block: 2rem;
    width: 90%;
    margin: 0 auto;
    ${({ header }: ModalSectionProps) => header && `width: 100%;`};
+   ${({ timerInputs }: ModalSectionProps) =>
+      timerInputs && `padding-block: 1.2rem;`};
    ${({ colors }: ModalSectionProps) => colors && `border-bottom: 0;`};
 `

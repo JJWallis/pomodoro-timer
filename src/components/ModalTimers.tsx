@@ -19,7 +19,7 @@ const ModalTimers: FC = () => {
    }
 
    return (
-      <ModalSection>
+      <ModalSection timerInputs>
          <h4>Time (minutes)</h4>
          <GridContainerModal>{produceTimerInputs()}</GridContainerModal>
       </ModalSection>

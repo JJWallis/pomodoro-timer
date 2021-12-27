@@ -31,3 +31,7 @@ export const TimerTitle = styled.h1<Props>`
          }
       `};
 `
+
+export const ModalTitle = styled.h3<Props>`
+   font-size: 1.7rem;
+`

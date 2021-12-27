@@ -4,6 +4,7 @@ import { FlexContainerModal } from '../containers/Container.styled'
 import { Close } from '../styles/Icon.styled'
 import { Button } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
+import { ModalTitle } from '../styles/Title.styled'
 
 interface Props {
    setIsModalToggled: handleChange
@@ -13,7 +14,7 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
    return (
       <ModalSection header>
          <FlexContainerModal header>
-            <h3>Settings</h3>
+            <ModalTitle>Settings</ModalTitle>
             <Button cross type="button" onClick={setIsModalToggled}>
                <Close xmlns="http://www.w3.org/2000/svg">
                   <path
