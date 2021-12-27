@@ -64,13 +64,21 @@ export const ResetButton = styled(Button)<ButtonProps>`
    position: absolute;
    top: 70%;
    right: 50%;
-   transform: translate(50%, -50%);
+   padding: 1.5rem;
+   font-size: 1.2rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 10px;
+   transform: translate(56%, 30%);
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
-   font-size: 2rem;
    transition: opacity
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
-      text-decoration: underline;
+      color: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   }
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      font-size: 1.2rem;
    }
 `
 
