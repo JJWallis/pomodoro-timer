@@ -56,10 +56,12 @@ export const GridContainerModal = styled.div`
 `
 
 export const NumberInputsContainer = styled.div`
+   display: grid;
+   gap: 0.5rem;
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      align-items: center;
    }
 `
 

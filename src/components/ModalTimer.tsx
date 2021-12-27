@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { ModalContextData } from '../context/modalContext.interface'
 import { Input } from '../styles/Input.styled'
 import { NumberInputsContainer } from '../containers/Container.styled'
+import { NumberInputLabel } from '../styles/Label.styled'
 
 interface Props {
    label: string
@@ -12,7 +13,9 @@ interface Props {
 const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
    return (
       <NumberInputsContainer>
-         <label htmlFor={label}>{label.replace('b', ' b')}</label>
+         <NumberInputLabel htmlFor={label}>
+            {label.replace('b', ' b')}
+         </NumberInputLabel>
          <Input
             type="number"
             id={label}

@@ -6,6 +6,7 @@ declare module 'styled-components' {
          bgPm: string
          bgSd: string
          lightGrey: string
+         darkGrey: string
          softWhite: string
          hoverTransition: string
          mediaBreakpoint: string
@@ -24,6 +25,7 @@ export const Theme = {
       bgPm: '#1E213F',
       bgSd: '#161932',
       lightGrey: '#EFF1FA',
+      darkGrey: '#99999A',
       softWhite: '#FFFFFF',
       hoverTransition: '0.2s ease-in-out',
       mediaBreakpoint: '43.999em',
