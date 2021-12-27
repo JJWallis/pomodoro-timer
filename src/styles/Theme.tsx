@@ -22,10 +22,10 @@ declare module 'styled-components' {
 
 export const Theme = {
    baseStyles: {
-      bgPm: '#181932',
-      bgSd: '#111325',
-      lightGrey: '#CED6FA',
-      softWhite: '#CFD7FF',
+      bgPm: '#1E213F',
+      bgSd: '#161932',
+      lightGrey: '#EFF1FA',
+      softWhite: '#FFFFFF',
       hoverTransition: '0.2s ease-in-out',
       mediaBreakpoint: '700px',
    },
@@ -44,7 +44,9 @@ export const Theme = {
 }
 
 export const Fonts = {
-   // mainFont: 'Kumbh Sans',
+   // pmFont: 'Kumbh Sans',
+   // sdFont: 'Roboto Slab',
+   // trFont: 'Space Mono',
    ffNoto: 'Noto Sans',
    ffRoboto: 'Roboto',
    ffRobotoMono: 'Roboto Mono',
