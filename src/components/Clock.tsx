@@ -63,7 +63,7 @@ const Clock: FC = () => {
                {isRunning && timerLength !== 0 ? 'pause' : 'start'}
             </TimerTitle>
          </ClockButton>
-         <ResetButton resetVisible={timerLength === 0} onClick={handleApplyBtn}>
+         <ResetButton progressAmount={progressWidth} onClick={handleApplyBtn}>
             Reset
          </ResetButton>
       </ClockContainer>
