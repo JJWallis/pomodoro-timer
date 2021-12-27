@@ -18,7 +18,8 @@ export const Button = styled.button<ButtonProps>`
 export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    active,
 }))<ButtonProps>`
-   padding: 1em 1.7em;
+   width: 33.333%;
+   min-height: 50px;
    border-radius: 50px;
    font-size: 0.9em;
    font-weight: bold;

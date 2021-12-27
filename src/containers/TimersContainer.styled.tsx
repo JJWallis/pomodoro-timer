@@ -1,19 +1,13 @@
 import styled from 'styled-components'
 
 export const TimersContainer = styled.div`
-   position: relative;
    display: flex;
+   justify-content: center;
    align-items: center;
+   width: 100%;
+   max-width: 440px;
    padding: 0.4rem 0.5rem;
+   margin-bottom: 2.5rem;
    border-radius: 50px;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
-`
-
-export const TimersContainerOverlay = styled.div`
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   padding: 1rem 1.7rem;
-   border-radius: 50px;
-   background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
 `
