@@ -5,6 +5,7 @@ import { TimerTitle } from '../styles/Title.styled'
 import { ProgressCircle } from '../styles/Icon.styled'
 import { useModalContext } from '../hooks/useModalContext'
 import { ResetButton } from '../styles/Button.styled'
+import { ClockContainer } from '../containers/Container.styled'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)
@@ -42,7 +43,7 @@ const Clock: FC = () => {
    }
 
    return (
-      <>
+      <ClockContainer>
          <ClockButton
             progressAmount={progressWidth}
             onClick={isRunning ? endTimer : startTimer}
@@ -65,7 +66,7 @@ const Clock: FC = () => {
          <ResetButton resetVisible={isRunning} onClick={handleApplyBtn}>
             Reset
          </ResetButton>
-      </>
+      </ClockContainer>
    )
 }
 
