@@ -1,6 +1,8 @@
 export type ModalContextData = {
    state: Data
    updateState: (timer: string, newState: number) => void
+   incremenet: (timer: string) => void
+   decremement: (timer: string) => void
 }
 
 export type ModalContextProvider = <T>(
