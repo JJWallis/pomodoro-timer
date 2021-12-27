@@ -124,9 +124,11 @@ export const ModalContainer = styled.div.attrs(
    left: 50%;
    background-color: white;
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
+   opacity: ${({ opacity }) => (opacity ? 1 : 0)};
    transform: ${({ opacity }) =>
       opacity ? 'translate(-50%)' : 'translate(-200%)'};
-   transition: transform 0.6s cubic-bezier(0.04, -0.03, 0.52, 1.49);
+   transition: transform 0.6s cubic-bezier(0.04, -0.03, 0.52, 1.49),
+      opacity 0.5s linear;
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
       max-width: 400px;
