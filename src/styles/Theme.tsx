@@ -7,6 +7,7 @@ declare module 'styled-components' {
          bgSd: string
          lightGrey: string
          softWhite: string
+         hoverTransition: string
       }
       currentTheme: {
          accent: string
@@ -23,6 +24,7 @@ export const Theme = {
       bgSd: '#111325',
       lightGrey: '#CED6FA',
       softWhite: '#CFD7FF',
+      hoverTransition: '0.2s ease-in-out',
    },
    redTheme: {
       accent: '#F2585D',

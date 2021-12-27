@@ -9,7 +9,7 @@ export const Cog = styled.svg`
    height: 40px;
    opacity: 0.6;
    fill: #ced6fa;
-   transition: fill 0.2s ease-in-out;
+   transition: fill ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       fill: ${({ theme: { currentTheme } }) => currentTheme.accent};
    }

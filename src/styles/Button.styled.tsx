@@ -27,7 +27,9 @@ export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    background-color: ${({ theme: { currentTheme }, active }) =>
       active ? currentTheme.accent : 'transparent'};
    opacity: ${({ active }) => (active ? '1' : '0.4')};
-   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+   transition: background-color
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition},
+      color ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
       color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
@@ -43,7 +45,8 @@ export const ClockButton = styled(Button)<ButtonProps>`
    border-radius: 50%;
    padding: 20px;
    box-shadow: -30px -20px 40px 0px rgba(40, 45, 87, 0.8);
-   transition: transform 0.2s ease-in-out;
+   transition: transform
+      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       transform: scale(1.05);
    }
@@ -60,7 +63,8 @@ export const ResetButton = styled(Button)<ButtonProps>`
    transform: translate(50%, -50%);
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    font-size: 2rem;
-   transition: opacity 0.3s ease-in-out;
+   transition: opacity
+      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       text-decoration: underline;
    }
@@ -77,7 +81,8 @@ export const ApplyButton = styled(Button)<ButtonProps>`
    font-weight: bold;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    background-color: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   transition: background-color 0.2s ease-in-out;
+   transition: background-color
+      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       background-color: black;
    }
