@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components'
 import { useRadioButton } from '../hooks/useRadioButton'
 import ModalSection from './ModalSection'
 import { FlexContainerModal } from '../containers/Container.styled'
+import { ModalTitle } from '../styles/Title.styled'
 
 const ModalColors: FC = () => {
    const { updateTheme } = useContext(ThemeContext)
@@ -15,7 +16,7 @@ const ModalColors: FC = () => {
    return (
       <ModalSection colors>
          <FlexContainerModal>
-            <h4>Color</h4>
+            <ModalTitle subTitle>Color</ModalTitle>
             <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>

@@ -13,6 +13,8 @@ const ModalFonts: FC = () => {
       tr: 'ffSpaceMono',
    })
 
+   // go into custom hook + add parent label + potential span for fonts (re-usable styles)
+
    return (
       <ModalSection>
          <FlexContainerModal>

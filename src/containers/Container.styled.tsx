@@ -47,12 +47,20 @@ export const FlexContainerModal = styled(
 
 export const GridContainerModal = styled.div`
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   /* @media (min-width: ${({ theme: { baseStyles } }) =>
-      baseStyles.mediaBreakpoint}) {
+   gap: 1rem;
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
       grid-template-columns: repeat(3, 1fr);
-      gap: 0 1rem;
-   } */
+      gap: 0 1.3rem;
+   }
+`
+
+export const NumberInputsContainer = styled.div`
+   @media (max-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+   }
 `
 
 export const AppContainer = styled(FlexContainerMobile)<ContainerProps>`
