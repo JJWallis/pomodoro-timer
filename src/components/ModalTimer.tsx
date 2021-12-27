@@ -27,7 +27,13 @@ const ModalTimer: FC<Props> = ({ label, val, updateState }) => {
                value={val}
                onChange={(e) => updateState(label, Number(e.target.value))}
             />
-            <Arrow xmlns="http://www.w3.org/2000/svg" width="14" height="7">
+            <Arrow
+               xmlns="http://www.w3.org/2000/svg"
+               width="14"
+               height="7"
+               focusable="true"
+               aria-label="Increase timer amount by one"
+            >
                <path d="M1 6l6-4 6 4" />
             </Arrow>
          </InputContainer>
