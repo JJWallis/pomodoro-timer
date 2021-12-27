@@ -103,15 +103,15 @@ export const ModalContainer = styled.div.attrs(
    width: 90%;
    max-width: 600px;
    border-radius: 20px;
-   padding: 1rem 0 3rem;
+   padding: 2rem 0 5rem;
    position: absolute;
    z-index: 999;
    left: 50%;
-   transform: translateX(-50%);
    background-color: white;
-   opacity: ${({ opacity }) => opacity};
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
-   transition: opacity 0.45s ease-in-out;
+   transform: ${({ opacity }) =>
+      opacity ? 'translate(-50%)' : 'translate(-200%)'};
+   transition: transform 0.45s ease-in-out;
 `
 
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
