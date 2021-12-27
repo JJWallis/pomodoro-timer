@@ -15,7 +15,7 @@ const FlexContainerMobile = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 4rem;
+   gap: 3rem;
 `
 
 export const FlexContainerModal = styled(
@@ -54,7 +54,7 @@ export const GridContainerModal = styled.div`
 `
 
 export const AppContainer = styled(FlexContainerMobile)`
-   padding: 2rem 1rem;
+   padding: 3rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;
 `

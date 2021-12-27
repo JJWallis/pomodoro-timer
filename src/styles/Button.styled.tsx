@@ -18,7 +18,7 @@ export const Button = styled.button<ButtonProps>`
 export const TimerButton = styled(Button).attrs<ButtonProps>(({ active }) => ({
    active,
 }))<ButtonProps>`
-   padding: 1.2em 1.7em;
+   padding: 1em 1.7em;
    border-radius: 50px;
    font-size: 0.9em;
    font-weight: bold;
@@ -44,6 +44,7 @@ export const ClockButton = styled(Button)<ButtonProps>`
    max-width: 100%;
    border-radius: 50%;
    padding: 20px;
+   background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
    box-shadow: -30px -20px 40px 0px rgba(40, 45, 87, 0.8);
    transition: transform
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
