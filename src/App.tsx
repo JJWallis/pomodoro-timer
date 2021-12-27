@@ -1,13 +1,14 @@
 import React, { FC } from 'react'
 import { AppContainer } from './containers/Container.styled'
-import { Title } from './styles/Title.styled'
+import { TimerContextProvider } from './context/timerContext'
+import { withModalContext } from './context/modalContext'
+import { useToggle } from './hooks/useToggle'
+import { Logo } from './styles/Image.styled'
+import LogoImg from './assets/logo.svg'
 import Clock from './components/Clock'
 import ModalToggle from './components/ModalToggle'
 import Timers from './components/Timers'
 import Modal from './components/Modal'
-import { useToggle } from './hooks/useToggle'
-import { TimerContextProvider } from './context/timerContext'
-import { withModalContext } from './context/modalContext'
 
 const App: FC = () => {
    const [isModalToggled, setIsModalToggled] = useToggle()
@@ -15,7 +16,7 @@ const App: FC = () => {
    return (
       <TimerContextProvider>
          <AppContainer>
-            <Title>pomodoro</Title>
+            <Logo src={LogoImg} alt="" />
             <Timers />
             <Clock />
             <ModalToggle setIsModalToggled={setIsModalToggled} />

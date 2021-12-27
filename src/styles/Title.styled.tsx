@@ -4,12 +4,7 @@ interface Props {
    subTitle?: boolean
 }
 
-export const Title = styled.h1`
-   font-size: 1.8rem;
-   color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
-`
-
-export const TimerTitle = styled.h2<Props>`
+export const TimerTitle = styled.h1<Props>`
    position: absolute;
    top: 50%;
    left: 50%;
