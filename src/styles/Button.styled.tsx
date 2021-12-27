@@ -45,6 +45,7 @@ export const ClockButton = styled(Button)<ButtonProps>`
    max-width: 100%;
    border-radius: 50%;
    padding: 20px;
+   margin-bottom: 2rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
    /* box-shadow: -70px -60px 120px 0 rgba(40, 45, 87, 1),
       60px 80px 120px 0 ${({ theme: { baseStyles } }) => baseStyles.bgSd}; */
@@ -52,10 +53,6 @@ export const ClockButton = styled(Button)<ButtonProps>`
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
       transform: scale(1.05);
-   }
-   @media (min-width: ${({ theme: { baseStyles } }) =>
-         baseStyles.mediaBreakpoint}) {
-      margin-bottom: 2rem;
    }
 `
 
