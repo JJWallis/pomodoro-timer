@@ -26,6 +26,11 @@ export const Close = styled.svg`
    top: 50%;
    transform: translateY(-35%);
    right: -3px;
+   fill: #ced6fa;
+   transition: fill ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+   &:hover {
+      fill: black;
+   }
 `
 
 export const ProgressCircle = styled.svg<Props>`

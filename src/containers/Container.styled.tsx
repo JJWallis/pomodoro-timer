@@ -104,7 +104,7 @@ export const ModalContainer = styled.div.attrs(
    width: 90%;
    max-width: 600px;
    border-radius: 20px;
-   padding: 1.5rem 0 2.5rem;
+   padding: 0.5rem 0 2.5rem;
    position: absolute;
    z-index: 999;
    left: 50%;
