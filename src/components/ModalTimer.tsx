@@ -16,6 +16,7 @@ interface Props {
 
 const ModalTimer: FC<Props> = ({ label, val }) => {
    const { state, updateState } = useModalContext()
+
    return (
       <NumberInputsContainer>
          <NumberInputLabel htmlFor={label}>
