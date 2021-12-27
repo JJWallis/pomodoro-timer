@@ -50,7 +50,7 @@ export const ClockButton = styled(Button)<ButtonProps>`
    transition: transform
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
    }
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
@@ -61,15 +61,16 @@ export const ClockButton = styled(Button)<ButtonProps>`
 
 export const ResetButton = styled(Button)<ButtonProps>`
    opacity: ${({ resetVisible }) => (resetVisible ? '1' : '0')};
+   pointer-events: ${({ resetVisible }) => (resetVisible ? 'all' : 'none')};
    position: absolute;
-   top: 70%;
+   top: 65%;
    right: 50%;
    padding: 1.5rem;
    font-size: 1.2rem;
    font-weight: bold;
    text-transform: uppercase;
    letter-spacing: 10px;
-   transform: translate(56%, 30%);
+   transform: translate(54%, 30%);
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    transition: opacity
       ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
