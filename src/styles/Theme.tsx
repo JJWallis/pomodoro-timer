@@ -12,7 +12,6 @@ declare module 'styled-components' {
       }
       currentTheme: {
          accent: string
-         lightAccent: string
       }
       updateTheme: (newTheme: string) => void
       currentFont: string
@@ -31,15 +30,12 @@ export const Theme = {
    },
    redTheme: {
       accent: '#F87070',
-      lightAccent: '#ff9494',
    },
    blueTheme: {
       accent: '#70F3F8',
-      lightAccent: '#92f9fc',
    },
    purpleTheme: {
       accent: '#D881F8',
-      lightAccent: '#e4a2fc',
    },
 }
 
