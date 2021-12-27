@@ -42,9 +42,12 @@ export const Arrow = styled(Close)<Props>`
    cursor: pointer;
    transform: translateY(-50%);
    transition: stroke
-      ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition},
+      stroke-opacity
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
-      stroke: red;
+      stroke: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
+      stroke-opacity: 1;
       fill: none;
    }
    ${({ downwards }) => downwards && ` transform: translateY(0%);`}
