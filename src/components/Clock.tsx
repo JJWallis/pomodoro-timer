@@ -59,7 +59,7 @@ const Clock: FC = () => {
                />
             </ProgressCircle>
             <TimerTitle>{formatTimer(timerLength)}</TimerTitle>
-            <TimerTitle subTitle>
+            <TimerTitle subTitle resetVisible={timerLength === 0}>
                {isRunning && timerLength !== 0 ? 'pause' : 'start'}
             </TimerTitle>
          </ClockButton>

@@ -60,12 +60,13 @@ export const ClockButton = styled(Button)<ButtonProps>`
 `
 
 export const ResetButton = styled(Button)<ButtonProps>`
+   outline: 1px solid white;
    opacity: ${({ resetVisible }) => (resetVisible ? '1' : '0')};
    pointer-events: ${({ resetVisible }) => (resetVisible ? 'all' : 'none')};
    position: absolute;
-   top: 65%;
-   right: 50%;
-   padding: 1.5rem;
+   top: 25%;
+   right: 51.5%;
+   padding: 16rem 9rem 5rem;
    font-size: 1.2rem;
    font-weight: bold;
    text-transform: uppercase;
