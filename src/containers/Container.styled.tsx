@@ -117,11 +117,15 @@ export const ModalContainer = styled.div.attrs(
 
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
    border-bottom: 1px solid lightgrey;
-   padding-block: 2rem;
+   padding-block: 1.3rem;
    width: 90%;
    margin: 0 auto;
    ${({ header }: ModalSectionProps) => header && `width: 100%;`};
    ${({ timerInputs }: ModalSectionProps) =>
       timerInputs && `padding-block: 1.2rem;`};
    ${({ colors }: ModalSectionProps) => colors && `border-bottom: 0;`};
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      padding-block: 2rem;
+   }
 `

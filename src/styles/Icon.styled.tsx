@@ -29,7 +29,7 @@ export const Close = styled.svg`
    fill: #ced6fa;
    transition: fill ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
    &:hover {
-      fill: black;
+      fill: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    }
 `
 

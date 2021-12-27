@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface Props {
    subTitle?: boolean
+   modalNumberInput?: boolean
    progressAmount?: number
 }
 
@@ -34,4 +35,19 @@ export const TimerTitle = styled.h1<Props>`
 
 export const ModalTitle = styled.h3<Props>`
    font-size: 1.7rem;
+   margin-bottom: ${({ modalNumberInput }) =>
+      modalNumberInput ? '1.3rem' : '0'};
+   ${({ subTitle }) =>
+      subTitle &&
+      css`
+      font-size: 1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+            text-align: left;
+         }
+      }
+   `}
 `

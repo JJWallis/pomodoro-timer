@@ -3,6 +3,7 @@ import ModalSection from './ModalSection'
 import ModalTimer from './ModalTimer'
 import { useModalContext } from '../hooks/useModalContext'
 import { GridContainerModal } from '../containers/Container.styled'
+import { ModalTitle } from '../styles/Title.styled'
 
 const ModalTimers: FC = () => {
    const { state, updateState } = useModalContext()
@@ -20,7 +21,9 @@ const ModalTimers: FC = () => {
 
    return (
       <ModalSection timerInputs>
-         <h4>Time (minutes)</h4>
+         <ModalTitle subTitle modalNumberInput>
+            Time (minutes)
+         </ModalTitle>
          <GridContainerModal>{produceTimerInputs()}</GridContainerModal>
       </ModalSection>
    )
