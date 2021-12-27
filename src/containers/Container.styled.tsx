@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface ContainerProps {
    opacity?: number
+   isModalToggled: boolean
 }
 
 interface ModalSectionProps {
@@ -53,10 +54,28 @@ export const GridContainerModal = styled.div`
    } */
 `
 
-export const AppContainer = styled(FlexContainerMobile)`
+export const AppContainer = styled(FlexContainerMobile)<ContainerProps>`
    padding: 3rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;
+   &::before {
+      content: '';
+      display: block;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity
+         ${({ theme: { baseStyles } }) => baseStyles.hoverTransition};
+      ${({ isModalToggled }) =>
+         isModalToggled &&
+         `
+            opacity: 1;
+            pointer-events: all;
+      `}
+   }
 `
 
 export const ClockContainer = styled.div`
@@ -83,10 +102,10 @@ export const ModalContainer = styled.div.attrs(
 )`
    width: 90%;
    max-width: 600px;
-   min-height: 600px;
    border-radius: 20px;
-   padding-block: 1rem;
+   padding: 1rem 0 3rem;
    position: absolute;
+   z-index: 999;
    left: 50%;
    transform: translateX(-50%);
    background-color: white;

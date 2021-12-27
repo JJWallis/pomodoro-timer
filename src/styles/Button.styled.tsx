@@ -90,7 +90,7 @@ export const ApplyButton = styled(Button)<ButtonProps>`
    transform: translate(50%, 50%);
    padding: 0.8em 2.7em;
    border-radius: 50px;
-   font-size: 0.9em;
+   font-size: 1em;
    font-weight: bold;
    color: ${({ theme: { baseStyles } }) => baseStyles.lightGrey};
    background-color: #f87070;

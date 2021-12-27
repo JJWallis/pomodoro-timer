@@ -15,7 +15,7 @@ const App: FC = () => {
 
    return (
       <TimerContextProvider>
-         <AppContainer>
+         <AppContainer isModalToggled={isModalToggled}>
             <Logo src={LogoImg} alt="" />
             <Timers />
             <Clock />
