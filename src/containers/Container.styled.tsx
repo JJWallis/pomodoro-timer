@@ -117,7 +117,7 @@ export const ModalContainer = styled.div.attrs(
 )`
    width: 90%;
    max-width: 600px;
-   border-radius: 20px;
+   border-radius: 25px;
    padding: 0.5rem 0 2.5rem;
    position: absolute;
    z-index: 999;
@@ -132,6 +132,10 @@ export const ModalContainer = styled.div.attrs(
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
       max-width: 400px;
+   }
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      padding: 0rem 0 2.5rem;
    }
 `
 

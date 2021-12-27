@@ -32,6 +32,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const handleApplyBtn = () => {
       endTimer()
       setNewTimer()
+      setIsModalToggled()
    }
 
    useLayoutEffect(() => {
