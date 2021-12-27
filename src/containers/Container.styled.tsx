@@ -111,7 +111,7 @@ export const ModalContainer = styled.div.attrs(
    pointer-events: ${({ opacity }) => (opacity ? 'all' : 'none')};
    transform: ${({ opacity }) =>
       opacity ? 'translate(-50%)' : 'translate(-200%)'};
-   transition: transform 0.45s ease-in-out;
+   transition: transform 0.55s cubic-bezier(0.04, -0.03, 0.52, 1.49);
 `
 
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
