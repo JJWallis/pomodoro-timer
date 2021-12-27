@@ -8,6 +8,7 @@ declare module 'styled-components' {
          lightGrey: string
          softWhite: string
          hoverTransition: string
+         mediaBreakpoint: string
       }
       currentTheme: {
          accent: string
@@ -25,6 +26,7 @@ export const Theme = {
       lightGrey: '#CED6FA',
       softWhite: '#CFD7FF',
       hoverTransition: '0.2s ease-in-out',
+      mediaBreakpoint: '700px',
    },
    redTheme: {
       accent: '#F2585D',

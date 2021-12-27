@@ -36,8 +36,8 @@ export const FlexContainerModal = styled(
          flex-direction: row;
          gap: 0.5rem;
       `}
-
-   @media (min-width: 700px) {
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+      baseStyles.mediaBreakpoint}) {
       flex-direction: row;
       justify-content: space-between;
    }
@@ -46,7 +46,8 @@ export const FlexContainerModal = styled(
 export const GridContainerModal = styled.div`
    display: grid;
    grid-template-columns: repeat(2, 1fr);
-   /* @media (min-width: 700px) {
+   /* @media (min-width: ${({ theme: { baseStyles } }) =>
+      baseStyles.mediaBreakpoint}) {
       grid-template-columns: repeat(3, 1fr);
       gap: 0 1rem;
    } */

@@ -50,7 +50,8 @@ export const ClockButton = styled(Button)<ButtonProps>`
    &:hover {
       transform: scale(1.05);
    }
-   @media (min-width: 700px) {
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
       margin-bottom: 2rem;
    }
 `
