@@ -1,7 +1,7 @@
 import React, { FC, memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import ModalSection from './ModalSection'
 import { useRadioButton } from '../hooks/useRadioButton'
+import ModalSection from './ModalSection'
 import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
 

@@ -1,12 +1,12 @@
 import React, { FC, memo } from 'react'
-import ModalSection from './ModalSection'
-import { FlexContainerModal } from '../containers/Container.styled'
-import { Close } from '../styles/Icon.styled'
-import { Button } from '../styles/Button.styled'
-import { handleChange } from '../hooks/useToggle'
-import { ModalTitle } from '../styles/Title.styled'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
+import ModalSection from './ModalSection'
+import { FlexContainerModal } from '../containers/Container.styled'
+import { ModalTitle } from '../styles/Title.styled'
+import { Button } from '../styles/Button.styled'
+import { Close } from '../styles/Icon.styled'
+import { handleChange } from '../hooks/useToggle'
 
 interface Props {
    setIsModalToggled: handleChange
