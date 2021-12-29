@@ -16,4 +16,8 @@ export const Input = styled(InputRest)`
    color: ${({ theme: { baseStyles } }) => baseStyles.bgSd};
    appearance: textfield;
    pointer-events: none;
+   @media (min-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      padding: 1rem;
+   }
 `

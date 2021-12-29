@@ -23,7 +23,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
          </NumberInputLabel>
          <InputContainer>
             <Input
-               disabled
+               readOnly
                type="number"
                id={label}
                value={val}

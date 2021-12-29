@@ -27,7 +27,7 @@ export const FlexContainerModal = styled(
    ${({ header }) =>
       header &&
       css`
-         width: 90%;
+         width: 85%;
          margin-inline: auto;
          flex-direction: row;
          justify-content: space-between;
@@ -101,7 +101,7 @@ export const ClockContainer = styled.div`
    height: 430px;
    border-radius: 50%;
    background-image: linear-gradient(to bottom right, #0e112a, #2e325a);
-   box-shadow: -5rem -5rem 10rem 0 #272c5a, 5rem 5rem 10rem 0 #121530;
+   box-shadow: -2rem -2rem 10rem 1rem #272c5a, 5rem 5rem 10rem 0 #121530;
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
       width: 400px;
@@ -115,7 +115,7 @@ export const ModalContainer = styled.div.attrs(
       opacity: opacity,
    })
 )`
-   width: 90%;
+   width: 85%;
    max-width: 600px;
    border-radius: 25px;
    padding: 0.5rem 0 2.5rem;
@@ -142,7 +142,7 @@ export const ModalContainer = styled.div.attrs(
 export const ModalSectionContainer = styled.div<ModalSectionProps>`
    border-bottom: 1px solid lightgrey;
    padding-block: 1.3rem;
-   width: 90%;
+   width: 85%;
    margin: 0 auto;
    ${({ header }: ModalSectionProps) => header && `width: 100%;`};
    ${({ timerInputs }: ModalSectionProps) =>
