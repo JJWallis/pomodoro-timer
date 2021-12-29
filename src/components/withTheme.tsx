@@ -17,8 +17,9 @@ export const ThemeContext: FC = ({ children }) => {
       setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])
    }
 
-   const updateFont = (newFont: string) =>
+   const updateFont = (newFont: string) => {
       setCurrentFont(Fonts[newFont as keyof typeof Fonts])
+   }
 
    return (
       <ThemeProvider
