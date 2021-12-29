@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react'
 import { UseTimerActions, UseTimerState } from './useTimer.interface'
+import { Data } from '../context/modalContext.interface'
 
 function reducer(state: UseTimerState, action: UseTimerActions) {
    switch (action.type) {
@@ -39,7 +40,7 @@ export function useTimer() {
    }, [timeoutId])
 
    const setNewTimer = useCallback(
-      (state) => {
+      (state: Data) => {
          const desiredAmount = state[activeTimer as keyof typeof state]
          dispatch({
             type: 'SET_INITIAL_TIMER_LENGTH',

@@ -1,4 +1,5 @@
 import { UseTimerActions } from '../hooks/useTimer.interface'
+import { Data } from './modalContext.interface'
 
 export interface TimerContextData {
    timerLength: number
@@ -9,5 +10,5 @@ export interface TimerContextData {
    activeTimer: string
    currentTimerTotal: React.MutableRefObject<number | null>
    formatTimer: (leftSeconds: number) => string
-   setNewTimer: (state: any) => void
+   setNewTimer: (state: Data) => void
 }
