@@ -45,8 +45,8 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0} as="section">
+         <ModalHeader setIsModalToggled={setIsModalToggled} />
          <form onSubmit={handleSubmission}>
-            <ModalHeader setIsModalToggled={setIsModalToggled} />
             <ModalTimers />
             <ModalFonts />
             <ModalColors />

@@ -15,7 +15,7 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
       <ModalSection header>
          <FlexContainerModal as="header" header>
             <ModalTitle>Settings</ModalTitle>
-            <Button type="button" cross onClick={setIsModalToggled}>
+            <Button cross onClick={setIsModalToggled}>
                <Close xmlns="http://www.w3.org/2000/svg" width="18" height="17">
                   <path
                      fillRule="evenodd"
