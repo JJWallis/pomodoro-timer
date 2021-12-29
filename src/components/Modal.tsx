@@ -29,8 +29,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       currentTimerTotal.current = desiredAmount
    }, [currentTimerTotal, dispatch, state, activeTimer])
 
-   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
+   const handleApplyBtn = () => {
       endTimer()
       setNewTimer()
       setIsModalToggled()
@@ -45,12 +44,14 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0} as="section">
-         <form onSubmit={handleSubmit}>
+         <form>
             <ModalHeader setIsModalToggled={setIsModalToggled} />
             <ModalTimers />
             <ModalFonts />
             <ModalColors />
-            <ApplyButton>Apply</ApplyButton>
+            <ApplyButton type="submit" onClick={handleApplyBtn}>
+               Apply
+            </ApplyButton>
          </form>
       </ModalContainer>
    )
