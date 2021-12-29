@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
-import { ClockButton } from '../styles/Button.styled'
-import { TimerTitle } from '../styles/Title.styled'
-import { ProgressCircle } from '../styles/Icon.styled'
 import { useModalContext } from '../hooks/useModalContext'
-import { ResetButton } from '../styles/Button.styled'
 import { ClockContainer } from '../containers/Container.styled'
+import { ClockButton } from '../styles/Button.styled'
+import { ProgressCircle } from '../styles/Icon.styled'
+import { TimerTitle } from '../styles/Title.styled'
+import { ResetButton } from '../styles/Button.styled'
 
 const Clock: FC = () => {
    const [progressWidth, setProgressWidth] = useState(0)

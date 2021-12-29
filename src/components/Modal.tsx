@@ -1,4 +1,6 @@
 import React, { FC, useLayoutEffect, useRef } from 'react'
+import { useTimerContext } from '../hooks/useTimerContext'
+import { useModalContext } from '../hooks/useModalContext'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -6,8 +8,6 @@ import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
 import { ApplyButton } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
-import { useTimerContext } from '../hooks/useTimerContext'
-import { useModalContext } from '../hooks/useModalContext'
 
 interface Props {
    isModalToggled: boolean

@@ -1,9 +1,9 @@
 import React, { FC, memo, useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 import { useRadioButton } from '../hooks/useRadioButton'
 import ModalSection from './ModalSection'
 import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
-import { ThemeContext } from 'styled-components'
 
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
