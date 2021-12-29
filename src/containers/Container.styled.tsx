@@ -150,6 +150,6 @@ export const ModalSectionContainer = styled.div<ModalSectionProps>`
    ${({ colors }: ModalSectionProps) => colors && `border-bottom: 0;`};
    @media (min-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
-      padding-block: 2rem;
+      padding-block: 1.8rem;
    }
 `
