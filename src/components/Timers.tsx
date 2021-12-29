@@ -23,7 +23,7 @@ const Timers: FC = () => {
    }
 
    return (
-      <TimersContainer>
+      <TimersContainer as="section">
          {Object.keys(state).map((key) => (
             <TimerButton
                key={key}
