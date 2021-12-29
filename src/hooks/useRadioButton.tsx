@@ -22,11 +22,6 @@ export function useRadioButton(
    ))
 }
 
-// const retrieveSelectedOption = (key: string) => {
-//    const previousOption = localStorage.getItem(key)
-//    if (previousOption) return JSON.parse(previousOption)
-// }
-
-// const previousOption = retrieveSelectedOption(key)
-// const {} = useContext(ThemeContext)
-// key: string - param
+// refactor - pass in currentTheme/Font obj + use identifier prop to get boolean for defaultChecked
+// inline arrow func = () => theme === current.identifier
+// type Current = <T extends {identifier: string}>
