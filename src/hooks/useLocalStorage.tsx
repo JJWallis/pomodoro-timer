@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react'
 type InitialValue =
    | { pomodoro: number; shortbreak: number; longbreak: number }
    | { accent: string }
-   | string
+   | {
+        identifier: string
+        family: string
+     }
    | (() => string)
 
 function getSavedValue(key: string, initialValue: InitialValue) {

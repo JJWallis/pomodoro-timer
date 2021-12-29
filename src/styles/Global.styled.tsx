@@ -36,8 +36,11 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden; 
-  font-family: ${({ theme: { currentFont } }) =>
-     currentFont}, sans-serif, monospace;
+  font-family: ${({
+     theme: {
+        currentFont: { family },
+     },
+  }) => family}, sans-serif, monospace;
 }
 
 a:not([class]) {

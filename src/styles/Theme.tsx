@@ -16,7 +16,10 @@ declare module 'styled-components' {
          identifier: string
       }
       updateTheme: (newTheme: string) => void
-      currentFont: string
+      currentFont: {
+         identifier: string
+         family: string
+      }
       updateFont: (newFont: string) => void
    }
 }
@@ -46,7 +49,16 @@ export const Theme = {
 }
 
 export const Fonts = {
-   ffKumbh: 'Kumbh Sans',
-   ffRoboto: 'Roboto Slab',
-   ffSpaceMono: 'Space Mono',
+   ffKumbh: {
+      identifier: 'ffKumbh',
+      family: 'Kumbh Sans',
+   },
+   ffRoboto: {
+      identifier: 'ffRoboto',
+      family: 'Roboto Slab',
+   },
+   ffSpaceMono: {
+      identifier: 'ffSpaceMono',
+      family: 'Space Mono',
+   },
 }
