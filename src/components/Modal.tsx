@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useCallback, useRef } from 'react'
+import React, { FC, useLayoutEffect, useRef } from 'react'
 import { ModalContainer } from '../containers/Container.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
@@ -15,33 +15,24 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { dispatch, currentTimerTotal, endTimer, activeTimer } =
+   const { dispatch, currentTimerTotal, endTimer, setNewTimer } =
       useTimerContext()
    const { state } = useModalContext()
    let updateTimerOnMount = useRef(true)
 
-   const setNewTimer = useCallback(() => {
-      const desiredAmount = state[activeTimer as keyof typeof state]
-      dispatch({
-         type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: desiredAmount * 60,
-      })
-      currentTimerTotal.current = desiredAmount
-   }, [currentTimerTotal, dispatch, state, activeTimer])
-
    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       endTimer()
-      setNewTimer()
+      setNewTimer(state)
       setIsModalToggled()
    }
 
    useLayoutEffect(() => {
       if (updateTimerOnMount.current) {
-         setNewTimer()
+         setNewTimer(state)
          updateTimerOnMount.current = false
       }
-   }, [currentTimerTotal, dispatch, setNewTimer, updateTimerOnMount])
+   }, [currentTimerTotal, dispatch, setNewTimer, updateTimerOnMount, state])
 
    return (
       <ModalContainer opacity={isModalToggled ? 1 : 0} as="section">

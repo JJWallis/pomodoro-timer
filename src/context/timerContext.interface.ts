@@ -9,4 +9,5 @@ export interface TimerContextData {
    activeTimer: string
    currentTimerTotal: React.MutableRefObject<number | null>
    formatTimer: (leftSeconds: number) => string
+   setNewTimer: (state: any) => void
 }

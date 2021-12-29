@@ -38,6 +38,18 @@ export function useTimer() {
       dispatch({ type: 'END_TIMER' })
    }, [timeoutId])
 
+   const setNewTimer = useCallback(
+      (state) => {
+         const desiredAmount = state[activeTimer as keyof typeof state]
+         dispatch({
+            type: 'SET_INITIAL_TIMER_LENGTH',
+            amount: desiredAmount * 60,
+         })
+         currentTimerTotal.current = desiredAmount
+      },
+      [currentTimerTotal, dispatch, activeTimer]
+   )
+
    const formatTimer = (leftSeconds: number) => {
       const seconds = leftSeconds % 60
       const minutes = Math.floor(leftSeconds / 60)
@@ -57,6 +69,7 @@ export function useTimer() {
       dispatch,
       startTimer,
       endTimer,
+      setNewTimer,
       currentTimerTotal,
       formatTimer,
    }
