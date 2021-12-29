@@ -5,4 +5,5 @@ export interface RadioButtonProps {
    defaultChecked: boolean
    setSelectedOption: React.Dispatch<React.SetStateAction<string>>
    updateTheme: Update
+   fonts?: boolean
 }

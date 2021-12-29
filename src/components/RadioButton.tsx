@@ -7,6 +7,7 @@ const RadioButton: FC<RadioButtonProps> = ({
    defaultChecked,
    setSelectedOption,
    updateTheme,
+   fonts,
 }) => {
    const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
@@ -15,7 +16,7 @@ const RadioButton: FC<RadioButtonProps> = ({
    }
 
    return (
-      <RadioButtonLabel htmlFor={theme}>
+      <RadioButtonLabel htmlFor={theme} fonts={fonts}>
          <input
             id={theme}
             type="radio"
