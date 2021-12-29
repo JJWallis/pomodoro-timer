@@ -10,7 +10,12 @@ const ModalFonts: FC = () => {
    const data = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
    const defaultFont = () =>
       data.filter((font) => currentFont.identifier === font)[0]
-   const produceRadioButtons = useRadioButton(data, defaultFont(), updateFont)
+   const produceRadioButtons = useRadioButton(
+      currentFont,
+      data,
+      defaultFont(),
+      updateFont
+   )
 
    // map over font obj to only get key/identifier props for colours
 

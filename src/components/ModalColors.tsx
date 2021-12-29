@@ -10,7 +10,12 @@ const ModalColors: FC = () => {
    const data = ['redTheme', 'blueTheme', 'purpleTheme']
    const defaultTheme = () =>
       data.filter((theme) => currentTheme.identifier === theme)[0]
-   const produceRadioButtons = useRadioButton(data, defaultTheme(), updateTheme)
+   const produceRadioButtons = useRadioButton(
+      currentTheme,
+      data,
+      defaultTheme(),
+      updateTheme
+   )
 
    return (
       <ModalSection colors>
