@@ -5,12 +5,22 @@ import { Close } from '../styles/Icon.styled'
 import { Button } from '../styles/Button.styled'
 import { handleChange } from '../hooks/useToggle'
 import { ModalTitle } from '../styles/Title.styled'
+import { useTimerContext } from '../hooks/useTimerContext'
+import { useModalContext } from '../hooks/useModalContext'
 
 interface Props {
    setIsModalToggled: handleChange
 }
 
 const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
+   const { setNewTimer } = useTimerContext()
+   const { state } = useModalContext()
+
+   const handleCloseBtn = () => {
+      setIsModalToggled()
+      setNewTimer(state)
+   }
+
    return (
       <ModalSection header>
          <FlexContainerModal as="header" header>
@@ -18,7 +28,7 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
             <Button
                aria-label="Toggle modal visibility"
                cross
-               onClick={setIsModalToggled}
+               onClick={handleCloseBtn}
             >
                <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
                   <path
