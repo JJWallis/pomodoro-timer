@@ -16,8 +16,7 @@ const Clock: FC = () => {
       startTimer,
       currentTimerTotal,
       formatTimer,
-      activeTimer,
-      dispatch,
+      setNewTimer,
    } = useTimerContext()
    const { state } = useModalContext()
 
@@ -28,18 +27,9 @@ const Clock: FC = () => {
       setProgressWidth((timerLength / 60 / current) * 500)
    }, [timerLength, currentTimerTotal, state])
 
-   const setNewTimer = () => {
-      const desiredAmount = state[activeTimer as keyof typeof state]
-      dispatch({
-         type: 'SET_INITIAL_TIMER_LENGTH',
-         amount: desiredAmount * 60,
-      })
-      currentTimerTotal.current = desiredAmount
-   }
-
-   const handleApplyBtn = () => {
+   const handleResetBtn = () => {
       endTimer()
-      setNewTimer()
+      setNewTimer(state)
    }
 
    return (
@@ -65,7 +55,7 @@ const Clock: FC = () => {
                {isRunning && timerLength !== 0 ? 'pause' : 'start'}
             </TimerTitle>
          </ClockButton>
-         <ResetButton progressAmount={progressWidth} onClick={handleApplyBtn}>
+         <ResetButton progressAmount={progressWidth} onClick={handleResetBtn}>
             Reset
          </ResetButton>
       </ClockContainer>
