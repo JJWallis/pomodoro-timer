@@ -3,6 +3,7 @@ import { RadioButtonProps } from './RadioButton.interface'
 import { RadioButtonLabel } from '../styles/Label.styled'
 import { InputReset } from '../styles/Input.styled'
 import { RadioButtonContent } from '../styles/Span.styled'
+import { Theme } from '../styles/Theme'
 
 const RadioButton: FC<RadioButtonProps> = ({
    theme,
@@ -18,7 +19,12 @@ const RadioButton: FC<RadioButtonProps> = ({
    }
 
    return (
-      <RadioButtonLabel htmlFor={theme} fonts={fonts} active={defaultChecked}>
+      <RadioButtonLabel
+         htmlFor={theme}
+         fonts={fonts}
+         active={defaultChecked}
+         themeBgColor={Theme[theme as keyof Omit<typeof Theme, 'baseStyles'>]}
+      >
          <InputReset
             radio
             id={theme}
@@ -28,7 +34,7 @@ const RadioButton: FC<RadioButtonProps> = ({
             checked={defaultChecked}
             onChange={handleRadioToggle}
          />
-         <RadioButtonContent />
+         <RadioButtonContent fonts={fonts} active={defaultChecked} />
       </RadioButtonLabel>
    )
 }

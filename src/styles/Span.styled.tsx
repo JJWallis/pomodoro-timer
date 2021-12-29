@@ -23,6 +23,7 @@ export const RadioButtonContent = styled.span<Props>`
       css`
          &::before {
             content: 'Aa';
+            color: ${active ? 'white' : 'black'};
          }
       `}
 `

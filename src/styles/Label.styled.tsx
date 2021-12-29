@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components'
 interface RadioButtonLabelProps {
    fonts?: boolean
    active?: boolean
+   themeBgColor?: {
+      identifier: string
+      accent: string
+   }
 }
 
 export const NumberInputLabel = styled.label`
@@ -21,8 +25,7 @@ export const RadioButtonLabel = styled.label.attrs<RadioButtonLabelProps>(
    width: 40px;
    height: 40px;
    border-radius: 50%;
-   background-color: ${({ active, theme }) =>
-      active ? theme.currentTheme.accent : 'transparent'};
+   background-color: ${({ themeBgColor }) => themeBgColor?.accent};
 
    ${({ fonts, active, theme }) =>
       fonts &&
