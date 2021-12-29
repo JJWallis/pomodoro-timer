@@ -1,13 +1,14 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import RadioButton from '../components/RadioButton'
-import { ThemeContext } from 'styled-components'
 
 export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
-type Themes = string[]
 
-export function useRadioButton(themes: Themes, defaultSelectedOption: string) {
+export function useRadioButton(
+   themes: string[],
+   defaultSelectedOption: string,
+   update: Update
+) {
    const [selectedOption, setSelectedOption] = useState(defaultSelectedOption)
-   const { updateTheme } = useContext(ThemeContext)
 
    return Object.values(themes).map((theme) => (
       <RadioButton
@@ -15,7 +16,7 @@ export function useRadioButton(themes: Themes, defaultSelectedOption: string) {
          value={theme}
          defaultChecked={selectedOption === theme}
          setSelectedOption={setSelectedOption}
-         updateTheme={updateTheme}
+         updateTheme={update}
          name={theme}
       />
    ))

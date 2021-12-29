@@ -6,11 +6,11 @@ import { ModalTitle } from '../styles/Title.styled'
 import { ThemeContext } from 'styled-components'
 
 const ModalColors: FC = () => {
-   const { currentTheme } = useContext(ThemeContext)
+   const { currentTheme, updateTheme } = useContext(ThemeContext)
    const data = ['redTheme', 'blueTheme', 'purpleTheme']
    const defaultTheme = () =>
       data.filter((theme) => currentTheme.identifier === theme)[0]
-   const produceRadioButtons = useRadioButton(data, defaultTheme())
+   const produceRadioButtons = useRadioButton(data, defaultTheme(), updateTheme)
 
    // pass in default value - grab currentTheme/Font from themeContext
    // whichever theme it matches to with data above gets passed in to hook + used as selected option
