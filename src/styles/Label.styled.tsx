@@ -16,11 +16,10 @@ export const RadioButtonLabel = styled.label.attrs<RadioButtonLabelProps>(
       active,
    })
 )<RadioButtonLabelProps>`
-   outline: 1px solid black;
    cursor: pointer;
    position: relative;
-   width: 35px;
-   height: 35px;
+   width: 40px;
+   height: 40px;
    border-radius: 50%;
    background-color: ${({ active, theme }) =>
       active ? theme.currentTheme.accent : 'transparent'};

@@ -2,6 +2,7 @@ import React, { FC, ChangeEvent } from 'react'
 import { RadioButtonProps } from './RadioButton.interface'
 import { RadioButtonLabel } from '../styles/Label.styled'
 import { InputReset } from '../styles/Input.styled'
+import { RadioButtonContent } from '../styles/Span.styled'
 
 const RadioButton: FC<RadioButtonProps> = ({
    theme,
@@ -27,6 +28,7 @@ const RadioButton: FC<RadioButtonProps> = ({
             checked={defaultChecked}
             onChange={handleRadioToggle}
          />
+         <RadioButtonContent />
       </RadioButtonLabel>
    )
 }
