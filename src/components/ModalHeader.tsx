@@ -15,7 +15,11 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
       <ModalSection header>
          <FlexContainerModal as="header" header>
             <ModalTitle as="h2">Settings</ModalTitle>
-            <Button cross onClick={setIsModalToggled}>
+            <Button
+               aria-label="Toggle modal visibility"
+               cross
+               onClick={setIsModalToggled}
+            >
                <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
                   <path
                      fillRule="evenodd"

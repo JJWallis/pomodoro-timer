@@ -25,6 +25,9 @@ const RadioButton: FC<RadioButtonProps> = ({
          fonts={fonts}
          active={defaultChecked}
          themeBgColor={Theme[theme as keyof Omit<typeof Theme, 'baseStyles'>]}
+         aria-label={
+            fonts ? 'Active font toggle' : 'Active color scheme toggle'
+         }
       >
          <InputReset
             radio
