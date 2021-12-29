@@ -16,7 +16,7 @@ const RadioButton: FC<RadioButtonProps> = ({
    }
 
    return (
-      <RadioButtonLabel htmlFor={theme} fonts={fonts}>
+      <RadioButtonLabel htmlFor={theme} fonts={fonts} active={defaultChecked}>
          <input
             id={theme}
             type="radio"
