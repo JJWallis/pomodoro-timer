@@ -5,17 +5,11 @@ export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
 type UseRadioButton = <T extends { identifier: string }>(
    current: T,
    themes: string[],
-   defaultSelectedOption: string,
    update: Update
 ) => JSX.Element[]
 
-export const useRadioButton: UseRadioButton = (
-   current,
-   themes,
-   defaultSelectedOption,
-   update
-) => {
-   const [selectedOption, setSelectedOption] = useState(defaultSelectedOption)
+export const useRadioButton: UseRadioButton = (current, themes, update) => {
+   const [selectedOption, setSelectedOption] = useState(current.identifier)
 
    return themes.map((theme) => (
       <RadioButton
@@ -28,6 +22,3 @@ export const useRadioButton: UseRadioButton = (
       />
    ))
 }
-
-// refactor - pass in currentTheme/Font obj + use identifier prop to get boolean for defaultChecked
-// inline arrow func = () => theme === current.identifier

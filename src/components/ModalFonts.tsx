@@ -7,15 +7,8 @@ import { ModalTitle } from '../styles/Title.styled'
 
 const ModalFonts: FC = () => {
    const { currentFont, updateFont } = useContext(ThemeContext)
-   const data = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
-   const defaultFont = () =>
-      data.filter((font) => currentFont.identifier === font)[0]
-   const produceRadioButtons = useRadioButton(
-      currentFont,
-      data,
-      defaultFont(),
-      updateFont
-   )
+   const fonts = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
+   const produceRadioButtons = useRadioButton(currentFont, fonts, updateFont)
 
    // map over font obj to only get key/identifier props for colours
 

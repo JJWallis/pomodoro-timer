@@ -7,15 +7,8 @@ import { ThemeContext } from 'styled-components'
 
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
-   const data = ['redTheme', 'blueTheme', 'purpleTheme']
-   const defaultTheme = () =>
-      data.filter((theme) => currentTheme.identifier === theme)[0]
-   const produceRadioButtons = useRadioButton(
-      currentTheme,
-      data,
-      defaultTheme(),
-      updateTheme
-   )
+   const colors = ['redTheme', 'blueTheme', 'purpleTheme']
+   const produceRadioButtons = useRadioButton(currentTheme, colors, updateTheme)
 
    return (
       <ModalSection colors>
