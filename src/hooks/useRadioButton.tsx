@@ -3,22 +3,7 @@ import RadioButton from '../components/RadioButton'
 import { ThemeContext } from 'styled-components'
 
 export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
-type Themes =
-   | {
-        pm: string
-        sd: string
-        tr: string
-     }
-   | string[]
-
-// const retrieveSelectedOption = (key: string) => {
-//    const previousOption = localStorage.getItem(key)
-//    if (previousOption) return JSON.parse(previousOption)
-// }
-
-// const previousOption = retrieveSelectedOption(key)
-// const {} = useContext(ThemeContext)
-// key: string - param
+type Themes = string[]
 
 export function useRadioButton(themes: Themes, defaultSelectedOption: string) {
    const [selectedOption, setSelectedOption] = useState(defaultSelectedOption)
@@ -35,3 +20,12 @@ export function useRadioButton(themes: Themes, defaultSelectedOption: string) {
       />
    ))
 }
+
+// const retrieveSelectedOption = (key: string) => {
+//    const previousOption = localStorage.getItem(key)
+//    if (previousOption) return JSON.parse(previousOption)
+// }
+
+// const previousOption = retrieveSelectedOption(key)
+// const {} = useContext(ThemeContext)
+// key: string - param

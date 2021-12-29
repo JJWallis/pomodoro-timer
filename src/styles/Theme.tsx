@@ -13,6 +13,7 @@ declare module 'styled-components' {
       }
       currentTheme: {
          accent: string
+         identifier: string
       }
       updateTheme: (newTheme: string) => void
       currentFont: string
@@ -31,12 +32,15 @@ export const Theme = {
       mediaBreakpoint: '43.999em',
    },
    redTheme: {
+      identifier: 'redTheme',
       accent: '#F87070',
    },
    blueTheme: {
+      identifier: 'blueTheme',
       accent: '#70F3F8',
    },
    purpleTheme: {
+      identifier: 'purpleTheme',
       accent: '#D881F8',
    },
 }

@@ -9,8 +9,9 @@ const ModalColors: FC = () => {
    const { currentTheme } = useContext(ThemeContext)
    const data = ['redTheme', 'blueTheme', 'purpleTheme']
    const defaultTheme = () =>
-      data.filter((theme) => currentTheme.accent === theme)[0]
+      data.filter((theme) => currentTheme.identifier === theme)[0]
    const produceRadioButtons = useRadioButton(data, defaultTheme())
+
    // pass in default value - grab currentTheme/Font from themeContext
    // whichever theme it matches to with data above gets passed in to hook + used as selected option
 
