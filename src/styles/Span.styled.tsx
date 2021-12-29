@@ -14,10 +14,12 @@ export const RadioButtonContent = styled.span<Props>`
       height: 20px;
       position: absolute;
       top: 44%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 57%;
       font-weight: bold;
       opacity: ${({ active }) => (active ? 1 : 0)};
+      transform: translate(-50%, -50%)
+         ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
+      transition: opacity 0.4s ease, transform 0.3s ease;
    }
 
    ${({ fonts, active }) =>
@@ -25,10 +27,12 @@ export const RadioButtonContent = styled.span<Props>`
       css`
          &::before {
             content: 'Aa';
-            top: 45%;
+            top: 43%;
             left: 50%;
             opacity: 1;
             color: ${active ? 'white' : 'black'};
+            transform: translate(-50%, -50%) scale(1);
+            transition: color 0.4s ease;
          }
       `}
 `

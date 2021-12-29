@@ -31,5 +31,6 @@ export const RadioButtonLabel = styled.label.attrs<RadioButtonLabelProps>(
       fonts &&
       css`
          background-color: ${active ? 'black' : theme.baseStyles.lightGrey};
+         transition: background-color 0.4s ease;
       `}
 `
