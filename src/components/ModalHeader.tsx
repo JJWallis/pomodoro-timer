@@ -13,7 +13,7 @@ interface Props {
 const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
    return (
       <ModalSection header>
-         <FlexContainerModal header>
+         <FlexContainerModal as="header" header>
             <ModalTitle>Settings</ModalTitle>
             <Button cross onClick={setIsModalToggled}>
                <Close xmlns="http://www.w3.org/2000/svg" width="18" height="17">
