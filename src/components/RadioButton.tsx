@@ -4,6 +4,7 @@ import { RadioButtonLabel } from '../styles/Label.styled'
 import { InputReset } from '../styles/Input.styled'
 import { RadioButtonContent } from '../styles/Span.styled'
 import { Theme } from '../styles/Theme'
+import Tick from '../assets/icon-tik.svg'
 
 const RadioButton: FC<RadioButtonProps> = ({
    theme,
@@ -34,7 +35,11 @@ const RadioButton: FC<RadioButtonProps> = ({
             checked={defaultChecked}
             onChange={handleRadioToggle}
          />
-         <RadioButtonContent fonts={fonts} active={defaultChecked} />
+         <RadioButtonContent
+            fonts={fonts}
+            active={defaultChecked}
+            tick={fonts ? null : Tick}
+         />
       </RadioButtonLabel>
    )
 }
