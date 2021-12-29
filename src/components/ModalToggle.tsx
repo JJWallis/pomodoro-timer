@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { handleChange } from '../hooks/useToggle'
 import { Button } from '../styles/Button.styled'
 import { Cog } from '../styles/Icon.styled'
+import { handleChange } from '../hooks/useToggle'
 
 interface Props {
    setIsModalToggled: handleChange

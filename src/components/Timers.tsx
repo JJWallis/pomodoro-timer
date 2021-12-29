@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { TimersContainer } from '../containers/TimersContainer.styled'
-import { useModalContext } from '../hooks/useModalContext'
 import { useTimerContext } from '../hooks/useTimerContext'
+import { useModalContext } from '../hooks/useModalContext'
+import { TimersContainer } from '../containers/TimersContainer.styled'
 import { TimerButton } from '../styles/Button.styled'
 import SrOnly from '../styles/SrOnly'
 
