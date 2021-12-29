@@ -12,9 +12,6 @@ const ModalColors: FC = () => {
       data.filter((theme) => currentTheme.identifier === theme)[0]
    const produceRadioButtons = useRadioButton(data, defaultTheme(), updateTheme)
 
-   // pass in default value - grab currentTheme/Font from themeContext
-   // whichever theme it matches to with data above gets passed in to hook + used as selected option
-
    return (
       <ModalSection colors>
          <FlexContainerModal>

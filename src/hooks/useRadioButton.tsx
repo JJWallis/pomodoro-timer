@@ -10,7 +10,7 @@ export function useRadioButton(
 ) {
    const [selectedOption, setSelectedOption] = useState(defaultSelectedOption)
 
-   return Object.values(themes).map((theme) => (
+   return themes.map((theme) => (
       <RadioButton
          key={theme}
          value={theme}

@@ -6,20 +6,18 @@ import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
 
 const ModalFonts: FC = () => {
-   const { updateFont } = useContext(ThemeContext)
-   const radioButtons = useRadioButton(updateFont, {
-      pm: 'ffKumbh',
-      sd: 'ffRoboto',
-      tr: 'ffSpaceMono',
-   })
-
-   // go into custom hook + add parent label + potential span for fonts (re-usable styles)
+   const { currentFont, updateFont } = useContext(ThemeContext)
+   const data = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
+   const defaultFont = () => data.filter((font) => currentFont === font)[0]
+   const produceRadioButtons = useRadioButton(data, defaultFont(), updateFont)
 
    return (
       <ModalSection>
          <FlexContainerModal>
             <ModalTitle subTitle>Font</ModalTitle>
-            <FlexContainerModal radioButtons>{radioButtons}</FlexContainerModal>
+            <FlexContainerModal radioButtons>
+               {produceRadioButtons}
+            </FlexContainerModal>
          </FlexContainerModal>
       </ModalSection>
    )
