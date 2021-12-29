@@ -1,4 +1,4 @@
-import { Update } from '../hooks/useRadioButton'
+import { Update } from '../hooks/useRadioButton.interface'
 
 export interface RadioButtonProps {
    value: string

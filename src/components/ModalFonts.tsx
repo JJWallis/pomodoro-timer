@@ -10,8 +10,6 @@ const ModalFonts: FC = () => {
    const fonts = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
    const produceRadioButtons = useRadioButton(currentFont, fonts, updateFont)
 
-   // map over font obj to only get key/identifier props for colours
-
    return (
       <ModalSection>
          <FlexContainerModal>
