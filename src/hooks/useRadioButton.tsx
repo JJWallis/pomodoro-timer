@@ -8,11 +8,10 @@ export const useRadioButton: UseRadioButton = (current, themes, update) => {
    return themes.map((theme) => (
       <RadioButton
          key={theme}
-         value={theme}
+         theme={theme}
          defaultChecked={selectedOption === theme}
          setSelectedOption={setSelectedOption}
          updateTheme={update}
-         name={theme}
       />
    ))
 }
