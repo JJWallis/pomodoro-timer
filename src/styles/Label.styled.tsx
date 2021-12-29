@@ -19,13 +19,15 @@ export const RadioButtonLabel = styled.label.attrs<RadioButtonLabelProps>(
    outline: 1px solid black;
    cursor: pointer;
    position: relative;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
    background-color: ${({ active, theme }) =>
       active ? theme.currentTheme.accent : 'transparent'};
 
-   ${({ fonts }) =>
+   ${({ fonts, active, theme }) =>
       fonts &&
       css`
-         background-color: ${({ theme: { baseStyles } }) =>
-            baseStyles.lightGrey};
+         background-color: ${active ? 'black' : theme.baseStyles.lightGrey};
       `}
 `

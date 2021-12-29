@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
-const InputRest = styled.input`
+interface Props {
+   radio?: boolean
+}
+
+export const InputReset = styled.input<Props>`
    outline: none;
    border: none;
    background-color: transparent;
+   ${({ radio }) => radio && `opacity: 0;`}
 `
 
-export const Input = styled(InputRest)`
+export const Input = styled(InputReset)<Props>`
    width: 100%;
    border-radius: 10px;
    padding: 0.8rem 1rem;
