@@ -36,7 +36,7 @@ export const FlexContainerModal = styled(
       radioButtons &&
       css`
          flex-direction: row;
-         gap: 0.5rem;
+         gap: 1rem;
       `}
    @media (min-width: ${({ theme: { baseStyles } }) =>
       baseStyles.mediaBreakpoint}) {

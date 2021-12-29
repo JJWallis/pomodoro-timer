@@ -27,7 +27,6 @@ export const RadioButtonContent = styled.span<Props>`
       css`
          &::before {
             content: 'Aa';
-            top: 43%;
             left: 50%;
             opacity: 1;
             color: ${active ? 'white' : 'black'};
