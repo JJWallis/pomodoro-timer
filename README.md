@@ -66,9 +66,9 @@ export function useTimerContext() {
 }
 ```
 
-Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure) | using in index.tsx vs App
+This project was a major step forward in my use of Context in react, learning the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it or return an appropiate error message used outside the providers 'range'.
 
-Custom hooks with context - TS destructuring solved | great error msg | easy to lift up if problem
+This solved a major problem I had encountered in previous Typescript based projects, where I had to constantly check if my destructed value from Context was true/present before I could use it. This technique further allowed me to pass down any global contexts directly from the index file instead of the App.
 
 ```tsx
 export const ProgressCircle = styled.svg<Props>`
@@ -107,6 +107,8 @@ declare module 'styled-components' {
 
 HOCs + TS - Omit utility type (+ generics) | fixing 'any' props - rare potential use case | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope) | add more components to tree + bloated syntax + props | example above - bracket notation with objects (ignoring other keys apart from those to target) | Partial utility type
 
+sep files for types/interfaces (+ diff folder structure) |
+
 Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
 
 ```tsx
@@ -126,8 +128,6 @@ Reducers -
 I have loved learning about custom hooks throughout this whole project and how versatile they are in refactoring our code. I can't wait to research more examples online and see how other developers have built their own to meet their specific needs.
 
 I am further keen to research more into Reducers and how they relate to other technologies I plan to learn in the future, most notably Redux.
-
-Reducers - more usecases + how that leads in Redux (apparently similar structure)
 
 ### Useful resources
 
