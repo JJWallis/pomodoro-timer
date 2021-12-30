@@ -1,13 +1,5 @@
 import { useState, useEffect } from 'react'
-
-type InitialValue =
-   | { pomodoro: number; shortbreak: number; longbreak: number }
-   | { accent: string }
-   | {
-        identifier: string
-        family: string
-     }
-   | (() => string)
+import { InitialValue } from './useLocalStorage.interface'
 
 function getSavedValue(key: string, initialValue: InitialValue) {
    const savedValue = localStorage.getItem(key)
