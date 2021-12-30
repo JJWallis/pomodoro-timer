@@ -71,7 +71,18 @@ export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
 }
 ```
 
-Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure)
+Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure) | using in index.tsx vs App
+
+```tsx
+export function useTimerContext() {
+   const context = useContext(TimerContext)
+   if (!context)
+      throw new Error('useAppContext must be used within a AppContextProvider')
+   return context
+}
+```
+
+Custom hooks with context - TS destructuring solved | great error msg | easy to lift up if problem
 
 ```tsx
 const updateTheme = (newTheme: string) => {
@@ -86,6 +97,9 @@ const produceColors = (colors: Partial<ColorThemes>) => {
 
 declare module 'styled-components' {
    export interface DefaultTheme {
+      baseStyles: typeof Theme['baseStyles']
+      currentTheme: typeof Theme['redTheme']
+      currentFont: typeof Fonts['ffKumbh']
       ...
    }
 }
