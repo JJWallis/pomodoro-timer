@@ -6,8 +6,7 @@ import { Theme } from '../styles/Theme'
 
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
-   const colors = ['redTheme', 'blueTheme', 'purpleTheme']
-   const newColors = Object.values(Theme)
+   const colors = Object.values(Theme)
       .splice(1, 3)
       .map((color: any) => color.identifier)
    // generics
