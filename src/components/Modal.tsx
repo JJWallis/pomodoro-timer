@@ -7,11 +7,11 @@ import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
 import { ApplyButton } from '../styles/Button.styled'
-import { handleChange } from '../hooks/useToggle'
+import { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
    isModalToggled: boolean
-   setIsModalToggled: handleChange
+   setIsModalToggled: HandleToggle
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {

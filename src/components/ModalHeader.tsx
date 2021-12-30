@@ -6,10 +6,10 @@ import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
 import { Button } from '../styles/Button.styled'
 import { Close } from '../styles/Icon.styled'
-import { handleChange } from '../hooks/useToggle'
+import { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
-   setIsModalToggled: handleChange
+   setIsModalToggled: HandleToggle
 }
 
 const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {

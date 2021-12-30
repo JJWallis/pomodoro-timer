@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import { Button } from '../styles/Button.styled'
 import { Cog } from '../styles/Icon.styled'
-import { handleChange } from '../hooks/useToggle'
+import { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
-   setIsModalToggled: handleChange
+   setIsModalToggled: HandleToggle
 }
 
 const ModalToggle: FC<Props> = ({ setIsModalToggled }) => {
