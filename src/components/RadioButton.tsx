@@ -3,7 +3,7 @@ import { RadioButtonProps } from './RadioButton.interface'
 import { RadioButtonLabel } from '../styles/Label.styled'
 import { InputReset } from '../styles/Input.styled'
 import { RadioButtonContent } from '../styles/Span.styled'
-import { Theme } from '../styles/Theme'
+import { Theme, ColorThemes } from '../styles/Theme'
 import Tick from '../assets/icon-tik.svg'
 
 const RadioButton: FC<RadioButtonProps> = ({
@@ -24,7 +24,7 @@ const RadioButton: FC<RadioButtonProps> = ({
          htmlFor={theme}
          fonts={fonts}
          active={defaultChecked}
-         themeBgColor={Theme[theme as keyof Omit<typeof Theme, 'baseStyles'>]}
+         themeBgColor={Theme[theme as keyof ColorThemes]}
          aria-label={
             fonts ? 'Active font toggle' : 'Active color scheme toggle'
          }
