@@ -2,24 +2,10 @@ import 'styled-components'
 
 declare module 'styled-components' {
    export interface DefaultTheme {
-      baseStyles: {
-         bgPm: string
-         bgSd: string
-         lightGrey: string
-         darkGrey: string
-         softWhite: string
-         hoverTransition: string
-         mediaBreakpoint: string
-      }
-      currentTheme: {
-         accent: string
-         identifier: string
-      }
+      baseStyles: typeof Theme['baseStyles']
+      currentTheme: typeof Theme['redTheme']
+      currentFont: typeof Fonts['ffKumbh']
       updateTheme: (newTheme: string) => void
-      currentFont: {
-         identifier: string
-         family: string
-      }
       updateFont: (newFont: string) => void
    }
 }
