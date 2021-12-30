@@ -66,7 +66,7 @@ export function useTimerContext() {
 }
 ```
 
-This project was a major step forward in my use of Context in react, learning the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it or return an appropiate error message used outside the providers 'range'.
+This project was a major step forward in my use of Context in react, most notably learning about the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it or return an appropiate error message if used outside the providers 'range'.
 
 This solved a major problem I had encountered in previous Typescript based projects, where I had to constantly check if my destructed value from Context was true/present before I could use it. This technique further allowed me to pass down any global contexts directly from the index file instead of the App.
 
@@ -96,7 +96,7 @@ export type ModalContextProvider = <T>(
 
 Furthermore, I used this project to enhance my knowledge of more advanced Typescript features that can especially help us out when dealing with dynamic information and properly typing React-based techniques. A great example of this is with Higher-order components, where naturally we want to pass on the props which the targetted component recieves, as well as any additional logic the higher-order component is in charge of attatching.
 
-This is where the `Omit` utility type comes in handy, since we tell Typescript to include any props the targetted component originally has, whilst excluding any logic we haven't yet passed to it from the higher-order component (we get a runtime error if we don't do this). In the example above I actually make use of the `keyof` operator alongside the utility type to dynamically access my theme object, whilst excluding the first property present. Additionally, we can use Generics to dynamically calculate/inherit the types of the props that are originally attatched, instead of reverting to using 'any'.
+This is where the `Omit` utility type comes in handy, since we can tell Typescript to include any props the targetted component originally includes, whilst excluding any logic we haven't yet passed to it from the higher-order component (we get a runtime error if we don't do this). In the example above, I actually make use of the `keyof` operator alongside the `Omit` utility type to dynamically access my theme object, whilst excluding the first property present. Additionally, we can use Generics to dynamically calculate/inherit the types of the props that are originally attatched, instead of reverting to using `any`.
 
 ```tsx
 function reducer(state: UseTimerState, action: UseTimerActions) {
@@ -108,7 +108,7 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 ```
 
-Reducers -
+The final major concept I learnt for this project was the `useReducer` hook, which allows us to store and manage more complicated state that potentially interacts with one another in a much neater and concise syntax. The best part about reducers are that you only need to pass down the desired state and the dispatch method in order to consume and update it, instead of passing down multiple separate functions that each update the state in specific ways. A reducer also provides a much more readable syntax within Typescript, since you have to type out all the possible actions that can affect that state, which I imagine serves as great documentation for any new developers contributing to a project.
 
 ### Continued development
 
