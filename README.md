@@ -50,20 +50,6 @@ Your users should be able to:
 ### What I learned
 
 ```tsx
-export const ProgressCircle = styled.svg<Props>`
-   stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
-   stroke-width: 5
-   stroke-dasharray: ${({ progressAmount }) => progressAmount}, 500;
-   stroke-linecap: round;
-   transition: stroke-dasharray 1s linear;
-`
-
-setProgressWidth((timerLength / 60 / current) * 500)
-```
-
-Circular progress bar -
-
-```tsx
 export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
    return (
       <TimerContext.Provider value={useTimer()}>
@@ -83,6 +69,20 @@ export function useTimerContext() {
 Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure) | using in index.tsx vs App
 
 Custom hooks with context - TS destructuring solved | great error msg | easy to lift up if problem
+
+```tsx
+export const ProgressCircle = styled.svg<Props>`
+   stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
+   stroke-width: 5
+   stroke-dasharray: ${({ progressAmount }) => progressAmount}, 500;
+   stroke-linecap: round;
+   transition: stroke-dasharray 1s linear;
+`
+
+setProgressWidth((timerLength / 60 / current) * 500)
+```
+
+Circular progress bar -
 
 ```tsx
 const updateTheme = (newTheme: string) => {
@@ -121,25 +121,19 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 
 Reducer -
 
-```tsx
-
-```
-
 ### Continued development
 
 Custom hooks - research online for more examples | building more logic into them
 
-useReducer() - more usecases + how that leads in Redux (apparently similar structure)
+Reducers - more usecases + how that leads in Redux (apparently similar structure)
 
 ### Useful resources
 
--  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) -
+-  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) - Second solution to producing circular progress bar post conic-gradient |
+
+-  [React Higher Order Components with TypeScript](https://isamatov.com/react-hoc-typescript/) - Omit type + HOCs with TS |
 
 ## Author
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
 -  Linkedin - [Joshua Jameson-Wallis]()
-
-## Acknowledgments
-
-[GitHub - mlatka9/Pomodoro-app](https://github.com/mlatka9/Pomodoro-app)
