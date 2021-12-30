@@ -68,16 +68,8 @@ export const ProgressCircle = styled.svg<Props>`
    stroke-linecap: round;
    transition: stroke-dasharray 1s linear;
 `
-```
 
-```tsx
-const formatTimer = (leftSeconds: number) => {
-   const seconds = leftSeconds % 60
-   const minutes = Math.floor(leftSeconds / 60)
-   const minutesString = minutes > 9 ? minutes : `0${minutes}`
-   const secondsString = seconds > 9 ? seconds : `0${seconds}`
-   return `${minutesString}:${secondsString}`
-}
+setProgressWidth((timerLength / 60 / current) * 500)
 ```
 
 ```tsx
