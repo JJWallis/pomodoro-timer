@@ -89,22 +89,14 @@ const updateTheme = (newTheme: string) => {
    setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])
 }
 
-const produceColors = (colors: Partial<ColorThemes>) => {
-   return Object.values(colors)
-      .splice(1, 3)
-      .map((color) => color.identifier)
-}
+export type ModalContextProvider = <T>(
+   Component: React.ComponentType<T>
+) => React.ComponentType<T>
 ```
 
 Furthermore, I used this project to enhance my knowledge of more advanced Typescript features that can especially help us out when dealing with dynamic information and properly typing React-based techniques. A great example of this is with Higher-order components, where naturally we want to pass on the props which the targetted component recieves, as well as any additional logic the higher-order component is in charge of attatching.
 
-This is where the Omit utility type comes in handy, since we tell Typescript to include any props the targetted component originally has, whilst excluding any logic we haven't yet passed to it from the higher-order component (we get a runtime error if we don't do this). In addition, we can use Generics to dynamically calculate/inherit the types of the props that are originally attatched, instead of reverting to using 'any'.
-
-example above - bracket notation with objects (ignoring other keys apart from those to target) | Partial utility type
-
-sep files for types/interfaces (+ diff folder structure) |
-
-Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
+This is where the `Omit` utility type comes in handy, since we tell Typescript to include any props the targetted component originally has, whilst excluding any logic we haven't yet passed to it from the higher-order component (we get a runtime error if we don't do this). In the example above I actually make use of the `keyof` operator alongside the utility type to dynamically access my theme object, whilst excluding the first property present. Additionally, we can use Generics to dynamically calculate/inherit the types of the props that are originally attatched, instead of reverting to using 'any'.
 
 ```tsx
 function reducer(state: UseTimerState, action: UseTimerActions) {
