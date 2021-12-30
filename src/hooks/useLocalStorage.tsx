@@ -8,7 +8,6 @@ type InitialValue =
         family: string
      }
    | (() => string)
-// generic
 
 function getSavedValue(key: string, initialValue: InitialValue) {
    const savedValue = localStorage.getItem(key)
