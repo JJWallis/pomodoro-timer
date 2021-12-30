@@ -61,6 +61,8 @@ export const ProgressCircle = styled.svg<Props>`
 setProgressWidth((timerLength / 60 / current) * 500)
 ```
 
+Circular progress bar -
+
 ```tsx
 export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
    return (
@@ -69,11 +71,7 @@ export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
       </TimerContext.Provider>
    )
 }
-```
 
-Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure) | using in index.tsx vs App
-
-```tsx
 export function useTimerContext() {
    const context = useContext(TimerContext)
    if (!context)
@@ -81,6 +79,8 @@ export function useTimerContext() {
    return context
 }
 ```
+
+Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure) | using in index.tsx vs App
 
 Custom hooks with context - TS destructuring solved | great error msg | easy to lift up if problem
 
