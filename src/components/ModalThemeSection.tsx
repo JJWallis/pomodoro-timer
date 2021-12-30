@@ -2,18 +2,13 @@ import React, { FC, memo } from 'react'
 import { useRadioButton } from '../hooks/useRadioButton'
 import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
-import { Update } from '../hooks/useRadioButton.interface'
+import { CurrentTheme, Update } from '../components/withTheme.interface'
 
 interface Props {
    title: string
    updateTheme: Update
    themes: string[]
-   currentTheme: {
-      identifier: string
-      accent?: string
-      family?: string
-   }
-   // refactor types!
+   currentTheme: CurrentTheme
 }
 
 const ModalThemeSection: FC<Props> = ({

@@ -1,6 +1,7 @@
-export type Update = ((newTheme: string) => void) | ((newFont: string) => void)
-export type UseRadioButton = <T extends { identifier: string }>(
-   current: T,
+import { CurrentTheme, Update } from '../components/withTheme.interface'
+
+export type UseRadioButton = (
+   current: CurrentTheme,
    themes: string[],
    update: Update
 ) => JSX.Element[]

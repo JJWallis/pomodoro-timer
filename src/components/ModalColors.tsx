@@ -6,6 +6,7 @@ import ModalThemeSection from './ModalThemeSection'
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
    const colors = ['redTheme', 'blueTheme', 'purpleTheme']
+   // map over theme obj to gain these instead?
 
    return (
       <ModalSection colors>
