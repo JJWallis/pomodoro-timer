@@ -82,7 +82,7 @@ export const ProgressCircle = styled.svg<Props>`
 setProgressWidth((timerLength / 60 / current) * 500)
 ```
 
-Circular progress bar -
+By far the most challenging feature of this project was building the circular progress bar which should update accordingly as the timer amount decreases.
 
 ```tsx
 const updateTheme = (newTheme: string) => {
