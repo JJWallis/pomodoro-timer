@@ -19,11 +19,11 @@ export const withModalContext: ModalContextProvider =
          setState({ ...state, [timer]: newState })
       }
 
-      const incremenet = (timer: string): void => {
+      const incremenet = (timer: string) => {
          setState({ ...state, [timer]: state[timer] + 1 })
       }
 
-      const decremement = (timer: string): void => {
+      const decremement = (timer: string) => {
          if (state[timer] === 1) return
          setState({ ...state, [timer]: state[timer] - 1 })
       }

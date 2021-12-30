@@ -2,7 +2,7 @@ import React, { FC, memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import ModalSection from './ModalSection'
 import ModalThemeSection from './ModalThemeSection'
-import { Theme, ColorThemes } from '../styles/Theme'
+import { Theme } from '../styles/Theme'
 
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
