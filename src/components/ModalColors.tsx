@@ -6,8 +6,8 @@ import { Theme, ColorThemes } from '../styles/Theme'
 
 const ModalColors: FC = () => {
    const { currentTheme, updateTheme } = useContext(ThemeContext)
-   const produceColors = (color: Partial<ColorThemes>) => {
-      return Object.values(color)
+   const produceColors = (colors: Partial<ColorThemes>) => {
+      return Object.values(colors)
          .splice(1, 3)
          .map((color) => color.identifier)
    }
