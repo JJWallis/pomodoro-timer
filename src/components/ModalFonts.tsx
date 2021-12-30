@@ -1,23 +1,20 @@
 import React, { FC, memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { useRadioButton } from '../hooks/useRadioButton'
 import ModalSection from './ModalSection'
-import { FlexContainerModal } from '../containers/Container.styled'
-import { ModalTitle } from '../styles/Title.styled'
+import ModalThemeSection from './ModalThemeSection'
 
 const ModalFonts: FC = () => {
    const { currentFont, updateFont } = useContext(ThemeContext)
    const fonts = ['ffKumbh', 'ffRoboto', 'ffSpaceMono']
-   const produceRadioButtons = useRadioButton(currentFont, fonts, updateFont)
 
    return (
       <ModalSection>
-         <FlexContainerModal>
-            <ModalTitle subTitle>Font</ModalTitle>
-            <FlexContainerModal radioButtons>
-               {produceRadioButtons}
-            </FlexContainerModal>
-         </FlexContainerModal>
+         <ModalThemeSection
+            title="Font"
+            currentTheme={currentFont}
+            themes={fonts}
+            updateTheme={updateFont}
+         />
       </ModalSection>
    )
 }
