@@ -119,19 +119,21 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 ```
 
-Reducer -
+Reducers -
 
 ### Continued development
 
-Custom hooks - research online for more examples | building more logic into them
+I have loved learning about custom hooks throughout this whole project and how versatile they are in refactoring our code. I can't wait to research more examples online and see how other developers have built their own to meet their specific needs.
+
+I am further keen to research more into Reducers and how they relate to other technologies I plan to learn in the future, most notably Redux.
 
 Reducers - more usecases + how that leads in Redux (apparently similar structure)
 
 ### Useful resources
 
--  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) - Second solution to producing circular progress bar post conic-gradient |
+-  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) - This article served as a great tutorial for building out the circular progress bar, as well as a great reference point with my original solution where I used a conic-gradient instead.
 
--  [React Higher Order Components with TypeScript](https://isamatov.com/react-hoc-typescript/) - Omit type + HOCs with TS |
+-  [React Higher Order Components with TypeScript](https://isamatov.com/react-hoc-typescript/) - This article introduced me to the Omit utility type in Typescript, enabling me to properly type the props my higher-order components would recieve, as well as 'omitting' the logic which would also be passed down via props from the higher-order component itself.
 
 ## Author
 
