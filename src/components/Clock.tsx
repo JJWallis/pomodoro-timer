@@ -31,12 +31,10 @@ const Clock: FC = () => {
       setNewTimer(state)
    }
 
-   const formatTimer = (leftSeconds: number) => {
-      const seconds = leftSeconds % 60
-      const minutes = Math.floor(leftSeconds / 60)
-      const minutesString = minutes > 9 ? minutes : `0${minutes}`
-      const secondsString = seconds > 9 ? seconds : `0${seconds}`
-      return `${minutesString}:${secondsString}`
+   const formatTimer = (secondsRemaining: number) => {
+      const seconds = secondsRemaining % 60
+      const minutes = Math.floor(secondsRemaining / 60)
+      return [minutes, seconds].map((time) => (time > 9 ? time : `0${time}`)).join(':')
    }
 
    return (

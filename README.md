@@ -71,6 +71,16 @@ export const ProgressCircle = styled.svg<Props>`
 ```
 
 ```tsx
+const formatTimer = (leftSeconds: number) => {
+   const seconds = leftSeconds % 60
+   const minutes = Math.floor(leftSeconds / 60)
+   const minutesString = minutes > 9 ? minutes : `0${minutes}`
+   const secondsString = seconds > 9 ? seconds : `0${seconds}`
+   return `${minutesString}:${secondsString}`
+}
+```
+
+```tsx
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
       return (
@@ -119,11 +129,3 @@ useReducer() - more usecases + how that leads in Redux (apparently similar struc
 ## Acknowledgments
 
 [GitHub - mlatka9/Pomodoro-app](https://github.com/mlatka9/Pomodoro-app)
-
-###### TODO
-
-CSS:
-
-Progressive meter/bar - SVG animation (outline drawing)
-
-JS:
