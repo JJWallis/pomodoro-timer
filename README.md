@@ -50,17 +50,6 @@ Your users should be able to:
 ### What I learned
 
 ```tsx
-export const ProgressMeter = styled.div<Props>`
-   background: conic-gradient(
-      ${({ theme: { currentTheme } }) => currentTheme.accent} ${({
-            progressAmount,
-         }) => progressAmount}%,
-      ${({ theme: { baseStyles } }) => baseStyles.bgSd} ${({
-            progressAmount,
-         }) => progressAmount}%
-   );
-`
-
 export const ProgressCircle = styled.svg<Props>`
    stroke: ${({ theme: { currentTheme } }) => currentTheme.accent};
    stroke-width: 5
@@ -73,27 +62,28 @@ setProgressWidth((timerLength / 60 / current) * 500)
 ```
 
 ```tsx
-export const withModalContext: ModalContextProvider =
-   (Component) => (props) => {
-      return (
-         <ModalContext.Provider value={{ state, updateState }}>
-            <Component {...props} />
-         </ModalContext.Provider>
-      )
-   }
+export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
+   return (
+      <TimerContext.Provider value={useTimer()}>
+         {children}
+      </TimerContext.Provider>
+   )
+}
 ```
 
-Context - multiple providers | sep folder | HOCs vs children for App context | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure)
+Context - multiple providers | sep folder | HOCs vs children for App context (+ custom hooks) | hook to use + return true if initialised inside its provider (TS destructuring solved) | sep files for types/interfaces (+ diff folder structure)
 
 ```tsx
 const updateTheme = (newTheme: string) => {
    setCurrentTheme(Theme[newTheme as keyof Omit<typeof Theme, 'baseStyles'>])
 }
-```
 
-HOCs + TS - Omit utility type (+ generics) | fixing 'any' props - rare potential use case | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope) | add more components to tree + bloated syntax + props | example above - bracket notation with objects (ignoring other keys apart from those to target)
+const produceColors = (colors: Partial<ColorThemes>) => {
+   return Object.values(colors)
+      .splice(1, 3)
+      .map((color) => color.identifier)
+}
 
-```tsx
 declare module 'styled-components' {
    export interface DefaultTheme {
       ...
@@ -101,7 +91,25 @@ declare module 'styled-components' {
 }
 ```
 
+HOCs + TS - Omit utility type (+ generics) | fixing 'any' props - rare potential use case | diff with custom hooks - arguments HOC take outside target component scope (custom hook can take them within that scope) | add more components to tree + bloated syntax + props | example above - bracket notation with objects (ignoring other keys apart from those to target) | Partial utility type
+
 Module Declarations - styled components (typing theme obj with declarations + intellisense/available in GlobalStyles)
+
+```tsx
+function reducer(state: UseTimerState, action: UseTimerActions) {
+   switch (action.type) {
+      case 'SET_INITIAL_TIMER_LENGTH':
+         return { ...state, timerLength: action.amount }
+         ...
+   }
+}
+```
+
+Reducer -
+
+```tsx
+
+```
 
 ### Continued development
 
