@@ -10,6 +10,8 @@ declare module 'styled-components' {
    }
 }
 
+export type ColorThemes = Omit<typeof Theme, 'baseStyles'>
+
 export const Theme = {
    baseStyles: {
       bgPm: '#1E213F',
