@@ -21,7 +21,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const { state } = useModalContext()
    let updateTimerOnMount = useRef(true)
    const modalRef = useRef(null)
-   useCLickOutside(modalRef, () => setIsModalToggled())
+   useCLickOutside(modalRef, () => isModalToggled && setIsModalToggled())
 
    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
