@@ -8,6 +8,7 @@ import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
 import { ApplyButton } from '../styles/Button.styled'
 import { HandleToggle } from '../hooks/useToggle.interface'
+import { useCLickOutside } from '../hooks/useClickOutside'
 
 interface Props {
    isModalToggled: boolean
@@ -19,6 +20,8 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
       useTimerContext()
    const { state } = useModalContext()
    let updateTimerOnMount = useRef(true)
+   const modalRef = useRef(null)
+   useCLickOutside(modalRef, () => setIsModalToggled())
 
    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -35,7 +38,11 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    }, [currentTimerTotal, dispatch, setNewTimer, updateTimerOnMount, state])
 
    return (
-      <ModalContainer opacity={isModalToggled ? 1 : 0} as="section">
+      <ModalContainer
+         ref={modalRef}
+         opacity={isModalToggled ? 1 : 0}
+         as="section"
+      >
          <ModalHeader setIsModalToggled={setIsModalToggled} />
          <form onSubmit={handleSubmission}>
             <ModalTimers />
