@@ -108,17 +108,19 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 ```
 
-The final major concept I learnt for this project was the `useReducer` hook, which allows us to store and manage more complicated state that potentially interacts with one another in a much neater and concise syntax. The best part about reducers are that you only need to pass down the desired state and the dispatch method in order to consume and update it, instead of passing down multiple separate functions that each update the state in specific ways. A reducer also provides a much more readable syntax within Typescript, since you have to type out all the possible actions that can affect that state, which I imagine serves as great documentation for any new developers contributing to a project.
+The final major concept I learnt for this project were Reducers and the `useReducer` hook, which allows us to store and update more complicated state that potentially interacts with one another in a much neater syntax, whilst being prone to less errors due to its restrictive nature of how we can update that state.
+
+The best part about reducers are that you only need to pass down the desired state and the dispatch method in order to consume and update it, instead of passing down multiple separate functions that each update the state in different ways. A reducer also provides a much more readable syntax within Typescript, since you have to type out all the possible actions that can affect that state, which I imagine serves as great documentation for any new developers contributing to a project.
 
 ### Continued development
 
 I have loved learning about custom hooks throughout this whole project and how versatile they are in refactoring our code. I can't wait to research more examples online and see how other developers have built their own to meet their specific needs.
 
-I am further keen to research more into Reducers and how they relate to other technologies I plan to learn in the future, most notably Redux.
+I am further keen to research more into Reducers and how they relate to other technologies I plan to learn in the future, most notably Redux since I've heard there are many crossovers with how state is managed within both.
 
 ### Useful resources
 
--  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) - This article served as a great tutorial for building out the circular progress bar, as well as a great reference point with my original solution where I used a conic-gradient instead.
+-  [How to code a responsive circular percentage chart with SVG and CSS.](https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705) - This article served as a great tutorial for building out the circular progress bar, as well as providing a great reference point alongside my original solution where I used a conic-gradient instead.
 
 -  [React Higher Order Components with TypeScript](https://isamatov.com/react-hoc-typescript/) - This article introduced me to the Omit utility type in Typescript, enabling me to properly type the props my higher-order components would recieve, as well as 'omitting' the logic which would also be passed down via props from the higher-order component itself.
 
