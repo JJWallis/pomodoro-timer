@@ -66,7 +66,7 @@ export function useTimerContext() {
 }
 ```
 
-This project was a major step forward in my use of Context in react, most notably learning about the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it or return an appropiate error message if used outside the providers 'range'.
+This project was a major step forward regarding my use of Context in React, most notably learning about the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it, or return an appropiate error message if used outside the provider's range.
 
 This solved a major problem I had encountered in previous Typescript based projects, where I had to constantly check if my destructed value from Context was true/present before I could use it. This technique further allowed me to pass down any global contexts directly from the index file instead of the App.
 
@@ -125,4 +125,4 @@ I am further keen to research more into Reducers and how they relate to other te
 ## Author
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
--  Linkedin - [Joshua Jameson-Wallis]()
+-  Linkedin - [Joshua Jameson-Wallis](www.linkedin.com/in/joshua-jameson-wallis)
