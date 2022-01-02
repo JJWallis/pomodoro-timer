@@ -14,7 +14,6 @@ This is a solution to the [Pomodoro app challenge](https://www.frontendmentor.io
    -  [Continued development](#continued-development)
    -  [Useful resources](#useful-resources)
 -  [Author](#author)
--  [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -40,9 +39,9 @@ Your users should be able to:
 ### Built with
 
 -  Semantic HTML5 markup
+-  Mobile-first workflow
 -  Flexbox
 -  CSS Grid
--  Mobile-first workflow
 -  [React](https://reactjs.org/) - JS library
 -  [Styled Components](https://styled-components.com/) - For styles
 -  Typescript
