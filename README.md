@@ -127,4 +127,4 @@ I am further keen to research more into Reducers and how they relate to other te
 ## Author
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
--  Linkedin - [Joshua Jameson-Wallis](www.linkedin.com/in/joshua-jameson-wallis)
+-  Linkedin - [Joshua Jameson-Wallis](https://www.linkedin.com/in/joshua-jameson-wallis/)
