@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { ModalSectionContainer } from '../containers/Container.styled'
+import { ModalSectionContainer } from '../containers/ModalContainers'
 
 interface Props {
    header?: boolean

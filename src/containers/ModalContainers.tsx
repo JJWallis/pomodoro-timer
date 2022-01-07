@@ -5,7 +5,6 @@ interface ModalProps {
    header?: boolean
    timerInputs?: boolean
    colors?: boolean
-   radioButtons?: boolean
 }
 
 export const ModalContainer = styled.div.attrs(({ opacity }: ModalProps) => ({
