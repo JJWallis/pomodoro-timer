@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
 export const TimersContainer = styled.div`
-   position: absolute;
-   top: 120px;
-   left: 50%;
-   transform: translateX(-50%);
    display: flex;
    justify-content: center;
    align-items: center;

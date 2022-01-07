@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react'
+import React, { FC } from 'react'
 import { AppContainer } from './containers/Container.styled'
 import { TimerContextProvider } from './context/timerContext'
 import { withModalContext } from './context/modalContext'
