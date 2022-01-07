@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react'
 import { useRadioButton } from '../hooks/useRadioButton'
-import { FlexContainerModal } from '../containers/Container.styled'
+import { FlexContainerModal } from '../containers/FlexContainerModal.styled'
 import { ModalTitle } from '../styles/Title.styled'
 import { CurrentTheme, Update } from '../context/withTheme.interface'
 
