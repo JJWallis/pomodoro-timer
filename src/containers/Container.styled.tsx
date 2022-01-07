@@ -45,16 +45,6 @@ export const FlexContainerModal = styled(
    }
 `
 
-export const NumberInputsContainer = styled.div`
-   display: grid;
-   gap: 0.5rem;
-   @media (max-width: ${({ theme: { baseStyles } }) =>
-         baseStyles.mediaBreakpoint}) {
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-   }
-`
-
 export const InputContainer = styled.div`
    position: relative;
 `

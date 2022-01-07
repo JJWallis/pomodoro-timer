@@ -1,12 +1,10 @@
 import React, { FC } from 'react'
 import { useModalContext } from '../hooks/useModalContext'
 import { Input } from '../styles/Input.styled'
-import {
-   NumberInputsContainer,
-   InputContainer,
-} from '../containers/Container.styled'
+import { InputContainer } from '../containers/Container.styled'
 import { NumberInputLabel } from '../styles/Label.styled'
 import { Arrow } from '../styles/Icon.styled'
+import { GridItemModal } from '../containers/GridContainerModal'
 
 interface Props {
    label: string
@@ -17,7 +15,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
    const { incremenet, decremement, updateState } = useModalContext()
 
    return (
-      <NumberInputsContainer>
+      <GridItemModal>
          <NumberInputLabel htmlFor={label}>
             {label.replace('b', ' b')}
          </NumberInputLabel>
@@ -49,7 +47,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                <path d="M1 1l6 4 6-4" />
             </Arrow>
          </InputContainer>
-      </NumberInputsContainer>
+      </GridItemModal>
    )
 }
 
