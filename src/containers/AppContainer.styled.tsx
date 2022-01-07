@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import { FlexContainerMobile } from './FlexContainerMobile.styled'
 
-interface ContainerProps {
-   opacity?: number
+interface Props {
    isModalToggled: boolean
 }
 
-export const AppContainer = styled(FlexContainerMobile)<ContainerProps>`
+export const AppContainer = styled(FlexContainerMobile)<Props>`
    padding: 3rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;

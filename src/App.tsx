@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { AppContainer } from './containers/Container.styled'
+import { AppContainer } from './containers/AppContainer.styled'
 import { TimerContextProvider } from './context/timerContext'
 import { withModalContext } from './context/modalContext'
 import { useToggle } from './hooks/useToggle'
