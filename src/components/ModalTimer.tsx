@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useModalContext } from '../hooks/useModalContext'
 import { Input } from '../styles/Input.styled'
-import { InputContainer } from '../containers/Container.styled'
+import { InputContainer } from '../containers/InputContainer.styled'
 import { NumberInputLabel } from '../styles/Label.styled'
 import { Arrow } from '../styles/Icon.styled'
 import { GridItemModal } from '../containers/GridContainerModal.styled'
