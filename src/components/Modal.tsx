@@ -1,7 +1,7 @@
 import React, { FC, useLayoutEffect, useRef } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
-import { ModalContainer } from '../containers/ModalContainers'
+import { ModalContainer } from '../containers/ModalContainers.styled'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'

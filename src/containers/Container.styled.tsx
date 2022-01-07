@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { FlexContainerMobile } from './FlexContainerMobile'
+import { FlexContainerMobile } from './FlexContainerMobile.styled'
 
 interface ContainerProps {
    opacity?: number

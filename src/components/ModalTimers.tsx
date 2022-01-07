@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { useModalContext } from '../hooks/useModalContext'
 import ModalSection from './ModalSection'
 import { ModalTitle } from '../styles/Title.styled'
-import { GridContainerModal } from '../containers/GridContainerModal'
+import { GridContainerModal } from '../containers/GridContainerModal.styled'
 import ModalTimer from './ModalTimer'
 
 const ModalTimers: FC = () => {

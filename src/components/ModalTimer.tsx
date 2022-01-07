@@ -4,7 +4,7 @@ import { Input } from '../styles/Input.styled'
 import { InputContainer } from '../containers/Container.styled'
 import { NumberInputLabel } from '../styles/Label.styled'
 import { Arrow } from '../styles/Icon.styled'
-import { GridItemModal } from '../containers/GridContainerModal'
+import { GridItemModal } from '../containers/GridContainerModal.styled'
 
 interface Props {
    label: string
