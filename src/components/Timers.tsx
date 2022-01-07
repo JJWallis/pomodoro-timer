@@ -3,7 +3,7 @@ import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { TimersContainer } from '../containers/TimersContainer.styled'
 import { TimerButton } from '../styles/Button.styled'
-import SrOnly from '../styles/SrOnly'
+import SrOnly from '../styles/SrOnly.styled'
 
 const Timers: FC = () => {
    const { state } = useModalContext()
