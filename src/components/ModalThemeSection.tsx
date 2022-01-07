@@ -2,7 +2,7 @@ import React, { FC, memo } from 'react'
 import { useRadioButton } from '../hooks/useRadioButton'
 import { FlexContainerModal } from '../containers/Container.styled'
 import { ModalTitle } from '../styles/Title.styled'
-import { CurrentTheme, Update } from '../components/withTheme.interface'
+import { CurrentTheme, Update } from '../context/withTheme.interface'
 
 interface Props {
    title: string

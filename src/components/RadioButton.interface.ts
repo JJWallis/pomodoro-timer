@@ -1,4 +1,4 @@
-import { Update } from '../components/withTheme.interface'
+import { Update } from '../context/withTheme.interface'
 
 export interface RadioButtonProps {
    theme: string

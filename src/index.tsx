@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import GlobalStyles from './styles/Global.styled'
-import { ThemeContext } from './components/withTheme'
+import { ThemeContext } from './context/withTheme'
 
 ReactDOM.render(
    <StrictMode>
