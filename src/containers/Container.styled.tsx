@@ -73,6 +73,11 @@ export const AppContainer = styled(FlexContainerMobile)<ContainerProps>`
    padding: 3rem 1rem;
    background-color: ${({ theme: { baseStyles } }) => baseStyles.bgPm};
    min-height: 100vh;
+   @media (max-width: ${({ theme: { baseStyles } }) =>
+         baseStyles.mediaBreakpoint}) {
+      gap: 4rem;
+   }
+
    &::before {
       content: '';
       display: block;
@@ -101,12 +106,11 @@ export const ClockContainer = styled.div`
    height: 430px;
    border-radius: 50%;
    background-image: linear-gradient(to bottom right, #0e112a, #2e325a);
-   box-shadow: -2rem -2rem 10rem 1rem #272c5a, 5rem 5rem 10rem 0 #121530;
+   box-shadow: -2rem -2rem 8rem 0 #272c5a, 5rem 5rem 10rem 0 #121530;
    @media (max-width: ${({ theme: { baseStyles } }) =>
          baseStyles.mediaBreakpoint}) {
       width: 400px;
       height: 400px;
-      box-shadow: -3rem -3rem 10rem 0 #272c5a, 3rem 3rem 10rem 0 #121530;
    }
 `
 

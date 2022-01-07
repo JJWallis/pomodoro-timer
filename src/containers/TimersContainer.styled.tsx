@@ -4,7 +4,7 @@ export const TimersContainer = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 90%;
+   width: 100%;
    max-width: 440px;
    padding: 0.4rem 0.5rem;
    margin-bottom: 1rem;
