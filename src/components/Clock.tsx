@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
-import { ClockContainer } from '../containers/Container.styled'
+import { ClockContainer } from '../containers/ClockContainer'
 import { ClockButton } from '../styles/Button.styled'
 import { ProgressCircle } from '../styles/Icon.styled'
 import { TimerTitle } from '../styles/Title.styled'
@@ -34,7 +34,9 @@ const Clock: FC = () => {
    const formatTimer = (secondsRemaining: number) => {
       const seconds = secondsRemaining % 60
       const minutes = Math.floor(secondsRemaining / 60)
-      return [minutes, seconds].map((time) => (time > 9 ? time : `0${time}`)).join(':')
+      return [minutes, seconds]
+         .map((time) => (time > 9 ? time : `0${time}`))
+         .join(':')
    }
 
    return (
