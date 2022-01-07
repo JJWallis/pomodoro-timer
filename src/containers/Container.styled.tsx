@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { FlexContainerMobile } from './FlexContainerMobile'
 
 interface ContainerProps {
    opacity?: number
@@ -11,14 +12,6 @@ interface ModalSectionProps {
    colors?: boolean
    radioButtons?: boolean
 }
-
-const FlexContainerMobile = styled.div`
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 3rem;
-`
 
 export const FlexContainerModal = styled(
    FlexContainerMobile
