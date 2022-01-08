@@ -115,9 +115,11 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 }
 ```
 
-The final major concept I learnt for this project were Reducers and the `useReducer` hook, which allows us to store and update more complicated state that potentially interacts with one another in a much neater syntax, whilst being prone to less errors due to its restrictive nature of how we can update that state.
+The final major concept I learnt for this project was the `useReducer` hook and Reducers in general, both allowing us to store and update more complicated state that potentially interacts with one another in a much concise syntax. They're also less error prone due to their restrictive nature of how we can update the state they house.
 
-The best part about reducers are that you only need to pass down the desired state and the dispatch method in order to consume and update it, instead of passing down multiple separate functions that each update the state in different ways. A reducer also provides a much more readable syntax within Typescript, since you have to type out all the possible actions that can affect that state, which I imagine serves as great documentation for any new developers contributing to a project.
+The best part about Reducers are that you only need to pass down the desired state and the dispatch method in order to consume and update it, instead of passing down multiple separate functions that each update the state in different ways.
+
+A reducer also provides a much more readable syntax within Typescript, since you have to type out all the possible actions, which I imagine serves as great documentation for any new developers contributing to a project.
 
 ### Continued development
 
