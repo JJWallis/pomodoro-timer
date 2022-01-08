@@ -67,9 +67,11 @@ export function useTimerContext() {
 }
 ```
 
-This project was a major step forward regarding my use of Context in React, most notably learning about the most efficient ways to structure the logic and pass it down to all necessary child components. I learnt how one should ideally create a context folder containing all created contexts and their types (if using Typescript), whilst then within the same file manually creating your own custom provider that can be matched with a custom hook to consume it, or return an appropiate error message if used outside the provider's range.
+This project was a major step forward regarding my use of the Context API in React, most notably learning about the best ways to structure the logic and pass it down to all necessary child components.
 
-This solved a major problem I had encountered in previous Typescript based projects, where I had to constantly check if my destructed value from Context was present before I could use it. This technique further allowed me to pass down any contexts anywhere within the app (such as directly from the index file), since you're returning the Provider itself which can then be used wherever desired.
+I learnt how one should ideally create a context folder containing all created contexts and their types, whilst then manually creating your own custom provider that can be matched with a custom hook to either consume it, or return an appropiate error message if used outside the provider's range.
+
+This solved a major problem I had encountered in previous Typescript projects, where I had to constantly check if my destructed value from Context was truthy before I could use it.
 
 ```tsx
 export const ProgressCircle = styled.svg<Props>`
