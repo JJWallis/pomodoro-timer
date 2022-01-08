@@ -85,7 +85,9 @@ export const ProgressCircle = styled.svg<Props>`
 setProgressWidth((timerLength / 60 / current) * 500)
 ```
 
-By far the most challenging feature of this project was building the circular progress bar, which should update accordingly as the remaining timer amount decreases. My first attempt involved creating a conic-gradient which revealed a decreasing amount of the current theme's accent colour, in contrast to the primary background-color of the Clock component. However, upon further research I came accross the method shown above which looked almost identical to the original design, and provided much greater flexibility in case I wanted to change how the SVG appeared (such as its shape).
+By far the most challenging feature of this project was building out the circular progress bar, which should update accordingly as the remaining timer amount decreases.
+
+My first attempt involved creating a conic-gradient which revealed a decreasing amount of the current theme's accent colour, in contrast to the primary background-color of the Clock component. However, upon further research I came accross a better method using an SVG's `stroke-width` and `stroke-dasharray` properties, providing greater flexibility in case I wanted to change how the progress bar appeared (such as its shape).
 
 ```tsx
 const updateTheme = (newTheme: string) => {
