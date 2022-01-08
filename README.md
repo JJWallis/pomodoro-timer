@@ -56,7 +56,9 @@ export const TimerContextProvider = ({ children }: { children: ReactNode }) => {
       </TimerContext.Provider>
    )
 }
+```
 
+```tsx
 export function useTimerContext() {
    const context = useContext(TimerContext)
    if (!context)
