@@ -30,6 +30,7 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
                cross
                onClick={handleCloseBtn}
                aria-label="Toggle modal visibility"
+               aria-controls="modal-container"
             >
                <Close viewBox="0 0 18 17" aria-hidden="true" focusable="false">
                   <path
