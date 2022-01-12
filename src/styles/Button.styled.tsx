@@ -65,7 +65,7 @@ export const ResetButton = styled(Button)<ButtonProps>`
    pointer-events: ${({ progressAmount }) =>
       progressAmount === 0 ? 'all' : 'none'};
    position: absolute;
-   top: 50%;
+   top: 53%;
    right: 50%;
    transform: translate(55.5%, 413%);
    font-size: 1.2rem;
