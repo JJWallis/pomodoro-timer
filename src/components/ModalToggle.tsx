@@ -9,7 +9,11 @@ interface Props {
 
 const ModalToggle: FC<Props> = ({ setIsModalToggled }) => {
    return (
-      <Button onClick={setIsModalToggled} aria-label="Toggle modal visibility">
+      <Button
+         onClick={setIsModalToggled}
+         aria-label="Toggle modal visibility"
+         aria-controls="modal-container"
+      >
          <Cog
             viewBox="0 0 28 28"
             fill="none"

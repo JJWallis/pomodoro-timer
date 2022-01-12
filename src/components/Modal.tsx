@@ -39,6 +39,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
 
    return (
       <ModalContainer
+         id="modal-container"
          ref={modalRef}
          opacity={isModalToggled ? 1 : 0}
          as="section"
