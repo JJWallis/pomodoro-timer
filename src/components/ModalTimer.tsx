@@ -31,7 +31,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                width="14"
                height="7"
                focusable="true"
-               aria-label="Upwards facing arrow icon, increasing corresponding timer amount by one"
+               aria-label="Upwards facing arrow to increase corresponding timer amount by one"
                onClick={() => incremenet(label)}
             >
                <path d="M1 6l6-4 6 4" />
@@ -41,7 +41,7 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                width="14"
                height="7"
                focusable="true"
-               aria-label="Downwards facing arrow icon, descreasing corresponding timer amount by one"
+               aria-label="Downwards facing arrow to descrease corresponding timer amount by one"
                onClick={() => decremement(label)}
             >
                <path d="M1 1l6 4 6-4" />
