@@ -24,8 +24,3 @@ export const useCLickOutside: UseClickOutside = (elRef, callback) => {
       }
    }, [elRef, callbackRef])
 }
-
-// instead of referencing callback in useEffect, we can use a ref to reference it
-// else new instance each render (+ event listeners fired each ...)
-// ref never changes (only instigated on original hook call)
-// but the value it holds will change (dynamic)
