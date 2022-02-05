@@ -16,8 +16,7 @@ interface Props {
 }
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
-   const { dispatch, currentTimerTotal, endTimer, setNewTimer } =
-      useTimerContext()
+   const { endTimer, setNewTimer } = useTimerContext()
    const { state } = useModalContext()
    let updateTimerOnMount = useRef(true)
    const modalRef = useRef(null)
@@ -35,7 +34,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
          setNewTimer(state)
          updateTimerOnMount.current = false
       }
-   }, [currentTimerTotal, dispatch, setNewTimer, updateTimerOnMount, state])
+   }, [setNewTimer, updateTimerOnMount, state])
 
    return (
       <ModalContainer
