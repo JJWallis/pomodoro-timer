@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import React, { FC } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import ModalSection from './ModalSection'
@@ -44,4 +44,4 @@ const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
    )
 }
 
-export default memo(ModalHeader)
+export default ModalHeader

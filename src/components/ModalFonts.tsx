@@ -1,4 +1,4 @@
-import React, { FC, memo, useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import ModalSection from './ModalSection'
 import ModalThemeSection from './ModalThemeSection'
@@ -20,4 +20,4 @@ const ModalFonts: FC = () => {
    )
 }
 
-export default memo(ModalFonts)
+export default ModalFonts

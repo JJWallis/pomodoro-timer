@@ -1,4 +1,4 @@
-import React, { FC, memo, useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import ModalSection from './ModalSection'
 import ModalThemeSection from './ModalThemeSection'
@@ -24,4 +24,4 @@ const ModalColors: FC = () => {
    )
 }
 
-export default memo(ModalColors)
+export default ModalColors

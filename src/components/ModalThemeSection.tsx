@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import React, { FC } from 'react'
 import { useRadioButton } from '../hooks/useRadioButton'
 import { FlexContainerModal } from '../containers/FlexContainerModal.styled'
 import { ModalTitle } from '../styles/Title.styled'
@@ -27,4 +27,4 @@ const ModalThemeSection: FC<Props> = ({
    )
 }
 
-export default memo(ModalThemeSection)
+export default ModalThemeSection
