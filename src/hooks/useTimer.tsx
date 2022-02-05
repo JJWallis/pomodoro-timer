@@ -2,6 +2,13 @@ import { useCallback, useEffect, useReducer, useRef } from 'react'
 import { UseTimerActions, UseTimerState } from './useTimer.interface'
 import { Data } from '../context/modalContext.interface'
 
+const initialState = {
+   timerLength: 0,
+   timeoutId: null,
+   isRunning: false,
+   activeTimer: 'pomodoro',
+}
+
 function reducer(state: UseTimerState, action: UseTimerActions) {
    switch (action.type) {
       case 'SET_INITIAL_TIMER_LENGTH':
@@ -21,12 +28,7 @@ function reducer(state: UseTimerState, action: UseTimerActions) {
 
 export function useTimer() {
    const [{ isRunning, timeoutId, timerLength, activeTimer }, dispatch] =
-      useReducer(reducer, {
-         timerLength: 0,
-         timeoutId: null,
-         isRunning: false,
-         activeTimer: 'pomodoro',
-      })
+      useReducer(reducer, initialState)
    const currentTimerTotal = useRef<number | null>(null)
 
    const startTimer = () => {
