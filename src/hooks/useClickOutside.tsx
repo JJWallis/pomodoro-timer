@@ -6,7 +6,7 @@ type UseClickOutside = <T>(
 ) => void
 
 export const useCLickOutside: UseClickOutside = (elRef, callback) => {
-   const callbackRef = useRef<typeof callback>()
+   const callbackRef = useRef<typeof callback | null>(null)
    callbackRef.current = callback
 
    useEffect(() => {
