@@ -29,10 +29,10 @@ export function useTimer() {
       })
    const currentTimerTotal = useRef<number | null>(null)
 
-   const startTimer = useCallback(() => {
+   const startTimer = () => {
       const time = setInterval(() => dispatch({ type: 'COUNT_DOWN' }), 1000)
       dispatch({ type: 'START_TIMER', timeOutId: time })
-   }, [])
+   }
 
    const endTimer = useCallback(() => {
       timeoutId && clearInterval(timeoutId)
