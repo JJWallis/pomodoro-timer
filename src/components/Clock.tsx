@@ -40,7 +40,7 @@ const Clock: FC = () => {
    }
 
    return (
-      <ClockContainer as="section">
+      <ClockContainer as="article">
          <ClockButton
             progressAmount={progressWidth}
             onClick={isRunning ? endTimer : startTimer}

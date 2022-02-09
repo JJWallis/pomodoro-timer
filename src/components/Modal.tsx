@@ -2,13 +2,13 @@ import React, { FC, useLayoutEffect, useRef } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { ModalContainer } from '../containers/ModalContainers.styled'
+import { ApplyButton } from '../styles/Button.styled'
+import { HandleToggle } from '../hooks/useToggle.interface'
+import { useCLickOutside } from '../hooks/useClickOutside'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
-import { ApplyButton } from '../styles/Button.styled'
-import { HandleToggle } from '../hooks/useToggle.interface'
-import { useCLickOutside } from '../hooks/useClickOutside'
 
 interface Props {
    isModalToggled: boolean
@@ -18,8 +18,8 @@ interface Props {
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const { endTimer, setNewTimer } = useTimerContext()
    const { state } = useModalContext()
-   let updateTimerOnMount = useRef(true)
    const modalRef = useRef(null)
+   let updateTimerOnMount = useRef(true)
    useCLickOutside(modalRef, () => isModalToggled && setIsModalToggled())
 
    const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
