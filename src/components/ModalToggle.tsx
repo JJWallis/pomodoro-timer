@@ -5,14 +5,17 @@ import { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
    setIsModalToggled: HandleToggle
+   isModalToggled: boolean
 }
 
-const ModalToggle: FC<Props> = ({ setIsModalToggled }) => {
+const ModalToggle: FC<Props> = ({ setIsModalToggled, isModalToggled }) => {
    return (
       <Button
          onClick={setIsModalToggled}
          aria-label="Toggle modal visibility"
          aria-controls="modal-container"
+         aria-expanded={isModalToggled}
+         aria-haspopup="dialog"
       >
          <Cog
             viewBox="0 0 28 28"

@@ -19,7 +19,10 @@ const App: FC = () => {
             <Logo src={LogoImg} alt="" />
             <Timers />
             <Clock />
-            <ModalToggle setIsModalToggled={setIsModalToggled} />
+            <ModalToggle
+               isModalToggled={isModalToggled}
+               setIsModalToggled={setIsModalToggled}
+            />
             <Modal
                setIsModalToggled={setIsModalToggled}
                isModalToggled={isModalToggled}
