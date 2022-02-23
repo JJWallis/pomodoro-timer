@@ -6,7 +6,7 @@ import { FlexContainerModal } from '../containers/FlexContainerModal.styled'
 import { ModalTitle } from '../styles/Title.styled'
 import { Button } from '../styles/Button.styled'
 import { Close } from '../styles/Icon.styled'
-import { HandleToggle } from '../hooks/useToggle.interface'
+import type { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
    setIsModalToggled: HandleToggle

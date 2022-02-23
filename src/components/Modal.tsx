@@ -3,12 +3,12 @@ import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { ModalContainer } from '../containers/ModalContainers.styled'
 import { ApplyButton } from '../styles/Button.styled'
-import { HandleToggle } from '../hooks/useToggle.interface'
 import { useCLickOutside } from '../hooks/useClickOutside'
 import ModalHeader from './ModalHeader'
 import ModalTimers from './ModalTimers'
 import ModalColors from './ModalColors'
 import ModalFonts from './ModalFonts'
+import type { HandleToggle } from '../hooks/useToggle.interface'
 
 interface Props {
    isModalToggled: boolean

@@ -1,10 +1,10 @@
 import React, { FC, ChangeEvent } from 'react'
-import { RadioButtonProps } from './RadioButton.interface'
 import { RadioButtonLabel } from '../styles/Label.styled'
 import { InputReset } from '../styles/Input.styled'
 import { RadioButtonContent } from '../styles/Span.styled'
 import { Theme, ColorThemes } from '../styles/Theme'
 import Tick from '../assets/icon-tik.svg'
+import type { RadioButtonProps } from './RadioButton.interface'
 
 const RadioButton: FC<RadioButtonProps> = ({
    theme,
