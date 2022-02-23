@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import RadioButton from '../components/RadioButton'
-import { UseRadioButton } from './useRadioButton.interface'
+import type { UseRadioButton } from './useRadioButton.interface'
 
 export const useRadioButton: UseRadioButton = (current, themes, update) => {
    const { identifier } = current

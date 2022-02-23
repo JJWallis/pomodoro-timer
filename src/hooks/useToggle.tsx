@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { UseToggle } from './useToggle.interface'
+import type { UseToggle } from './useToggle.interface'
 
 export const useToggle: UseToggle = (initialState?: boolean) => {
    const [isToggled, setIsToggled] = useState(initialState ?? false)

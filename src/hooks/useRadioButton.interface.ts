@@ -1,4 +1,4 @@
-import { CurrentTheme, Update } from '../context/withTheme.interface'
+import type { CurrentTheme, Update } from '../context/withTheme.interface'
 
 export type UseRadioButton = (
    current: CurrentTheme,

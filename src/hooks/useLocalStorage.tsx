@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { InitialValue } from './useLocalStorage.interface'
+import type { InitialValue } from './useLocalStorage.interface'
 
 function getSavedValue(key: string, initialValue: InitialValue) {
    const savedValue = localStorage.getItem(key)

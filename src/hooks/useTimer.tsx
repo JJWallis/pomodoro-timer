@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react'
-import { UseTimerActions, UseTimerState } from './useTimer.interface'
-import { Data } from '../context/modalContext.interface'
+import type { UseTimerActions, UseTimerState } from './useTimer.interface'
+import type { Data } from '../context/modalContext.interface'
 
 const initialState = {
    timerLength: 0,
