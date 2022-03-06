@@ -9,6 +9,8 @@ export type ModalContextProvider = <T>(
    Component: React.ComponentType<T>
 ) => React.ComponentType<T>
 
+export type ModalStateKeys = keyof Data
+
 export interface Data {
    pomodoro: number
    shortbreak: number

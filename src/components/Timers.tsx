@@ -4,6 +4,7 @@ import { useModalContext } from '../hooks/useModalContext'
 import { TimersContainer } from '../containers/TimersContainer.styled'
 import { TimerButton } from '../styles/Button.styled'
 import SrOnly from '../styles/SrOnly.styled'
+import { ModalStateKeys } from '../context/modalContext.interface'
 
 const Timers: FC = () => {
    const { state } = useModalContext()
@@ -12,7 +13,7 @@ const Timers: FC = () => {
 
    const handleClick = (desiredTimer: string) => {
       if (activeTimer !== desiredTimer) {
-         const newAmount = state[desiredTimer as keyof typeof state]
+         const newAmount = state[desiredTimer as ModalStateKeys]
          endTimer()
          dispatch({ type: 'SET_ACTIVE_TIMER', active: desiredTimer })
          dispatch({
@@ -24,8 +25,8 @@ const Timers: FC = () => {
    }
 
    return (
-      <TimersContainer as="section">
-         <SrOnly>Select desired active timer</SrOnly>
+      <TimersContainer as="section" aria-labelledby="timers-subtitle">
+         <SrOnly id="timers-subtitle">Select desired active timer</SrOnly>
          {Object.keys(state).map((key) => (
             <TimerButton
                key={key}
