@@ -11,6 +11,7 @@ declare module 'styled-components' {
 }
 
 export type ColorThemes = Omit<typeof Theme, 'baseStyles'>
+export type ColorThemeKeys = keyof ColorThemes
 
 export const Theme = {
    baseStyles: {
