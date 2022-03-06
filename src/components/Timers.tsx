@@ -3,8 +3,8 @@ import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { TimersContainer } from '../containers/TimersContainer.styled'
 import { TimerButton } from '../styles/Button.styled'
-import SrOnly from '../styles/SrOnly.styled'
 import { ModalStateKeys } from '../context/modalContext.interface'
+import SrOnly from '../styles/SrOnly.styled'
 
 const Timers: FC = () => {
    const { state } = useModalContext()
@@ -25,8 +25,8 @@ const Timers: FC = () => {
    }
 
    return (
-      <TimersContainer as="section" aria-labelledby="timers-subtitle">
-         <SrOnly id="timers-subtitle">Select desired active timer</SrOnly>
+      <TimersContainer as="section" aria-labelledby="timers-desc">
+         <SrOnly id="timers-desc">Select desired active timer</SrOnly>
          {Object.keys(state).map((key) => (
             <TimerButton
                key={key}
