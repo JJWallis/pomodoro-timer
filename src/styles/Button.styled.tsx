@@ -112,3 +112,9 @@ export const ApplyButton = styled(Button)<ButtonProps>`
       opacity: 0.1;
    }
 `
+
+export const ErrorReset = styled(ApplyButton)<ButtonProps>`
+   position: static;
+   margin-top: 2rem;
+   transform: translate(60%, 50%);
+`

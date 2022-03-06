@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { FallbackProps } from 'react-error-boundary'
+import { ErrorReset } from '../styles/Button.styled'
 import ErrorMsg from '../styles/ErrorMsg.styled'
 
 const ErrorFallback: FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
@@ -9,7 +10,7 @@ const ErrorFallback: FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
             Something went wrong: <br />
             {error.message}
          </ErrorMsg>
-         <button onClick={resetErrorBoundary}>Try again</button>
+         <ErrorReset onClick={resetErrorBoundary}>Try again</ErrorReset>
       </div>
    )
 }
