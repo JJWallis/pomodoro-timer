@@ -8,7 +8,7 @@ interface Props {
    isModalToggled: boolean
 }
 
-const ModalToggle: FC<Props> = ({ setIsModalToggled, isModalToggled }) => {
+const ModalToggle: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    return (
       <Button
          onClick={setIsModalToggled}

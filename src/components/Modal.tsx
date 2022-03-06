@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useRef } from 'react'
+import React, { FC, useLayoutEffect, useRef, FormEvent } from 'react'
 import { useTimerContext } from '../hooks/useTimerContext'
 import { useModalContext } from '../hooks/useModalContext'
 import { ModalContainer } from '../containers/ModalContainers.styled'
@@ -22,7 +22,7 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    let updateTimerOnMount = useRef(true)
    useCLickOutside(modalRef, () => isModalToggled && setIsModalToggled())
 
-   const handleSubmission = (e: React.FormEvent<HTMLFormElement>) => {
+   const handleSubmission = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       endTimer()
       setNewTimer(state)

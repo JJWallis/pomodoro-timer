@@ -13,8 +13,8 @@ const RadioButton: FC<RadioButtonProps> = ({
    updateTheme,
    fonts,
 }) => {
-   const handleRadioToggle = (e: ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target
+   const handleRadioToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
+      const { value } = target
       setSelectedOption(value)
       updateTheme(value)
    }
