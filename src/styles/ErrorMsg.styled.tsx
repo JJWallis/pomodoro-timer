@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.p`
-   color: ${({ theme }) => theme.currentTheme.accent};
+   color: #f87070;
    font-size: 2rem;
    text-align: center;
 `

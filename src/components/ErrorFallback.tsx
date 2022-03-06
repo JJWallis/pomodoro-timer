@@ -8,7 +8,7 @@ const ErrorFallback: FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
       <div role="alert">
          <ErrorMsg>
             Something went wrong: <br />
-            {error.message}
+            {error.message} <br />
          </ErrorMsg>
          <ErrorReset onClick={resetErrorBoundary}>Try again</ErrorReset>
       </div>

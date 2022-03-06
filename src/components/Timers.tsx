@@ -23,13 +23,8 @@ const Timers: FC = () => {
       }
    }
 
-   const TestErr = () => {
-      throw new Error('test error')
-   }
-
    return (
       <TimersContainer as="section">
-         <TestErr />
          <SrOnly>Select desired active timer</SrOnly>
          {Object.keys(state).map((key) => (
             <TimerButton
