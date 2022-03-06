@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { Theme, Fonts, ColorThemes } from '../styles/Theme'
+import { Theme, Fonts, ColorThemeKeys } from '../styles/Theme'
 
 const { redTheme, baseStyles } = Theme
 const { ffKumbh } = Fonts
@@ -14,7 +14,7 @@ export const ThemeContext: FC = ({ children }) => {
    const [currentFont, setCurrentFont] = useLocalStorage('themeFont', ffKumbh)
 
    const updateTheme = (newTheme: string) => {
-      setCurrentTheme(Theme[newTheme as keyof ColorThemes])
+      setCurrentTheme(Theme[newTheme as ColorThemeKeys])
    }
 
    const updateFont = (newFont: string) => {
