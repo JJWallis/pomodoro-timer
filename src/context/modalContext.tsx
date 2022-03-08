@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useReducer } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import {
    ModalContextData,
@@ -7,6 +7,25 @@ import {
 
 export const ModalContext = createContext<ModalContextData | null>(null)
 
+const initialState = {
+   pomodoro: 1,
+   shortbreak: 5,
+   longbreak: 15,
+}
+
+const reducer = (state: any, action: any) => {
+   const { type, payload } = action
+   switch (type) {
+      case 'UPDATE_STATE': {
+         return { ...state, pomodoro: payload }
+      }
+
+      default: {
+         return state
+      }
+   }
+}
+
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
       const [state, setState] = useLocalStorage('TIMERS', {
@@ -14,6 +33,8 @@ export const withModalContext: ModalContextProvider =
          shortbreak: 5,
          longbreak: 15,
       })
+
+      const [newState, dispatch] = useReducer(reducer, state)
 
       const updateState = (timer: string, newState: number) => {
          setState({ ...state, [timer]: newState })
