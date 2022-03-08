@@ -1,5 +1,9 @@
 import 'styled-components'
 
+export type ColorThemes = Omit<typeof Theme, 'baseStyles'>
+export type ColorThemeKeys = keyof ColorThemes
+export type FontKeys = keyof typeof Fonts
+
 declare module 'styled-components' {
    export interface DefaultTheme {
       baseStyles: typeof Theme['baseStyles']
@@ -9,9 +13,6 @@ declare module 'styled-components' {
       updateFont: (newFont: string) => void
    }
 }
-
-export type ColorThemes = Omit<typeof Theme, 'baseStyles'>
-export type ColorThemeKeys = keyof ColorThemes
 
 export const Theme = {
    baseStyles: {
