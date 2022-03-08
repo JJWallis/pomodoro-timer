@@ -7,11 +7,15 @@ import ModalTimer from './ModalTimer'
 import { ModalStateKeys } from '../context/modalContext.interface'
 
 const ModalTimers: FC = () => {
-   const { state } = useModalContext()
+   const modalState = useModalContext()
 
    const produceTimerInputs = () => {
-      return Object.keys(state).map((key) => (
-         <ModalTimer key={key} label={key} val={state[key as ModalStateKeys]} />
+      return Object.keys(modalState).map((key) => (
+         <ModalTimer
+            key={key}
+            label={key}
+            val={modalState[key as ModalStateKeys]}
+         />
       ))
    }
 
