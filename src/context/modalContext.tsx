@@ -1,8 +1,11 @@
 import React, { createContext, useReducer } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import {
+   Data,
+   ModalActions,
    ModalContextData,
    ModalContextProvider,
+   ModalStateKeys,
 } from './modalContext.interface'
 
 export const ModalContext = createContext<ModalContextData | null>(null)
@@ -13,17 +16,17 @@ const initialState = {
    longbreak: 15,
 }
 
-const reducer = (state, action) => {
-   const { type, amount, timer } = action
+const reducer = (state: Data, action: ModalActions) => {
+   const { type, timer } = action
    switch (type) {
       case 'UPDATE_TIMER': {
-         return { ...state, [timer]: amount }
+         return { ...state, [timer]: action.amount }
       }
       case 'INCREMENT_TIMER': {
-         return { ...state, [timer]: state[timer] + 1 }
+         return { ...state, [timer]: state[timer as ModalStateKeys] + 1 }
       }
       case 'DECREMENT_TIMER': {
-         return { ...state, [timer]: state[timer] - 1 }
+         return { ...state, [timer]: state[timer as ModalStateKeys] - 1 }
       }
       default: {
          return state
