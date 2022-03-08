@@ -42,6 +42,9 @@ export const withModalContext: ModalContextProvider =
          longbreak: 15,
       })
 
+      // useEffect to store in local storage
+      // lazy func to retrieve from local storage
+
       const [modalState, dispatch] = useReducer(reducer, initialState)
 
       const updateState = (timer: string, newState: number) => {
