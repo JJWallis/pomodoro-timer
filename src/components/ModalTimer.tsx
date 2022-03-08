@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { useModalContext } from '../hooks/useModalContext'
+import { useModalContextDispatch } from '../hooks/useModalContextDispatch'
 import { Input } from '../styles/Input.styled'
 import { InputContainer } from '../containers/InputContainer.styled'
 import { NumberInputLabel } from '../styles/Label.styled'
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ModalTimer: FC<Props> = ({ label, val }) => {
-   const { incremenet, decremement, updateState } = useModalContext()
+   const dispatch = useModalContextDispatch()
 
    return (
       <GridItemModal>
@@ -25,14 +25,22 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                type="number"
                id={label}
                value={val}
-               onChange={(e) => updateState(label, Number(e.target.value))}
+               onChange={(e) =>
+                  dispatch({
+                     type: 'UPDATE_TIMER',
+                     timer: label,
+                     amount: Number(e.target.value),
+                  })
+               }
             />
             <Arrow
                width="14"
                height="7"
                focusable="true"
                aria-label="Increase timer amount by one minute"
-               onClick={() => incremenet(label)}
+               onClick={() =>
+                  dispatch({ type: 'INCREMENT_TIMER', timer: label })
+               }
             >
                <path d="M1 6l6-4 6 4" />
             </Arrow>
@@ -42,7 +50,9 @@ const ModalTimer: FC<Props> = ({ label, val }) => {
                height="7"
                focusable="true"
                aria-label="Descrease timer amount by one minute"
-               onClick={() => decremement(label)}
+               onClick={() =>
+                  dispatch({ type: 'DECREMENT_TIMER', timer: label })
+               }
             >
                <path d="M1 1l6 4 6-4" />
             </Arrow>
