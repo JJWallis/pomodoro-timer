@@ -16,3 +16,18 @@ export interface Data {
    shortbreak: number
    longbreak: number
 }
+
+export type ModalActions =
+   | {
+        type: 'UPDATE_TIMER'
+        timer: string
+        amount: number
+     }
+   | {
+        type: 'INCREMENT_TIMER'
+        timer: string
+     }
+   | {
+        type: 'DECREMENT_TIMER'
+        timer: string
+     }

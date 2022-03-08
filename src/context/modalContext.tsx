@@ -13,7 +13,7 @@ const initialState = {
    longbreak: 15,
 }
 
-const reducer = (state: any, action: any) => {
+const reducer = (state, action) => {
    const { type, amount, timer } = action
    switch (type) {
       case 'UPDATE_TIMER': {
@@ -39,7 +39,7 @@ export const withModalContext: ModalContextProvider =
          longbreak: 15,
       })
 
-      const [modalState, dispatch] = useReducer(reducer, state)
+      const [modalState, dispatch] = useReducer(reducer, initialState)
 
       const updateState = (timer: string, newState: number) => {
          setState({ ...state, [timer]: newState })
