@@ -14,12 +14,12 @@ interface Props {
 
 const ModalHeader: FC<Props> = ({ setIsModalToggled }) => {
    const { setNewTimer, endTimer } = useTimerContext()
-   const { state } = useModalContext()
+   const modalState = useModalContext()
 
    const handleCloseBtn = () => {
       setIsModalToggled()
       endTimer()
-      setNewTimer(state)
+      setNewTimer(modalState)
    }
 
    return (
