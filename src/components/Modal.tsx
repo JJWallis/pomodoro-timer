@@ -17,7 +17,7 @@ interface Props {
 
 const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const { endTimer, setNewTimer } = useTimerContext()
-   const { state } = useModalContext()
+   const modalState = useModalContext()
    const modalRef = useRef(null)
    let updateTimerOnMount = useRef(true)
    useCLickOutside(modalRef, () => isModalToggled && setIsModalToggled())
@@ -25,16 +25,16 @@ const Modal: FC<Props> = ({ isModalToggled, setIsModalToggled }) => {
    const handleSubmission = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       endTimer()
-      setNewTimer(state)
+      setNewTimer(modalState)
       setIsModalToggled()
    }
 
    useLayoutEffect(() => {
       if (updateTimerOnMount.current) {
-         setNewTimer(state)
+         setNewTimer(modalState)
          updateTimerOnMount.current = false
       }
-   }, [setNewTimer, updateTimerOnMount, state])
+   }, [setNewTimer, updateTimerOnMount, modalState])
 
    return (
       <ModalContainer

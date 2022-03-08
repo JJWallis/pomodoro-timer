@@ -17,18 +17,18 @@ const Clock: FC = () => {
       currentTimerTotal,
       setNewTimer,
    } = useTimerContext()
-   const { state } = useModalContext()
+   const modalState = useModalContext()
 
    useEffect(() => {
       const current = currentTimerTotal.current
          ? currentTimerTotal.current
-         : state.pomodoro
+         : modalState.pomodoro
       setProgressWidth((timerLength / 60 / current) * 500)
-   }, [timerLength, currentTimerTotal, state])
+   }, [timerLength, currentTimerTotal, modalState])
 
    const handleResetBtn = () => {
       endTimer()
-      setNewTimer(state)
+      setNewTimer(modalState)
    }
 
    const formatTimer = (secondsRemaining: number) => {
