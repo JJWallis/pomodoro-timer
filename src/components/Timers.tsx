@@ -7,13 +7,13 @@ import { ModalStateKeys } from '../context/modalContext.interface'
 import SrOnly from '../styles/SrOnly.styled'
 
 const Timers: FC = () => {
-   const { state } = useModalContext()
+   const modalState = useModalContext()
    const { dispatch, endTimer, currentTimerTotal, activeTimer } =
       useTimerContext()
 
    const handleClick = (desiredTimer: string) => {
       if (activeTimer !== desiredTimer) {
-         const newAmount = state[desiredTimer as ModalStateKeys]
+         const newAmount = modalState[desiredTimer as ModalStateKeys]
          endTimer()
          dispatch({ type: 'SET_ACTIVE_TIMER', active: desiredTimer })
          dispatch({
@@ -27,7 +27,7 @@ const Timers: FC = () => {
    return (
       <TimersContainer as="section" aria-labelledby="timers-desc">
          <SrOnly id="timers-desc">Select desired active timer</SrOnly>
-         {Object.keys(state).map((key) => (
+         {Object.keys(modalState).map((key) => (
             <TimerButton
                key={key}
                active={key === activeTimer}

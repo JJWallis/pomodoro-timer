@@ -26,7 +26,9 @@ const reducer = (state: Data, action: ModalActions) => {
          return { ...state, [timer]: state[timer as ModalStateKeys] + 1 }
       }
       case 'DECREMENT_TIMER': {
-         return { ...state, [timer]: state[timer as ModalStateKeys] - 1 }
+         const curr = state[timer as ModalStateKeys]
+         if (curr === 1) return state
+         return { ...state, [timer]: curr - 1 }
       }
       default: {
          return state
