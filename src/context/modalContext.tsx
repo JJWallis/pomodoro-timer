@@ -16,10 +16,15 @@ const initialState = {
 const reducer = (state: any, action: any) => {
    const { type, amount, timer } = action
    switch (type) {
-      case 'UPDATE_STATE': {
+      case 'UPDATE_TIMER': {
          return { ...state, [timer]: amount }
       }
-
+      case 'INCREMENT_TIMER': {
+         return { ...state, [timer]: state[timer] + 1 }
+      }
+      case 'DECREMENT_TIMER': {
+         return { ...state, [timer]: state[timer] - 1 }
+      }
       default: {
          return state
       }
@@ -34,7 +39,7 @@ export const withModalContext: ModalContextProvider =
          longbreak: 15,
       })
 
-      const [newState, dispatch] = useReducer(reducer, state)
+      const [modalState, dispatch] = useReducer(reducer, state)
 
       const updateState = (timer: string, newState: number) => {
          setState({ ...state, [timer]: newState })
