@@ -1,14 +1,14 @@
-import React, { createContext, useReducer } from 'react'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import React, { createContext, useReducer, Dispatch } from 'react'
 import {
    Data,
    ModalActions,
-   ModalContextData,
    ModalContextProvider,
    ModalStateKeys,
 } from './modalContext.interface'
 
-export const ModalContext = createContext<ModalContextData | null>(null)
+export const ModalContext = createContext<Data | null>(null)
+export const ModalContextDispatch =
+   createContext<Dispatch<ModalActions> | null>(null)
 
 const initialState = {
    pomodoro: 1,
@@ -36,29 +36,29 @@ const reducer = (state: Data, action: ModalActions) => {
 
 export const withModalContext: ModalContextProvider =
    (Component) => (props) => {
-      const [state, setState] = useLocalStorage('TIMERS', {
-         pomodoro: 1,
-         shortbreak: 5,
-         longbreak: 15,
-      })
+      // const [state, setState] = useLocalStorage('TIMERS', {
+      //    pomodoro: 1,
+      //    shortbreak: 5,
+      //    longbreak: 15,
+      // })
 
       // useEffect to store in local storage
       // lazy func to retrieve from local storage
 
       const [modalState, dispatch] = useReducer(reducer, initialState)
 
-      const updateState = (timer: string, newState: number) => {
-         setState({ ...state, [timer]: newState })
-      }
+      // const updateState = (timer: string, newState: number) => {
+      //    setState({ ...state, [timer]: newState })
+      // }
 
-      const incremenet = (timer: string) => {
-         setState({ ...state, [timer]: state[timer] + 1 })
-      }
+      // const incremenet = (timer: string) => {
+      //    setState({ ...state, [timer]: state[timer] + 1 })
+      // }
 
-      const decremement = (timer: string) => {
-         if (state[timer] === 1) return
-         setState({ ...state, [timer]: state[timer] - 1 })
-      }
+      // const decremement = (timer: string) => {
+      //    if (state[timer] === 1) return
+      //    setState({ ...state, [timer]: state[timer] - 1 })
+      // }
 
       return (
          <ModalContext.Provider
