@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, Dispatch } from 'react'
+import React, { createContext, useReducer, Dispatch, useEffect } from 'react'
 import {
    Data,
    ModalActions,
@@ -14,6 +14,11 @@ const initialState = {
    pomodoro: 1,
    shortbreak: 5,
    longbreak: 15,
+}
+
+const retrieveState = (): Data => {
+   const state = localStorage.getItem('modalState')
+   return state ? JSON.parse(state) : initialState
 }
 
 const reducer = (state: Data, action: ModalActions) => {
@@ -37,9 +42,15 @@ const reducer = (state: Data, action: ModalActions) => {
 }
 
 export const withModalContext: WithModalContext = (Component) => (props) => {
-   const [modalState, dispatch] = useReducer(reducer, initialState)
-   // useEffect to store in local storage
-   // lazy func to retrieve from local storage
+   const [modalState, dispatch] = useReducer(
+      reducer,
+      initialState,
+      retrieveState
+   )
+
+   useEffect(() => {
+      localStorage.setItem('modalState', JSON.stringify(modalState))
+   }, [modalState])
 
    return (
       <ModalContext.Provider value={modalState}>
