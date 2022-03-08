@@ -14,10 +14,10 @@ const initialState = {
 }
 
 const reducer = (state: any, action: any) => {
-   const { type, payload } = action
+   const { type, amount, timer } = action
    switch (type) {
       case 'UPDATE_STATE': {
-         return { ...state, pomodoro: payload }
+         return { ...state, [timer]: amount }
       }
 
       default: {
