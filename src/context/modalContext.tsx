@@ -2,7 +2,7 @@ import React, { createContext, useReducer, Dispatch } from 'react'
 import {
    Data,
    ModalActions,
-   ModalContextProvider,
+   WithModalContext,
    ModalStateKeys,
 } from './modalContext.interface'
 
@@ -34,37 +34,16 @@ const reducer = (state: Data, action: ModalActions) => {
    }
 }
 
-export const withModalContext: ModalContextProvider =
-   (Component) => (props) => {
-      // const [state, setState] = useLocalStorage('TIMERS', {
-      //    pomodoro: 1,
-      //    shortbreak: 5,
-      //    longbreak: 15,
-      // })
+export const withModalContext: WithModalContext = (Component) => (props) => {
+   const [modalState, dispatch] = useReducer(reducer, initialState)
+   // useEffect to store in local storage
+   // lazy func to retrieve from local storage
 
-      // useEffect to store in local storage
-      // lazy func to retrieve from local storage
-
-      const [modalState, dispatch] = useReducer(reducer, initialState)
-
-      // const updateState = (timer: string, newState: number) => {
-      //    setState({ ...state, [timer]: newState })
-      // }
-
-      // const incremenet = (timer: string) => {
-      //    setState({ ...state, [timer]: state[timer] + 1 })
-      // }
-
-      // const decremement = (timer: string) => {
-      //    if (state[timer] === 1) return
-      //    setState({ ...state, [timer]: state[timer] - 1 })
-      // }
-
-      return (
-         <ModalContext.Provider
-            value={{ state, updateState, incremenet, decremement }}
-         >
+   return (
+      <ModalContext.Provider value={modalState}>
+         <ModalContextDispatch.Provider value={dispatch}>
             <Component {...props} />
-         </ModalContext.Provider>
-      )
-   }
+         </ModalContextDispatch.Provider>
+      </ModalContext.Provider>
+   )
+}
